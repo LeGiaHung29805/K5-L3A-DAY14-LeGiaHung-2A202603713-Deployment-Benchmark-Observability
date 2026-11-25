@@ -1,0 +1,44 @@
+name: Agent quality gate
+on:
+  push:
+    paths:
+      - '06-lab-complete/benchmark-observability/develop/**'
+      - 'reports/eval_v2.json'
+      - '.github/workflows/quality-gate.yml'
+  pull_request:
+    paths:
+      - '06-lab-complete/benchmark-observability/develop/**'
+      - 'reports/eval_v2.json'
+      - '.github/workflows/quality-gate.yml'
+permissions:
+  contents: read
+jobs:
+  evaluate:
+    runs-on: ubuntu-latest
+    timeout-minutes: 10
+    steps:
+      - uses: actions/checkout@v4
+      - uses: actions/setup-python@v5
+        with:
+          python-version: '3.11'
+      - run: pip install -r 06-lab-complete/benchmark-observability/develop/requirements.txt
+      - name: Start v2 without random faults for deterministic quality evaluation
+        working-directory: 06-lab-complete/benchmark-observability/develop
+        run: |
+          AGENT_VERSION=v2 PORT=8002 MOCK_ERROR_RATE=0 MOCK_SLOW_RATE=0 python app.py > /tmp/day14-eval.log 2>&1 &
+          echo $! > /tmp/day14-eval.pid
+          for attempt in $(seq 1 60); do
+            if curl -fsS http://127.0.0.1:8002/health; then exit 0; fi
+            sleep 1
+          done
+          cat /tmp/day14-eval.log
+          exit 1
+      - name: Require 100% accuracy and no regression against recorded v2 baseline
+        run: |
+          python 06-lab-complete/benchmark-observability/develop/eval/run_eval.py \
+            --url http://127.0.0.1:8002 --min-accuracy 1.0 \
+            --baseline reports/eval_v2.json --out reports/eval_ci.json
+      - name: Stop this job's agent
+        if: always()
+        run: |
+          if [ -f /tmp/day14-eval.pid ]; then kill "$(cat /tmp/day14-eval.pid)" 2>/dev/null || true; fi

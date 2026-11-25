@@ -16,7 +16,7 @@ if os.getenv("TEST_REDIS_URL"):
 
 from fastapi import HTTPException
 from app.config import settings
-from app import cost_guard, rate_limiter
+from app import cost_guard, rate_limiter, history
 from app.redis_client import r
 
 
@@ -28,7 +28,7 @@ class SharedLimitsTests(unittest.TestCase):
             rate_limit_per_minute=5,
             daily_budget_usd=Decimal("0.00001"), monthly_budget_usd=Decimal("0.00001"),
         )
-        for module in (cost_guard, rate_limiter):
+        for module in (cost_guard, rate_limiter, history):
             patcher = patch.object(module, "settings", self.config)
             patcher.start()
             self.addCleanup(patcher.stop)
@@ -53,6 +53,39 @@ class SharedLimitsTests(unittest.TestCase):
             results = list(pool.map(request, range(32)))
         self.assertEqual(results.count(200), 5)
         self.assertEqual(results.count(429), 27)
+
+    def test_history_is_isolated_by_credential(self):
+        session = uuid.uuid4()
+        history.append_turn("owner", session, "question", "answer", .01)
+        self.assertEqual(len(history.read_history("owner", session)), 2)
+        with self.assertRaises(HTTPException) as rejected:
+            history.read_history("different-owner", session)
+        self.assertEqual(rejected.exception.status_code, 404)
+
+    def test_history_retention_and_ttl(self):
+        session = uuid.uuid4()
+        config = replace(self.config, history_max_turns=2, history_ttl_seconds=60)
+        with patch.object(history, "settings", config):
+            for number in range(3):
+                history.append_turn("owner", session, f"question-{number}", f"answer-{number}", .01)
+            messages = history.read_history("owner", session)
+            self.assertEqual([message["content"] for message in messages],
+                             ["question-1", "answer-1", "question-2", "answer-2"])
+            self.assertGreater(r.ttl(history.history_key("owner", session)), 0)
+            self.assertLessEqual(r.ttl(history.history_key("owner", session)), 60)
+
+    def test_parallel_history_keeps_question_answer_pairs(self):
+        session = uuid.uuid4()
+        def save(number):
+            history.append_turn("owner", session, str(number), str(number), .01)
+        with ThreadPoolExecutor(max_workers=16) as pool:
+            list(pool.map(save, range(32)))
+        messages = history.read_history("owner", session)
+        self.assertEqual(len(messages), 64)
+        for index in range(0, 64, 2):
+            self.assertEqual(messages[index]["role"], "user")
+            self.assertEqual(messages[index + 1]["role"], "assistant")
+            self.assertEqual(messages[index]["content"], messages[index + 1]["content"])
 
     def test_parallel_budget_cannot_reserve_more_than_available(self):
         # Each reservation costs 7,500 nanodollars; budget is 10,000.

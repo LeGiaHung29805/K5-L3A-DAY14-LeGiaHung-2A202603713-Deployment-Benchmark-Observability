@@ -37,6 +37,8 @@ class Settings:
     daily_budget_usd: Decimal = field(default_factory=lambda: budget("DAILY_BUDGET_USD", "1"))
     monthly_budget_usd: Decimal = field(default_factory=lambda: budget("MONTHLY_BUDGET_USD", "10"))
     max_output_tokens: int = field(default_factory=lambda: positive_integer("MAX_OUTPUT_TOKENS", 500, 8192, minimum=2))
+    history_max_turns: int = field(default_factory=lambda: positive_integer("HISTORY_MAX_TURNS", 50, 200))
+    history_ttl_seconds: int = field(default_factory=lambda: positive_integer("HISTORY_TTL_SECONDS", 86400, 604800))
     log_level: str = field(default_factory=lambda: os.getenv("LOG_LEVEL", "INFO").upper())
 
     @property
