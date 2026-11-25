@@ -476,7 +476,7 @@ curl -sS -o /dev/null -w '%{http_code}\n' -X POST "$LAB_BASE/ask" \
 unset LAB_API_KEY
 ```
 
-Khi triển khai xong, bổ sung URL, kết quả thật, ảnh đã che secret và `DEPLOYMENT.md`. Không dùng `GET /ask` để thử auth vì sai method có thể trả 405.
+Đã triển khai agent Part 6 lên Railway và lưu URL public, kết quả HTTP thực nhận cùng ảnh bằng chứng trong [DEPLOYMENT.md](DEPLOYMENT.md). Không dùng `GET /ask` để thử auth vì sai method có thể trả 405.
 
 ## Part 4: API Security — CP3
 
@@ -551,7 +551,59 @@ Lần kiểm chứng bổ sung: mười request có JWT trả 200, request thứ
 2. **Đặt rate limit bao nhiêu?** Dựa trên khả năng xử lý đo được, độ dài/chi phí request, latency mục tiêu, ngân sách và loại tài khoản. Mức 10/100 request trong mẫu là cấu hình demo, không phải con số tối ưu cho mọi agent.
 3. **Key bị lộ thì làm gì?** Theo dõi log/usage bất thường, thu hồi hoặc rotate key, cập nhật server/client và kiểm tra log/lịch sử Git. Không coi xóa dòng secret ở commit mới là đã xử lý việc lộ key cũ.
 
-**Tình trạng CP3:** Các kết quả chức năng 4.1–4.4 đã được báo và phần giải thích đã hoàn thiện theo code. Bài nộp vẫn cần transcript `curl -i` đã che secret, đặc biệt response 429, để có bằng chứng nguyên văn theo checkpoint.
+**Tình trạng CP3:** Đã hoàn thiện kết quả chức năng 4.1–4.4, phần giải thích và bằng chứng HTTP 401/200/429. Các đoạn dưới đây trích nguyên văn từ [report kiểm chứng HTTP](reports/part4_http_verification.txt), giữ status, headers và body để đối chiếu yêu cầu output `curl -i` của checkpoint. Nguồn là kết quả script kiểm chứng HTTP đã chạy trước đó; lượt này chỉ trích lại report. API key và JWT không được ghi vào report.
+
+### Output HTTP thực nhận — CP3
+
+**HTTP 401: Thiếu API key — bản develop, Exercise 4.1**
+
+```text
+POST /ask
+HTTP 401
+date: Wed, 25 Nov 2026 13:16:45 GMT
+server: uvicorn
+content-length: 67
+content-type: application/json
+connection: close
+
+{"detail":"Missing API key. Include header: X-API-Key: <your-key>"}
+```
+
+**HTTP 200: API key hợp lệ — bản develop, Exercise 4.1**
+
+```text
+POST /ask
+HTTP 200
+date: Wed, 25 Nov 2026 13:16:45 GMT
+server: uvicorn
+content-length: 114
+content-type: application/json
+connection: close
+
+{"question":"Hello","answer":"Agent đang hoạt động tốt! (mock response) Hỏi thêm câu hỏi đi nhé."}
+```
+
+**HTTP 429: Request thứ 11 vượt giới hạn — bản JWT production, Exercise 4.3**
+
+```text
+POST /ask
+HTTP 429
+date: Wed, 25 Nov 2026 13:16:47 GMT
+server: uvicorn
+x-ratelimit-limit: 10
+x-ratelimit-remaining: 0
+x-ratelimit-reset: 1795612667
+retry-after: 59
+content-length: 98
+content-type: application/json
+x-content-type-options: nosniff
+x-frame-options: DENY
+x-xss-protection: 1; mode=block
+referrer-policy: strict-origin-when-cross-origin
+connection: close
+
+{"detail":{"error":"Rate limit exceeded","limit":10,"window_seconds":60,"retry_after_seconds":59}}
+```
 
 ## Part 5: Scaling & Reliability — CP4
 
@@ -880,7 +932,7 @@ Công cụ sử dụng: ChatGPT/Codex. Mục này được giữ theo `RULES.md`
 | Hướng dẫn vị trí nối agent tới Redis | Chỉ rõ ô ứng dụng GitHub → Variables → New Variable, REDIS_URL reference tới service Redis; ghi project precious-rebirth/environment production từ ảnh canvas vào DEPLOYMENT.md. | Chỉ sửa tài liệu, chưa thao tác dashboard; chưa xác nhận reference đã lưu hoặc kết nối Redis thành công. |
 | Ảnh Redis Online, app có AGENT_API_KEY/REDIS_URL, hỏi bước tiếp | Ghi trạng thái ảnh vào DEPLOYMENT.md; hướng dẫn thêm bảy biến production, apply/deploy và đọc log mới. | Giá trị hai biến được che và app còn Apply 4 changes; chưa xác nhận key/reference hợp lệ, biến đã áp dụng, kết nối Redis runtime hoặc deployment agent thành công. Không thao tác dashboard thay. |
 | Xác nhận thêm đủ biến, deploy thành công và agent Online; nhờ hướng dẫn domain/API | Ghi kết quả theo xác nhận vào DEPLOYMENT.md, hướng dẫn Generate Domain, chọn cổng theo log Uvicorn, bốn phép thử HTTP và lưu reports. | Không tạo domain hoặc chạy API thay; chưa có URL hoặc HTTP cloud thực nhận. Không suy từ Online rằng Redis/auth đã được kiểm chứng. |
-
 | Yêu cầu hoàn thiện toàn bộ lab, phần mở rộng, báo cáo và dọn cấu trúc; xác nhận L3A, tạo domain public và đổi tên repo | Hoàn thiện history Redis/SSE/Nginx; chạy lại kiểm chứng Part 4–6, benchmark/eval/Locust A–E và AB; thêm histogram 7.1, đo/giải thích 7.4; tạo BENCHMARK_REPORT, cập nhật MISSION/DEPLOYMENT, thêm CI quality gate. | Codex trực tiếp chạy các phép thử theo phạm vi mới được cho phép, lưu raw JSON/CSV/log/ảnh và ghi nguồn thực hiện. Part 6 PASS 12/12, 44/44 khi kèm public URL; bảy test Redis PASS; v2 23/23; CI success. Đã đổi tên repo, push mã nguồn và deploy bản mới, kiểm chứng API HTTPS và history/chat/SSE. Không sửa script chấm/golden dataset, không bịa số đạt SLO, không tác động process riêng cổng 8000. |
+| Sửa hai đoạn còn sót trong MISSION_ANSWERS và đưa output CP3 vào bài, commit/push | Cập nhật trạng thái deploy/CP3; trích nguyên văn ba response 401/200/429 từ report đã lưu. | Đối chiếu từng khối status, headers và body với reports/part4_http_verification.txt; chỉ sửa tài liệu, không chạy lại lab hoặc tạo số đo mới. |
 
 Các kết quả trước đây trong AI log mô tả thời điểm từng lượt, không thay thế trạng thái cuối ở các phần trên. Bài nộp dùng source trong `06-lab-complete/`, ba báo cáo root, raw `reports/`, `benchmark-results/` và ảnh `screenshots/`. Nộp link repository public trên LMS theo SUBMISSION.md; không thay ngày commit hoặc force-push.
