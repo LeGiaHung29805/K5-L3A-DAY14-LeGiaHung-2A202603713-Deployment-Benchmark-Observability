@@ -1,0 +1,76 @@
+ Image k5-day14-final-agent Building 
+#1 [internal] load local bake definitions
+#1 reading from stdin 690B done
+#1 DONE 0.0s
+
+#2 [internal] load build definition from Dockerfile
+#2 transferring dockerfile: 901B 0.0s done
+#2 DONE 0.0s
+
+#3 [internal] load metadata for docker.io/library/python:3.11-slim
+#3 DONE 2.2s
+
+#4 [internal] load .dockerignore
+#4 transferring context: 210B 0.0s done
+#4 DONE 0.0s
+
+#5 [builder 1/4] FROM docker.io/library/python:3.11-slim@sha256:61e01f72680f86a5279ad510818ab7b2ee9f049822589d4e34e33e044360356c
+#5 resolve docker.io/library/python:3.11-slim@sha256:61e01f72680f86a5279ad510818ab7b2ee9f049822589d4e34e33e044360356c 0.0s done
+#5 DONE 0.0s
+
+#6 [internal] load build context
+#6 transferring context: 2.51kB 0.0s done
+#6 DONE 0.0s
+
+#7 [runtime 3/6] WORKDIR /app
+#7 CACHED
+
+#8 [builder 4/4] RUN python -m venv /opt/venv && /opt/venv/bin/pip install --no-cache-dir -r requirements.txt
+#8 CACHED
+
+#9 [runtime 2/6] RUN groupadd --system agent && useradd --system --gid agent --home-dir /app agent
+#9 CACHED
+
+#10 [builder 2/4] WORKDIR /build
+#10 CACHED
+
+#11 [builder 3/4] COPY requirements.txt .
+#11 CACHED
+
+#12 [runtime 4/6] COPY --from=builder /opt/venv /opt/venv
+#12 CACHED
+
+#13 [runtime 5/6] COPY --chown=agent:agent app/ ./app/
+#13 DONE 0.0s
+
+#14 [runtime 6/6] COPY --chown=agent:agent utils/ ./utils/
+#14 DONE 0.0s
+
+#15 exporting to image
+#15 exporting layers 0.0s done
+#15 exporting manifest sha256:77addf06dd727ddf2975a0e9c3b2dac6eb1d074cf5ed9d4509ee424fe35e413b done
+#15 exporting config sha256:ffffd98955ed073af1ffc49aabb4c46622c3519c1ab7d531a5a4eaebea5f88b4 done
+#15 exporting attestation manifest sha256:9152a3bcb4a76342a6780b540c95cc3489b4a12cbc95f594f222de277c0cc440 done
+#15 exporting manifest list sha256:c1bf2f3c3dab594d8f4cde824aa483f3ac1e80463a90a66b12006e3e0995a1b2 done
+#15 naming to docker.io/library/k5-day14-final-agent:latest done
+#15 unpacking to docker.io/library/k5-day14-final-agent:latest
+#15 unpacking to docker.io/library/k5-day14-final-agent:latest 0.7s done
+#15 DONE 0.8s
+
+#16 resolving provenance for metadata file
+#16 DONE 0.0s
+ Image k5-day14-final-agent Built 
+ Network k5-day14-final_default Creating 
+ Network k5-day14-final_default Created 
+ Volume k5-day14-final_redis_data Creating 
+ Volume k5-day14-final_redis_data Created 
+ Container k5-day14-final-redis-1 Creating 
+ Container k5-day14-final-redis-1 Created 
+ Container k5-day14-final-agent-1 Creating 
+ Container k5-day14-final-agent-1 Created 
+ Container k5-day14-final-redis-1 Starting 
+ Container k5-day14-final-redis-1 Started 
+ Container k5-day14-final-redis-1 Waiting 
+ Container k5-day14-final-redis-1 Healthy 
+ Container k5-day14-final-agent-1 Starting 
+ Container k5-day14-final-agent-1 Started 

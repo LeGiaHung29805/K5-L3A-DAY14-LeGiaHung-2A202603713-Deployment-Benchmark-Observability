@@ -1,0 +1,142 @@
+[
+  {
+    "Command": "\"uvicorn main:app --…\"",
+    "CreatedAt": "2026-11-25 15:11:06 +0700 +07",
+    "ExitCode": 0,
+    "Health": "healthy",
+    "ID": "cd4b90f1bf8a",
+    "Image": "k5-day14-docker-agent",
+    "Labels": "com.docker.compose.config-hash=d8a8836bbe819194d0f2db74af364ebcbd729879491dc38fdc4cf6e2af4f82d9,com.docker.compose.container-number=1,com.docker.compose.depends_on=qdrant:service_healthy:false,redis:service_healthy:false,com.docker.compose.image=sha256:fa4db62b208f6658d87f234255d78b99853ee458bd38f1a0b86cfa5511d85772,com.docker.compose.oneoff=False,com.docker.compose.project.config_files=/mnt/e/Lab_VinUni/Day14/K5-L3-Day14-LeGiaHung-2A202603713-Deployment-Agent-Benchmark-Observability/02-docker/production/docker-compose.yml,com.docker.compose.project.working_dir=/mnt/e/Lab_VinUni/Day14/K5-L3-Day14-LeGiaHung-2A202603713-Deployment-Agent-Benchmark-Observability/02-docker/production,com.docker.compose.service=agent,com.docker.compose.project=k5-day14-docker,com.docker.compose.version=5.3.1,desktop.docker.io/ports.scheme=v2,desktop.docker.io/wsl-distro=Ubuntu-24.04",
+    "LocalVolumes": "0",
+    "Mounts": "",
+    "Name": "k5-day14-docker-agent-1",
+    "Names": "k5-day14-docker-agent-1",
+    "Networks": "k5-day14-docker_internal",
+    "Ports": "8000/tcp",
+    "Project": "k5-day14-docker",
+    "Publishers": [
+      {
+        "URL": "",
+        "TargetPort": 8000,
+        "PublishedPort": 0,
+        "Protocol": "tcp"
+      }
+    ],
+    "RunningFor": "17 seconds ago",
+    "Service": "agent",
+    "Size": "0B",
+    "State": "running",
+    "Status": "Up 5 seconds (healthy)"
+  },
+  {
+    "Command": "\"/docker-entrypoint.…\"",
+    "CreatedAt": "2026-11-25 15:11:06 +0700 +07",
+    "ExitCode": 0,
+    "Health": "",
+    "ID": "9c2d1d4786e8",
+    "Image": "nginx:alpine",
+    "Labels": "com.docker.compose.project=k5-day14-docker,com.docker.compose.project.working_dir=/mnt/e/Lab_VinUni/Day14/K5-L3-Day14-LeGiaHung-2A202603713-Deployment-Agent-Benchmark-Observability/02-docker/production,desktop.docker.io/binds/0/Source=/mnt/e/Lab_VinUni/Day14/K5-L3-Day14-LeGiaHung-2A202603713-Deployment-Agent-Benchmark-Observability/02-docker/production/nginx/nginx.conf,maintainer=NGINX Docker Maintainers <docker-maint@nginx.com>,com.docker.compose.oneoff=False,com.docker.compose.project.config_files=/mnt/e/Lab_VinUni/Day14/K5-L3-Day14-LeGiaHung-2A202603713-Deployment-Agent-Benchmark-Observability/02-docker/production/docker-compose.yml,desktop.docker.io/binds/0/SourceKind=hostFile,desktop.docker.io/binds/0/Target=/etc/nginx/nginx.conf,desktop.docker.io/ports/443/tcp=:443,desktop.docker.io/ports/80/tcp=:80,desktop.docker.io/wsl-distro=Ubuntu-24.04,com.docker.compose.container-number=1,com.docker.compose.version=5.3.1,desktop.docker.io/ports.scheme=v2,com.docker.compose.config-hash=011f4b46a1ad118b9a78320b765c2ac8b9055af599fd1dac10bfb81da335f0db,com.docker.compose.service=nginx,com.docker.compose.depends_on=agent:service_started:false,com.docker.compose.image=sha256:b50897d5c7b1aa08067c3d90c5e8b3e47ec4e3c91c91446f67820228f7b41e34",
+    "LocalVolumes": "0",
+    "Mounts": "/run/desktop/m…",
+    "Name": "k5-day14-docker-nginx-1",
+    "Names": "k5-day14-docker-nginx-1",
+    "Networks": "k5-day14-docker_internal",
+    "Ports": "0.0.0.0:80->80/tcp, [::]:80->80/tcp, 0.0.0.0:443->443/tcp, [::]:443->443/tcp",
+    "Project": "k5-day14-docker",
+    "Publishers": [
+      {
+        "URL": "0.0.0.0",
+        "TargetPort": 80,
+        "PublishedPort": 80,
+        "Protocol": "tcp"
+      },
+      {
+        "URL": "::",
+        "TargetPort": 80,
+        "PublishedPort": 80,
+        "Protocol": "tcp"
+      },
+      {
+        "URL": "0.0.0.0",
+        "TargetPort": 443,
+        "PublishedPort": 443,
+        "Protocol": "tcp"
+      },
+      {
+        "URL": "::",
+        "TargetPort": 443,
+        "PublishedPort": 443,
+        "Protocol": "tcp"
+      }
+    ],
+    "RunningFor": "17 seconds ago",
+    "Service": "nginx",
+    "Size": "0B",
+    "State": "running",
+    "Status": "Up 5 seconds"
+  },
+  {
+    "Command": "\"./entrypoint.sh\"",
+    "CreatedAt": "2026-11-25 15:11:06 +0700 +07",
+    "ExitCode": 0,
+    "Health": "healthy",
+    "ID": "96def8266afa",
+    "Image": "qdrant/qdrant:v1.9.0",
+    "Labels": "com.docker.compose.config-hash=4c5dffc3c733d73298a117b5290f4110ec8c7c94de0ef1aca2ff29bda1de3ee1,com.docker.compose.project=k5-day14-docker,desktop.docker.io/wsl-distro=Ubuntu-24.04,org.opencontainers.image.title=Qdrant,org.opencontainers.image.url=https://qdrant.com/,org.opencontainers.image.vendor=Qdrant,com.docker.compose.depends_on=,com.docker.compose.image=sha256:2c1b5428cf1b40f9e27835218e6eb0431265718ba0d7cf09a50b143d1b457e04,com.docker.compose.oneoff=False,desktop.docker.io/ports.scheme=v2,org.opencontainers.image.description=Official Qdrant image,org.opencontainers.image.version=v1.9.0,com.docker.compose.container-number=1,com.docker.compose.project.config_files=/mnt/e/Lab_VinUni/Day14/K5-L3-Day14-LeGiaHung-2A202603713-Deployment-Agent-Benchmark-Observability/02-docker/production/docker-compose.yml,com.docker.compose.service=qdrant,com.docker.compose.version=5.3.1,org.opencontainers.image.documentation=https://qdrant.com/docs,com.docker.compose.project.working_dir=/mnt/e/Lab_VinUni/Day14/K5-L3-Day14-LeGiaHung-2A202603713-Deployment-Agent-Benchmark-Observability/02-docker/production,org.opencontainers.image.source=https://github.com/qdrant/qdrant",
+    "LocalVolumes": "1",
+    "Mounts": "k5-day14-docke…",
+    "Name": "k5-day14-docker-qdrant-1",
+    "Names": "k5-day14-docker-qdrant-1",
+    "Networks": "k5-day14-docker_internal",
+    "Ports": "6333-6334/tcp",
+    "Project": "k5-day14-docker",
+    "Publishers": [
+      {
+        "URL": "",
+        "TargetPort": 6333,
+        "PublishedPort": 0,
+        "Protocol": "tcp"
+      },
+      {
+        "URL": "",
+        "TargetPort": 6334,
+        "PublishedPort": 0,
+        "Protocol": "tcp"
+      }
+    ],
+    "RunningFor": "17 seconds ago",
+    "Service": "qdrant",
+    "Size": "0B",
+    "State": "running",
+    "Status": "Up 16 seconds (healthy)"
+  },
+  {
+    "Command": "\"docker-entrypoint.s…\"",
+    "CreatedAt": "2026-11-25 15:11:06 +0700 +07",
+    "ExitCode": 0,
+    "Health": "healthy",
+    "ID": "2ab90494bae7",
+    "Image": "redis:7-alpine",
+    "Labels": "com.docker.compose.container-number=1,com.docker.compose.image=sha256:7f7d30b7fdd09467bac58198a1f166dd69789d348d4fe859cccb20e0cf287fbe,com.docker.compose.oneoff=False,desktop.docker.io/wsl-distro=Ubuntu-24.04,com.docker.compose.config-hash=1e79f700c96ff71fa8a43926ba9c395509cff351d1ae18a69d46eca80df803c2,com.docker.compose.depends_on=,com.docker.compose.project=k5-day14-docker,com.docker.compose.project.config_files=/mnt/e/Lab_VinUni/Day14/K5-L3-Day14-LeGiaHung-2A202603713-Deployment-Agent-Benchmark-Observability/02-docker/production/docker-compose.yml,com.docker.compose.project.working_dir=/mnt/e/Lab_VinUni/Day14/K5-L3-Day14-LeGiaHung-2A202603713-Deployment-Agent-Benchmark-Observability/02-docker/production,com.docker.compose.service=redis,com.docker.compose.version=5.3.1,desktop.docker.io/ports.scheme=v2",
+    "LocalVolumes": "1",
+    "Mounts": "k5-day14-docke…",
+    "Name": "k5-day14-docker-redis-1",
+    "Names": "k5-day14-docker-redis-1",
+    "Networks": "k5-day14-docker_internal",
+    "Ports": "6379/tcp",
+    "Project": "k5-day14-docker",
+    "Publishers": [
+      {
+        "URL": "",
+        "TargetPort": 6379,
+        "PublishedPort": 0,
+        "Protocol": "tcp"
+      }
+    ],
+    "RunningFor": "17 seconds ago",
+    "Service": "redis",
+    "Size": "0B",
+    "State": "running",
+    "Status": "Up 16 seconds (healthy)"
+  }
+]

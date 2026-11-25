@@ -1,15 +1,21 @@
-"""
-Kết nối Redis dùng chung cho rate limiter và cost guard.
+"""Lazy Redis connection: importing the app never pings Redis."""
+import redis
+from fastapi import HTTPException
 
-Yêu cầu:
-  • Đọc REDIS_URL từ config
-  • App vẫn phải KHỞI ĐỘNG ĐƯỢC khi Redis chưa sẵn sàng (đừng ping Redis lúc import)
-  • redis_healthy() dùng cho GET /ready: Redis không kết nối được → False
-"""
+from app.config import settings
 
-r = None  # TODO: tạo client, vd redis.from_url(settings.redis_url, decode_responses=True)
+r = redis.from_url(
+    settings.redis_url, decode_responses=True,
+    socket_connect_timeout=1, socket_timeout=1, health_check_interval=30,
+)
 
 
 def redis_healthy() -> bool:
-    # TODO: ping Redis; lỗi kết nối → False
-    return False
+    try:
+        return bool(r.ping())
+    except redis.RedisError:
+        return False
+
+
+def unavailable() -> HTTPException:
+    return HTTPException(status_code=503, detail="Redis unavailable", headers={"Retry-After": "1"})

@@ -1,0 +1,103 @@
+{
+  "project": "k5-day14-final",
+  "base_url": "http://127.0.0.1:18006",
+  "tests": {
+    "health": {
+      "status": 200,
+      "body": {
+        "status": "ok"
+      }
+    },
+    "ready": {
+      "status": 200,
+      "body": {
+        "ready": true
+      }
+    },
+    "missing_key": {
+      "status": 401,
+      "body": {
+        "detail": "Missing or invalid API key"
+      }
+    },
+    "wrong_key": {
+      "status": 401,
+      "body": {
+        "detail": "Missing or invalid API key"
+      }
+    },
+    "valid_key": {
+      "status": 200,
+      "body": {
+        "question": "What is deployment?",
+        "answer": "Deployment là quá trình đưa code từ máy bạn lên server để người khác dùng được.",
+        "cost_usd": 2.01e-05
+      }
+    }
+  },
+  "container_user": "agent",
+  "image_inspect_size_bytes": 66560119,
+  "services": [
+    {
+      "Command": "\"sh -c 'exec uvicorn…\"",
+      "CreatedAt": "2026-11-25 17:15:08 +0700 +07",
+      "ExitCode": 0,
+      "Health": "starting",
+      "ID": "450a50c3cd21",
+      "Image": "k5-day14-final-agent",
+      "Labels": "com.docker.compose.config-hash=b6bd56ad52ae3b48214b13f922bd059d857f3e683cb6d0a1841cf9acf5fef9d4,com.docker.compose.depends_on=redis:service_healthy:false,com.docker.compose.image=sha256:c1bf2f3c3dab594d8f4cde824aa483f3ac1e80463a90a66b12006e3e0995a1b2,com.docker.compose.oneoff=False,com.docker.compose.project=k5-day14-final,com.docker.compose.project.config_files=/mnt/e/Lab_VinUni/Day14/K5-L3-Day14-LeGiaHung-2A202603713-Deployment-Agent-Benchmark-Observability/06-lab-complete/docker-compose.yml,com.docker.compose.service=agent,com.docker.compose.version=5.3.1,com.docker.compose.container-number=1,com.docker.compose.project.working_dir=/mnt/e/Lab_VinUni/Day14/K5-L3-Day14-LeGiaHung-2A202603713-Deployment-Agent-Benchmark-Observability/06-lab-complete,desktop.docker.io/ports.scheme=v2,desktop.docker.io/ports/8000/tcp=127.0.0.1:18006,desktop.docker.io/wsl-distro=Ubuntu-24.04",
+      "LocalVolumes": "0",
+      "Mounts": "",
+      "Name": "k5-day14-final-agent-1",
+      "Names": "k5-day14-final-agent-1",
+      "Networks": "k5-day14-final_default",
+      "Ports": "127.0.0.1:18006->8000/tcp",
+      "Project": "k5-day14-final",
+      "Publishers": [
+        {
+          "URL": "127.0.0.1",
+          "TargetPort": 8000,
+          "PublishedPort": 18006,
+          "Protocol": "tcp"
+        }
+      ],
+      "RunningFor": "6 seconds ago",
+      "Service": "agent",
+      "Size": "0B",
+      "State": "running",
+      "Status": "Up 1 second (health: starting)"
+    },
+    {
+      "Command": "\"docker-entrypoint.s…\"",
+      "CreatedAt": "2026-11-25 17:15:07 +0700 +07",
+      "ExitCode": 0,
+      "Health": "healthy",
+      "ID": "a95cfc4be13b",
+      "Image": "redis:7-alpine",
+      "Labels": "com.docker.compose.config-hash=12a58e438264ac1fd3211798aa4c3493863fcdac5fcb68bd4ddbaa3441804829,com.docker.compose.depends_on=,com.docker.compose.image=sha256:7f7d30b7fdd09467bac58198a1f166dd69789d348d4fe859cccb20e0cf287fbe,com.docker.compose.oneoff=False,com.docker.compose.project.config_files=/mnt/e/Lab_VinUni/Day14/K5-L3-Day14-LeGiaHung-2A202603713-Deployment-Agent-Benchmark-Observability/06-lab-complete/docker-compose.yml,desktop.docker.io/ports.scheme=v2,desktop.docker.io/wsl-distro=Ubuntu-24.04,com.docker.compose.container-number=1,com.docker.compose.project=k5-day14-final,com.docker.compose.project.working_dir=/mnt/e/Lab_VinUni/Day14/K5-L3-Day14-LeGiaHung-2A202603713-Deployment-Agent-Benchmark-Observability/06-lab-complete,com.docker.compose.service=redis,com.docker.compose.version=5.3.1",
+      "LocalVolumes": "1",
+      "Mounts": "k5-day14-final…",
+      "Name": "k5-day14-final-redis-1",
+      "Names": "k5-day14-final-redis-1",
+      "Networks": "k5-day14-final_default",
+      "Ports": "6379/tcp",
+      "Project": "k5-day14-final",
+      "Publishers": [
+        {
+          "URL": "",
+          "TargetPort": 6379,
+          "PublishedPort": 0,
+          "Protocol": "tcp"
+        }
+      ],
+      "RunningFor": "7 seconds ago",
+      "Service": "redis",
+      "Size": "0B",
+      "State": "running",
+      "Status": "Up 5 seconds (healthy)"
+    }
+  ],
+  "result": "PASS",
+  "cleanup_exit_code": 0,
+  "cleanup": "Stopped this verification project; kept Redis volume."
+}

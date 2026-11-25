@@ -1,0 +1,54 @@
+{
+  "size_measurement": "Primary sizes: Docker Engine GET /v1.55/images/json Size (bytes), corresponding to docker image ls Size. Separate inspect_size_bytes records image inspect Size; do not mix these metrics.",
+  "images": {
+    "develop": {
+      "id": "sha256:2bda0494387356cc29c8950331051a24c511b3a810084b3d0acadb6ac9c3154a",
+      "architecture": "amd64",
+      "os": "linux",
+      "configured_user": null,
+      "working_dir": "/app",
+      "cmd": [
+        "python",
+        "app.py"
+      ],
+      "healthcheck": null,
+      "inspect_size_bytes": 426320273,
+      "inspect_size_MB": 426.320273,
+      "size_bytes": 1667782656,
+      "size_MB": 1667.782656
+    },
+    "advanced": {
+      "id": "sha256:8a30b0531c4976ae33d3533528efb65d7c79d9276f17625b7478a57382ab1129",
+      "architecture": "amd64",
+      "os": "linux",
+      "configured_user": "appuser",
+      "working_dir": "/app",
+      "cmd": [
+        "uvicorn",
+        "main:app",
+        "--host",
+        "0.0.0.0",
+        "--port",
+        "8000",
+        "--workers",
+        "2"
+      ],
+      "healthcheck": {
+        "Test": [
+          "CMD-SHELL",
+          "python -c \"import urllib.request; urllib.request.urlopen('http://localhost:8000/health')\" || exit 1"
+        ],
+        "Interval": 30000000000,
+        "Timeout": 10000000000,
+        "StartPeriod": 5000000000,
+        "Retries": 3
+      },
+      "inspect_size_bytes": 57409053,
+      "inspect_size_MB": 57.409053,
+      "size_bytes": 239817880,
+      "size_MB": 239.81788
+    }
+  },
+  "reduction_percent": 85.62055558395254,
+  "docker_image_ls": "my-agent:advanced\t240MB\nmy-agent:develop\t1.67GB"
+}

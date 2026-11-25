@@ -1,0 +1,11 @@
+{
+  "container_port": 18007,
+  "tests": {
+    "health": 200,
+    "ready_without_redis": 503
+  },
+  "runtime_user": "agent",
+  "pid_1_command": "/opt/venv/bin/python /opt/venv/bin/uvicorn app.main:app --host 0.0.0.0 --port 18007 --timeout-graceful-shutdown 5",
+  "docker_health": "healthy",
+  "result": "PASS"
+}

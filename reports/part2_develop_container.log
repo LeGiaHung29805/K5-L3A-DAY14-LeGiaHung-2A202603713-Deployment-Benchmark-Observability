@@ -1,0 +1,8 @@
+INFO:     172.17.0.1:45662 - "GET /health HTTP/1.1" 200 OK
+INFO:     172.17.0.1:45666 - "GET /health HTTP/1.1" 200 OK
+INFO:     172.17.0.1:45680 - "POST /ask?question=What%20is%20Docker%3F HTTP/1.1" 200 OK
+INFO:     172.17.0.1:45690 - "POST /ask HTTP/1.1" 422 Unprocessable Entity
+INFO:     Started server process [1]
+INFO:     Waiting for application startup.
+INFO:     Application startup complete.
+INFO:     Uvicorn running on http://0.0.0.0:8000 (Press CTRL+C to quit)
