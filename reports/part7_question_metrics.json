@@ -1,0 +1,14 @@
+{
+  "result": "PASS",
+  "question_length_chars": 40,
+  "histogram_count": 1.0,
+  "histogram_sum": 40.0,
+  "unmatched_404_count": 3.0,
+  "answer_usage": {
+    "input_tokens": 91,
+    "output_tokens": 55,
+    "cost_usd": 4.665e-05
+  },
+  "server_exit_code": -15,
+  "application_shutdown_complete": true
+}

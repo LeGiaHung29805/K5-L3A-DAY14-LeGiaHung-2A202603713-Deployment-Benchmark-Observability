@@ -1,0 +1,16 @@
+{
+  "python": "3.12.3",
+  "platform": "Linux-6.18.58.1-microsoft-standard-WSL2-x86_64-with-glibc2.39",
+  "logical_cpus_wsl": 12,
+  "wsl_memory": [
+    "MemTotal:       12135172 kB",
+    "MemFree:         6994916 kB",
+    "MemAvailable:    9648552 kB"
+  ],
+  "docker": "29.7.2; CPUs=12; memory_bytes=12426416128; OS=Docker Desktop (containerized)",
+  "part7_agent_limits": {
+    "cpus_per_container": 0.5,
+    "memory_per_container": "256M"
+  },
+  "notes": "Local benchmark measured on shared Windows/WSL machine; initial develop runs overlapped Docker image downloads and browser use."
+}

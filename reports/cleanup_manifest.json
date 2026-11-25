@@ -1,0 +1,35 @@
+{
+  "program_documents_preserved": true,
+  "duplicate_root_go_dockerfile_removed": true,
+  "original_go_example_preserved": "02-docker/multi-stages/Dockerfile-multistage",
+  "temporary_cloud_secret_copy_removed": true,
+  "screenshot_duplicates_removed": [
+    "dashboard.jpg",
+    "exercise-7.4-dashboard.jpg",
+    "exercise-7.4-instances.jpg",
+    "experiment-A-alerts.jpg",
+    "experiment-A-dashboard.jpg",
+    "experiment-B-alerts.jpg",
+    "experiment-B-dashboard.jpg",
+    "experiment-C-alerts.jpg",
+    "experiment-C-dashboard.jpg",
+    "experiment-D-alerts.jpg",
+    "experiment-D-dashboard.jpg",
+    "experiment-E-alerts.jpg",
+    "experiment-E-dashboard.jpg",
+    "experiment-E-version.jpg",
+    "grafana-dashboard.jpg",
+    "jaeger-error-trace.jpg",
+    "jaeger-slow-trace.jpg",
+    "prometheus-alert-firing.jpg",
+    "running.jpg",
+    "test.jpg",
+    "domain-review.png"
+  ],
+  "python_cache_directories_removed": 10,
+  "lab_compose_projects_stopped_with_volumes": [
+    "k5-day14-final",
+    "k5-day14-observability"
+  ],
+  "unrelated_port_8000_listener_preserved": true
+}

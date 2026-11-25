@@ -1,0 +1,291 @@
+{
+  "started_utc": "2026-11-25T13:09:07.476132+00:00",
+  "tests": {
+    "health": {
+      "status": 200,
+      "body": {
+        "status": "ok"
+      },
+      "served_by": "d1af12843318"
+    },
+    "missing_key": {
+      "status": 401,
+      "body": {
+        "detail": "Missing or invalid API key"
+      },
+      "served_by": "bd9ba4f8e903"
+    },
+    "blank_question": {
+      "status": 422,
+      "body": {
+        "detail": [
+          {
+            "type": "value_error",
+            "loc": [
+              "body",
+              "question"
+            ],
+            "msg": "Value error, Question must contain non-whitespace text",
+            "input": "   ",
+            "ctx": {
+              "error": {}
+            }
+          }
+        ]
+      },
+      "served_by": "fe439d36541d"
+    },
+    "three_backends": [
+      "bd9ba4f8e903",
+      "d1af12843318",
+      "fe439d36541d"
+    ],
+    "chat": [
+      {
+        "status": 200,
+        "body": {
+          "question": "deployment question 0",
+          "answer": "Deployment là quá trình đưa code từ máy bạn lên server để người khác dùng được.",
+          "cost_usd": 2.01e-05,
+          "session_id": "93b90504-1e1c-4a95-979f-247a3979abb8",
+          "message_count": 2,
+          "storage": "redis",
+          "served_by": "d1af12843318"
+        },
+        "served_by": "d1af12843318"
+      },
+      {
+        "status": 200,
+        "body": {
+          "question": "deployment question 1",
+          "answer": "Deployment là quá trình đưa code từ máy bạn lên server để người khác dùng được.",
+          "cost_usd": 2.01e-05,
+          "session_id": "93b90504-1e1c-4a95-979f-247a3979abb8",
+          "message_count": 4,
+          "storage": "redis",
+          "served_by": "bd9ba4f8e903"
+        },
+        "served_by": "bd9ba4f8e903"
+      },
+      {
+        "status": 200,
+        "body": {
+          "question": "deployment question 2",
+          "answer": "Deployment là quá trình đưa code từ máy bạn lên server để người khác dùng được.",
+          "cost_usd": 2.01e-05,
+          "session_id": "93b90504-1e1c-4a95-979f-247a3979abb8",
+          "message_count": 6,
+          "storage": "redis",
+          "served_by": "fe439d36541d"
+        },
+        "served_by": "fe439d36541d"
+      }
+    ],
+    "shared_history": {
+      "status": 200,
+      "body": {
+        "session_id": "93b90504-1e1c-4a95-979f-247a3979abb8",
+        "messages": [
+          {
+            "role": "user",
+            "content": "deployment question 0"
+          },
+          {
+            "role": "assistant",
+            "content": "Deployment là quá trình đưa code từ máy bạn lên server để người khác dùng được."
+          },
+          {
+            "role": "user",
+            "content": "deployment question 1"
+          },
+          {
+            "role": "assistant",
+            "content": "Deployment là quá trình đưa code từ máy bạn lên server để người khác dùng được."
+          },
+          {
+            "role": "user",
+            "content": "deployment question 2"
+          },
+          {
+            "role": "assistant",
+            "content": "Deployment là quá trình đưa code từ máy bạn lên server để người khác dùng được."
+          }
+        ],
+        "message_count": 6,
+        "storage": "redis",
+        "served_by": "d1af12843318"
+      },
+      "served_by": "d1af12843318"
+    },
+    "stream_events": [
+      {
+        "elapsed_ms": 133.45,
+        "data": {
+          "text": "Deployment "
+        }
+      },
+      {
+        "elapsed_ms": 154.25,
+        "data": {
+          "text": "là "
+        }
+      },
+      {
+        "elapsed_ms": 175.07,
+        "data": {
+          "text": "quá "
+        }
+      },
+      {
+        "elapsed_ms": 195.83,
+        "data": {
+          "text": "trình "
+        }
+      },
+      {
+        "elapsed_ms": 216.94,
+        "data": {
+          "text": "đưa "
+        }
+      },
+      {
+        "elapsed_ms": 237.92,
+        "data": {
+          "text": "code "
+        }
+      },
+      {
+        "elapsed_ms": 258.94,
+        "data": {
+          "text": "từ "
+        }
+      },
+      {
+        "elapsed_ms": 279.65,
+        "data": {
+          "text": "máy "
+        }
+      },
+      {
+        "elapsed_ms": 300.19,
+        "data": {
+          "text": "bạn "
+        }
+      },
+      {
+        "elapsed_ms": 319.36,
+        "data": {
+          "text": "lên "
+        }
+      },
+      {
+        "elapsed_ms": 340.44,
+        "data": {
+          "text": "server "
+        }
+      },
+      {
+        "elapsed_ms": 361.05,
+        "data": {
+          "text": "để "
+        }
+      },
+      {
+        "elapsed_ms": 381.69,
+        "data": {
+          "text": "người "
+        }
+      },
+      {
+        "elapsed_ms": 402.37,
+        "data": {
+          "text": "khác "
+        }
+      },
+      {
+        "elapsed_ms": 422.4,
+        "data": {
+          "text": "dùng "
+        }
+      },
+      {
+        "elapsed_ms": 443.12,
+        "data": {
+          "text": "được. "
+        }
+      },
+      {
+        "elapsed_ms": 463.81,
+        "data": {
+          "question": "stream deployment",
+          "answer": "Deployment là quá trình đưa code từ máy bạn lên server để người khác dùng được.",
+          "cost_usd": 1.98e-05,
+          "session_id": "93b90504-1e1c-4a95-979f-247a3979abb8",
+          "message_count": 8,
+          "storage": "redis",
+          "served_by": "bd9ba4f8e903"
+        }
+      }
+    ],
+    "shared_rate_limit_burst_statuses": [
+      200,
+      429,
+      429,
+      200,
+      200,
+      200,
+      200,
+      200,
+      429,
+      429
+    ],
+    "history_after_agent_restart": {
+      "status": 200,
+      "body": {
+        "session_id": "93b90504-1e1c-4a95-979f-247a3979abb8",
+        "messages": [
+          {
+            "role": "user",
+            "content": "deployment question 0"
+          },
+          {
+            "role": "assistant",
+            "content": "Deployment là quá trình đưa code từ máy bạn lên server để người khác dùng được."
+          },
+          {
+            "role": "user",
+            "content": "deployment question 1"
+          },
+          {
+            "role": "assistant",
+            "content": "Deployment là quá trình đưa code từ máy bạn lên server để người khác dùng được."
+          },
+          {
+            "role": "user",
+            "content": "deployment question 2"
+          },
+          {
+            "role": "assistant",
+            "content": "Deployment là quá trình đưa code từ máy bạn lên server để người khác dùng được."
+          },
+          {
+            "role": "user",
+            "content": "stream deployment"
+          },
+          {
+            "role": "assistant",
+            "content": "Deployment là quá trình đưa code từ máy bạn lên server để người khác dùng được."
+          }
+        ],
+        "message_count": 8,
+        "storage": "redis",
+        "served_by": "d1af12843318"
+      },
+      "served_by": "d1af12843318"
+    },
+    "rate_limit_after_restart": 429
+  },
+  "result": "PASS",
+  "cleanup_exit_code": 0,
+  "finished_utc": "2026-11-25T13:09:54.971461+00:00"
+}

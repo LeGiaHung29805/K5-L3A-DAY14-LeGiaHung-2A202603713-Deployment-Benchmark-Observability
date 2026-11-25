@@ -1,0 +1,222 @@
+ Image k5-day14-observability-agent Building 
+#1 [internal] load local bake definitions
+#1 reading from stdin 776B done
+#1 DONE 0.0s
+
+#2 [internal] load build definition from Dockerfile
+#2 transferring dockerfile: 1.41kB 0.0s done
+#2 DONE 0.0s
+
+#3 [internal] load metadata for docker.io/library/python:3.11-slim
+#3 DONE 26.9s
+
+#4 [internal] load .dockerignore
+#4 transferring context: 156B 0.0s done
+#4 DONE 0.0s
+
+#5 [builder 1/4] FROM docker.io/library/python:3.11-slim@sha256:61e01f72680f86a5279ad510818ab7b2ee9f049822589d4e34e33e044360356c
+#5 resolve docker.io/library/python:3.11-slim@sha256:61e01f72680f86a5279ad510818ab7b2ee9f049822589d4e34e33e044360356c 0.0s done
+#5 DONE 0.0s
+
+#6 [runtime 2/7] RUN groupadd -r agent && useradd -r -g agent -d /app agent
+#6 CACHED
+
+#7 [runtime 3/7] WORKDIR /app
+#7 CACHED
+
+#8 [internal] load build context
+#8 transferring context: 28.41kB 0.0s done
+#8 DONE 0.0s
+
+#9 [builder 2/4] WORKDIR /build
+#9 CACHED
+
+#10 [builder 3/4] COPY requirements.txt .
+#10 DONE 0.0s
+
+#11 [builder 4/4] RUN python -m venv /opt/venv && /opt/venv/bin/pip install --no-cache-dir -r requirements.txt
+#11 17.83 Collecting fastapi==0.115.0 (from -r requirements.txt (line 1))
+#11 25.13   Downloading fastapi-0.115.0-py3-none-any.whl.metadata (27 kB)
+#11 27.81 Collecting uvicorn==0.30.0 (from uvicorn[standard]==0.30.0->-r requirements.txt (line 2))
+#11 30.53   Downloading uvicorn-0.30.0-py3-none-any.whl.metadata (6.3 kB)
+#11 32.83 Collecting pydantic==2.9.0 (from -r requirements.txt (line 3))
+#11 33.68   Downloading pydantic-2.9.0-py3-none-any.whl.metadata (146 kB)
+#11 35.89      ━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━ 146.9/146.9 kB 57.7 kB/s eta 0:00:00
+#11 37.11 Collecting prometheus-client==0.26.0 (from -r requirements.txt (line 4))
+#11 38.47   Downloading prometheus_client-0.26.0-py3-none-any.whl.metadata (2.1 kB)
+#11 43.88 Collecting opentelemetry-api==1.45.2 (from -r requirements.txt (line 7))
+#11 49.10   Downloading opentelemetry_api-1.45.2-py3-none-any.whl.metadata (1.4 kB)
+#11 51.44 Collecting opentelemetry-sdk==1.45.2 (from -r requirements.txt (line 8))
+#11 53.21   Downloading opentelemetry_sdk-1.45.2-py3-none-any.whl.metadata (1.6 kB)
+#11 54.67 Collecting opentelemetry-exporter-otlp-proto-http==1.45.2 (from -r requirements.txt (line 9))
+#11 55.52   Downloading opentelemetry_exporter_otlp_proto_http-1.45.2-py3-none-any.whl.metadata (3.0 kB)
+#11 56.63 Collecting opentelemetry-instrumentation-fastapi==0.66b2 (from -r requirements.txt (line 10))
+#11 57.35   Downloading opentelemetry_instrumentation_fastapi-0.66b2-py3-none-any.whl.metadata (2.2 kB)
+#11 59.61 Collecting starlette<0.39.0,>=0.37.2 (from fastapi==0.115.0->-r requirements.txt (line 1))
+#11 61.15   Downloading starlette-0.38.6-py3-none-any.whl.metadata (6.0 kB)
+#11 62.34 Collecting typing-extensions>=4.8.0 (from fastapi==0.115.0->-r requirements.txt (line 1))
+#11 63.37   Downloading typing_extensions-4.16.0-py3-none-any.whl.metadata (3.3 kB)
+#11 64.31 Collecting click>=7.0 (from uvicorn==0.30.0->uvicorn[standard]==0.30.0->-r requirements.txt (line 2))
+#11 79.27   WARNING: Retrying (Retry(total=4, connect=None, read=None, redirect=None, status=None)) after connection broken by 'ReadTimeoutError("HTTPSConnectionPool(host='files.pythonhosted.org', port=443): Read timed out. (read timeout=15)")': /packages/31/7d/164b7ffc8624fe9efb4221bf9af485d5c1e41b9ae118045d2b6dc5457d8b/click-8.5.1-py3-none-any.whl.metadata
+#11 90.46   Downloading click-8.5.1-py3-none-any.whl.metadata (2.6 kB)
+#11 92.99 Collecting h11>=0.8 (from uvicorn==0.30.0->uvicorn[standard]==0.30.0->-r requirements.txt (line 2))
+#11 93.55   Downloading h11-0.16.0-py3-none-any.whl.metadata (8.3 kB)
+#11 93.80 Collecting annotated-types>=0.4.0 (from pydantic==2.9.0->-r requirements.txt (line 3))
+#11 94.02   Downloading annotated_types-0.8.0-py3-none-any.whl.metadata (15 kB)
+#11 98.78 Collecting pydantic-core==2.23.2 (from pydantic==2.9.0->-r requirements.txt (line 3))
+#11 102.8   Downloading pydantic_core-2.23.2-cp311-cp311-manylinux_2_17_x86_64.manylinux2014_x86_64.whl.metadata (6.6 kB)
+#11 104.8 Collecting tzdata (from pydantic==2.9.0->-r requirements.txt (line 3))
+#11 106.2   Downloading tzdata-2026.6-py2.py3-none-any.whl.metadata (1.4 kB)
+#11 107.2 Collecting opentelemetry-semantic-conventions==0.66b2 (from opentelemetry-sdk==1.45.2->-r requirements.txt (line 8))
+#11 110.9   Downloading opentelemetry_semantic_conventions-0.66b2-py3-none-any.whl.metadata (2.4 kB)
+#11 112.9 Collecting googleapis-common-protos~=1.52 (from opentelemetry-exporter-otlp-proto-http==1.45.2->-r requirements.txt (line 9))
+#11 113.3   Downloading googleapis_common_protos-1.76.0-py3-none-any.whl.metadata (8.5 kB)
+#11 114.9 Collecting opentelemetry-exporter-http-transport==0.66b2 (from opentelemetry-exporter-http-transport[requests]==0.66b2->opentelemetry-exporter-otlp-proto-http==1.45.2->-r requirements.txt (line 9))
+#11 116.6   Downloading opentelemetry_exporter_http_transport-0.66b2-py3-none-any.whl.metadata (2.3 kB)
+#11 118.3 Collecting opentelemetry-exporter-otlp-common==0.66b2 (from opentelemetry-exporter-otlp-proto-http==1.45.2->-r requirements.txt (line 9))
+#11 119.4   Downloading opentelemetry_exporter_otlp_common-0.66b2-py3-none-any.whl.metadata (1.9 kB)
+#11 121.2 Collecting opentelemetry-exporter-otlp-proto-common==1.45.2 (from opentelemetry-exporter-otlp-proto-http==1.45.2->-r requirements.txt (line 9))
+#11 127.6   Downloading opentelemetry_exporter_otlp_proto_common-1.45.2-py3-none-any.whl.metadata (1.8 kB)
+#11 128.1 Collecting opentelemetry-proto==1.45.2 (from opentelemetry-exporter-otlp-proto-http==1.45.2->-r requirements.txt (line 9))
+#11 128.6   Downloading opentelemetry_proto-1.45.2-py3-none-any.whl.metadata (2.3 kB)
+#11 130.2 Collecting requests~=2.7 (from opentelemetry-exporter-otlp-proto-http==1.45.2->-r requirements.txt (line 9))
+#11 133.8   Downloading requests-2.34.2-py3-none-any.whl.metadata (4.8 kB)
+#11 135.4 Collecting opentelemetry-instrumentation-asgi==0.66b2 (from opentelemetry-instrumentation-fastapi==0.66b2->-r requirements.txt (line 10))
+#11 142.5   Downloading opentelemetry_instrumentation_asgi-0.66b2-py3-none-any.whl.metadata (2.0 kB)
+#11 145.2 Collecting opentelemetry-instrumentation==0.66b2 (from opentelemetry-instrumentation-fastapi==0.66b2->-r requirements.txt (line 10))
+#11 157.1   Downloading opentelemetry_instrumentation-0.66b2-py3-none-any.whl.metadata (7.2 kB)
+#11 157.5 Collecting opentelemetry-util-http==0.66b2 (from opentelemetry-instrumentation-fastapi==0.66b2->-r requirements.txt (line 10))
+#11 157.8   Downloading opentelemetry_util_http-0.66b2-py3-none-any.whl.metadata (2.6 kB)
+#11 158.6 Collecting httptools>=0.5.0 (from uvicorn[standard]==0.30.0->-r requirements.txt (line 2))
+#11 159.0   Downloading httptools-0.9.0-cp311-cp311-manylinux1_x86_64.manylinux_2_28_x86_64.manylinux_2_5_x86_64.whl.metadata (3.5 kB)
+#11 159.8 Collecting python-dotenv>=0.13 (from uvicorn[standard]==0.30.0->-r requirements.txt (line 2))
+#11 160.0   Downloading python_dotenv-1.2.4-py3-none-any.whl.metadata (29 kB)
+#11 160.7 Collecting pyyaml>=5.1 (from uvicorn[standard]==0.30.0->-r requirements.txt (line 2))
+#11 161.1   Downloading pyyaml-6.0.4-cp311-cp311-manylinux2014_x86_64.manylinux_2_17_x86_64.manylinux_2_28_x86_64.whl.metadata (2.3 kB)
+#11 161.5 Collecting uvloop!=0.15.0,!=0.15.1,>=0.14.0 (from uvicorn[standard]==0.30.0->-r requirements.txt (line 2))
+#11 161.8   Downloading uvloop-0.23.0-cp311-cp311-manylinux2014_x86_64.manylinux_2_17_x86_64.manylinux_2_28_x86_64.whl.metadata (5.1 kB)
+#11 162.7 Collecting watchfiles>=0.13 (from uvicorn[standard]==0.30.0->-r requirements.txt (line 2))
+#11 162.9   Downloading watchfiles-1.3.0-cp310-abi3-manylinux_2_17_x86_64.manylinux2014_x86_64.whl.metadata (4.9 kB)
+#11 164.2 Collecting websockets>=10.4 (from uvicorn[standard]==0.30.0->-r requirements.txt (line 2))
+#11 164.4   Downloading websockets-17.4-cp311-cp311-manylinux1_x86_64.manylinux_2_28_x86_64.manylinux_2_5_x86_64.whl.metadata (6.3 kB)
+#11 165.0 Collecting packaging>=18.0 (from opentelemetry-instrumentation==0.66b2->opentelemetry-instrumentation-fastapi==0.66b2->-r requirements.txt (line 10))
+#11 165.3   Downloading packaging-26.4-py3-none-any.whl.metadata (3.5 kB)
+#11 167.6 Collecting wrapt<3.0.0,>=1.0.0 (from opentelemetry-instrumentation==0.66b2->opentelemetry-instrumentation-fastapi==0.66b2->-r requirements.txt (line 10))
+#11 168.3   Downloading wrapt-2.5.2-cp311-cp311-manylinux1_x86_64.manylinux_2_28_x86_64.manylinux_2_5_x86_64.whl.metadata (7.6 kB)
+#11 170.4 Collecting asgiref~=3.0 (from opentelemetry-instrumentation-asgi==0.66b2->opentelemetry-instrumentation-fastapi==0.66b2->-r requirements.txt (line 10))
+#11 171.5   Downloading asgiref-3.13.0-py3-none-any.whl.metadata (12 kB)
+#11 173.0 Collecting protobuf<8.0,>=5.0 (from opentelemetry-proto==1.45.2->opentelemetry-exporter-otlp-proto-http==1.45.2->-r requirements.txt (line 9))
+#11 173.2   Downloading protobuf-7.36.2-cp310-abi3-manylinux2014_x86_64.whl.metadata (595 bytes)
+#11 174.6 Collecting charset_normalizer<4,>=2 (from requests~=2.7->opentelemetry-exporter-otlp-proto-http==1.45.2->-r requirements.txt (line 9))
+#11 175.1   Downloading charset_normalizer-3.5.3-cp311-cp311-manylinux1_x86_64.manylinux_2_28_x86_64.manylinux_2_5_x86_64.whl.metadata (43 kB)
+#11 175.1      ━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━ 43.3/43.3 kB 575.5 kB/s eta 0:00:00
+#11 175.3 Collecting idna<4,>=2.5 (from requests~=2.7->opentelemetry-exporter-otlp-proto-http==1.45.2->-r requirements.txt (line 9))
+#11 175.6   Downloading idna-3.20-py3-none-any.whl.metadata (7.2 kB)
+#11 176.1 Collecting urllib3<3,>=1.26 (from requests~=2.7->opentelemetry-exporter-otlp-proto-http==1.45.2->-r requirements.txt (line 9))
+#11 176.3   Downloading urllib3-2.8.0-py3-none-any.whl.metadata (7.4 kB)
+#11 176.6 Collecting certifi>=2023.5.7 (from requests~=2.7->opentelemetry-exporter-otlp-proto-http==1.45.2->-r requirements.txt (line 9))
+#11 176.7   Downloading certifi-2026.11.20-py3-none-any.whl.metadata (2.5 kB)
+#11 177.5 Collecting anyio<5,>=3.4.0 (from starlette<0.39.0,>=0.37.2->fastapi==0.115.0->-r requirements.txt (line 1))
+#11 177.8   Downloading anyio-4.16.0-py3-none-any.whl.metadata (4.7 kB)
+#11 179.2 Downloading fastapi-0.115.0-py3-none-any.whl (94 kB)
+#11 181.1    ━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━ 94.6/94.6 kB 46.5 kB/s eta 0:00:00
+#11 182.0 Downloading uvicorn-0.30.0-py3-none-any.whl (62 kB)
+#11 183.1    ━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━ 62.4/62.4 kB 173.2 kB/s eta 0:00:00
+#11 184.5 Downloading pydantic-2.9.0-py3-none-any.whl (434 kB)
+#11 187.1    ━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━ 434.3/434.3 kB 167.7 kB/s eta 0:00:00
+#11 187.5 Downloading prometheus_client-0.26.0-py3-none-any.whl (64 kB)
+#11 187.7    ━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━ 64.5/64.5 kB 283.1 kB/s eta 0:00:00
+#11 188.3 Downloading opentelemetry_api-1.45.2-py3-none-any.whl (60 kB)
+#11 188.5    ━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━ 60.3/60.3 kB 290.9 kB/s eta 0:00:00
+#11 189.5 Downloading opentelemetry_sdk-1.45.2-py3-none-any.whl (141 kB)
+#11 190.3    ━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━ 141.8/141.8 kB 220.0 kB/s eta 0:00:00
+#11 191.9 Downloading opentelemetry_exporter_otlp_proto_http-1.45.2-py3-none-any.whl (22 kB)
+#11 198.1 Downloading opentelemetry_instrumentation_fastapi-0.66b2-py3-none-any.whl (14 kB)
+#11 199.5 Downloading opentelemetry_exporter_http_transport-0.66b2-py3-none-any.whl (12 kB)
+#11 201.9 Downloading opentelemetry_exporter_otlp_common-0.66b2-py3-none-any.whl (12 kB)
+#11 203.3 Downloading opentelemetry_exporter_otlp_proto_common-1.45.2-py3-none-any.whl (15 kB)
+#11 203.8 Downloading opentelemetry_instrumentation-0.66b2-py3-none-any.whl (36 kB)
+#11 204.7 Downloading opentelemetry_instrumentation_asgi-0.66b2-py3-none-any.whl (15 kB)
+#11 205.2 Downloading opentelemetry_proto-1.45.2-py3-none-any.whl (72 kB)
+#11 205.9    ━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━ 72.5/72.5 kB 132.5 kB/s eta 0:00:00
+#11 206.1 Downloading opentelemetry_semantic_conventions-0.66b2-py3-none-any.whl (206 kB)
+#11 207.7    ━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━ 206.3/206.3 kB 128.7 kB/s eta 0:00:00
+#11 208.3 Downloading opentelemetry_util_http-0.66b2-py3-none-any.whl (8.4 kB)
+#11 209.2 Downloading pydantic_core-2.23.2-cp311-cp311-manylinux_2_17_x86_64.manylinux2014_x86_64.whl (2.1 MB)
+#11 215.0    ━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━ 2.1/2.1 MB 349.1 kB/s eta 0:00:00
+#11 215.9 Downloading annotated_types-0.8.0-py3-none-any.whl (13 kB)
+#11 217.5 Downloading click-8.5.1-py3-none-any.whl (126 kB)
+#11 217.8    ━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━ 126.2/126.2 kB 520.2 kB/s eta 0:00:00
+#11 219.1 Downloading googleapis_common_protos-1.76.0-py3-none-any.whl (307 kB)
+#11 219.7    ━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━ 307.7/307.7 kB 509.1 kB/s eta 0:00:00
+#11 219.9 Downloading h11-0.16.0-py3-none-any.whl (37 kB)
+#11 220.1 Downloading httptools-0.9.0-cp311-cp311-manylinux1_x86_64.manylinux_2_28_x86_64.manylinux_2_5_x86_64.whl (499 kB)
+#11 220.9    ━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━ 499.1/499.1 kB 672.1 kB/s eta 0:00:00
+#11 221.0 Downloading python_dotenv-1.2.4-py3-none-any.whl (23 kB)
+#11 221.1 Downloading pyyaml-6.0.4-cp311-cp311-manylinux2014_x86_64.manylinux_2_17_x86_64.manylinux_2_28_x86_64.whl (828 kB)
+#11 222.3    ━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━ 828.0/828.0 kB 705.2 kB/s eta 0:00:00
+#11 222.4 Downloading requests-2.34.2-py3-none-any.whl (73 kB)
+#11 222.5    ━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━ 73.1/73.1 kB 912.0 kB/s eta 0:00:00
+#11 222.6 Downloading starlette-0.38.6-py3-none-any.whl (71 kB)
+#11 222.7    ━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━ 71.5/71.5 kB 782.8 kB/s eta 0:00:00
+#11 222.8 Downloading typing_extensions-4.16.0-py3-none-any.whl (45 kB)
+#11 222.9    ━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━ 45.6/45.6 kB 2.8 MB/s eta 0:00:00
+#11 222.9 Downloading uvloop-0.23.0-cp311-cp311-manylinux2014_x86_64.manylinux_2_17_x86_64.manylinux_2_28_x86_64.whl (4.0 MB)
+#11 227.1    ━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━ 4.0/4.0 MB 938.8 kB/s eta 0:00:00
+#11 227.3 Downloading watchfiles-1.3.0-cp310-abi3-manylinux_2_17_x86_64.manylinux2014_x86_64.whl (458 kB)
+#11 228.0    ━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━ 458.4/458.4 kB 672.8 kB/s eta 0:00:00
+#11 228.1 Downloading websockets-17.4-cp311-cp311-manylinux1_x86_64.manylinux_2_28_x86_64.manylinux_2_5_x86_64.whl (226 kB)
+#11 228.3    ━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━ 226.0/226.0 kB 1.3 MB/s eta 0:00:00
+#11 228.4 Downloading tzdata-2026.6-py2.py3-none-any.whl (348 kB)
+#11 228.7    ━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━ 348.2/348.2 kB 1.1 MB/s eta 0:00:00
+#11 228.8 Downloading anyio-4.16.0-py3-none-any.whl (134 kB)
+#11 228.9    ━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━ 134.5/134.5 kB 8.8 MB/s eta 0:00:00
+#11 229.0 Downloading asgiref-3.13.0-py3-none-any.whl (27 kB)
+#11 229.1 Downloading certifi-2026.11.20-py3-none-any.whl (127 kB)
+#11 229.2    ━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━ 127.9/127.9 kB 6.5 MB/s eta 0:00:00
+#11 229.2 Downloading charset_normalizer-3.5.3-cp311-cp311-manylinux1_x86_64.manylinux_2_28_x86_64.manylinux_2_5_x86_64.whl (263 kB)
+#11 229.4    ━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━ 263.4/263.4 kB 1.4 MB/s eta 0:00:00
+#11 229.5 Downloading idna-3.20-py3-none-any.whl (69 kB)
+#11 229.7    ━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━ 69.6/69.6 kB 610.6 kB/s eta 0:00:00
+#11 229.8 Downloading packaging-26.4-py3-none-any.whl (140 kB)
+#11 229.9    ━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━ 140.0/140.0 kB 1.5 MB/s eta 0:00:00
+#11 230.0 Downloading protobuf-7.36.2-cp310-abi3-manylinux2014_x86_64.whl (343 kB)
+#11 230.2    ━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━ 343.2/343.2 kB 1.7 MB/s eta 0:00:00
+#11 230.3 Downloading urllib3-2.8.0-py3-none-any.whl (135 kB)
+#11 230.4    ━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━ 135.7/135.7 kB 2.6 MB/s eta 0:00:00
+#11 230.5 Downloading wrapt-2.5.2-cp311-cp311-manylinux1_x86_64.manylinux_2_28_x86_64.manylinux_2_5_x86_64.whl (240 kB)
+#11 230.6    ━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━ 240.3/240.3 kB 1.9 MB/s eta 0:00:00
+#11 230.8 Installing collected packages: wrapt, websockets, uvloop, urllib3, tzdata, typing-extensions, pyyaml, python-dotenv, protobuf, prometheus-client, packaging, opentelemetry-util-http, idna, httptools, h11, click, charset_normalizer, certifi, asgiref, annotated-types, uvicorn, requests, pydantic-core, opentelemetry-proto, opentelemetry-api, googleapis-common-protos, anyio, watchfiles, starlette, pydantic, opentelemetry-semantic-conventions, opentelemetry-exporter-otlp-proto-common, opentelemetry-exporter-http-transport, opentelemetry-sdk, opentelemetry-instrumentation, fastapi, opentelemetry-instrumentation-asgi, opentelemetry-exporter-otlp-common, opentelemetry-instrumentation-fastapi, opentelemetry-exporter-otlp-proto-http
+#11 234.4 Successfully installed annotated-types-0.8.0 anyio-4.16.0 asgiref-3.13.0 certifi-2026.11.20 charset_normalizer-3.5.3 click-8.5.1 fastapi-0.115.0 googleapis-common-protos-1.76.0 h11-0.16.0 httptools-0.9.0 idna-3.20 opentelemetry-api-1.45.2 opentelemetry-exporter-http-transport-0.66b2 opentelemetry-exporter-otlp-common-0.66b2 opentelemetry-exporter-otlp-proto-common-1.45.2 opentelemetry-exporter-otlp-proto-http-1.45.2 opentelemetry-instrumentation-0.66b2 opentelemetry-instrumentation-asgi-0.66b2 opentelemetry-instrumentation-fastapi-0.66b2 opentelemetry-proto-1.45.2 opentelemetry-sdk-1.45.2 opentelemetry-semantic-conventions-0.66b2 opentelemetry-util-http-0.66b2 packaging-26.4 prometheus-client-0.26.0 protobuf-7.36.2 pydantic-2.9.0 pydantic-core-2.23.2 python-dotenv-1.2.4 pyyaml-6.0.4 requests-2.34.2 starlette-0.38.6 typing-extensions-4.16.0 tzdata-2026.6 urllib3-2.8.0 uvicorn-0.30.0 uvloop-0.23.0 watchfiles-1.3.0 websockets-17.4 wrapt-2.5.2
+#11 235.0 
+#11 235.0 [notice] A new release of pip is available: 24.0 -> 26.3
+#11 235.0 [notice] To update, run: python -m pip install --upgrade pip
+#11 DONE 236.3s
+
+#12 [runtime 4/7] COPY --from=builder /opt/venv /opt/venv
+#12 DONE 0.6s
+
+#13 [runtime 5/7] COPY app/ ./app/
+#13 DONE 0.1s
+
+#14 [runtime 6/7] COPY utils/ ./utils/
+#14 DONE 0.0s
+
+#15 [runtime 7/7] RUN chown -R agent:agent /app
+#15 DONE 0.2s
+
+#16 exporting to image
+#16 exporting layers
+#16 exporting layers 2.6s done
+#16 exporting manifest sha256:8eb8a5a4fd61f80365d7b2c85334a9456fcd08b1e7874e9cbefa5cae22c2dd37 done
+#16 exporting config sha256:f8850e4edc879a4dd1c6b6262c1aa584d9b3f5882174ff15fe5498249b7be5a1 done
+#16 exporting attestation manifest sha256:ca03683e19812a5a099d8cc0dd58e3f4b6a80abea80a7d42e9e0db9678a39e73 done
+#16 exporting manifest list sha256:4cf272645f1e03722f50b3383816f4de7c3da1ce8009774f5d5b8d93d33794dd done
+#16 naming to docker.io/library/k5-day14-observability-agent:latest done
+#16 unpacking to docker.io/library/k5-day14-observability-agent:latest
+#16 unpacking to docker.io/library/k5-day14-observability-agent:latest 1.0s done
+#16 DONE 3.7s
+
+#17 resolving provenance for metadata file
+#17 DONE 0.0s
+ Image k5-day14-observability-agent Built 

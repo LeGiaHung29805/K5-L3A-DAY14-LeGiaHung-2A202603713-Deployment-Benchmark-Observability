@@ -65,10 +65,12 @@ Script tự khởi động agent của bạn, gọi API thật, build và chạy
 │   ├── auth.py           # X-API-Key → 401 khi thiếu/sai
 │   ├── rate_limiter.py   # Sliding window dùng Redis Lua → 429
 │   ├── cost_guard.py     # Giữ chỗ/quyết toán ngân sách UTC → 402
-│   └── redis_client.py   # Redis pool, timeout và readiness
+│   ├── redis_client.py   # Redis pool, timeout và readiness
+│   └── history.py        # History Redis nguyên tử, TTL và giới hạn lưu
 ├── utils/mock_llm.py     # Mock LLM — có sẵn, không cần sửa
 ├── Dockerfile            # Multi-stage, non-root, healthcheck
-├── docker-compose.yml    # Agent + Redis, volume persistence
+├── docker-compose.yml    # Nginx + ba agent + Redis, volume persistence
+├── nginx/nginx.conf      # Docker DNS, load balancing, không buffer SSE
 ├── .dockerignore         # Loại secret và môi trường host
 ├── .env.example          # Cấu hình mẫu không chứa key thật
 ├── railway.toml          # Docker build + healthcheck
@@ -114,7 +116,7 @@ python check_production_ready.py --public-url https://your-app.railway.app   # t
 
 ## Deploy
 
-Làm theo [DEPLOYMENT.md](../DEPLOYMENT.md): chọn Railway hoặc Render, nối Redis, đặt secret, cấu hình đúng thư mục Part 6 rồi kiểm tra URL thật. Tiêu chí “Public URL ready” hiện xác nhận cấu hình; không có nghĩa đã có dịch vụ public.
+Đã deploy tại [domain Railway](https://day14-agent-53c5ceff.up.railway.app), kiểm chứng `/health`, `/ready`, `/ask` thiếu/có key lần lượt 200/200/401/200 và các endpoint mở rộng. Cấu hình thực tế và raw ở [DEPLOYMENT.md](../DEPLOYMENT.md). Tiêu chí “Public URL ready” của script chấm chỉ xác nhận cấu hình; bằng chứng HTTP cloud được lưu riêng.
 
 ---
 

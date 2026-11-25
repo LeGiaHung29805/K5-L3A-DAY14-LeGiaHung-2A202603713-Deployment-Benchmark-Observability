@@ -387,7 +387,7 @@ docker compose -p k5-day14-docker down
 
 ## Part 3: Cloud Deployment
 
-**Tình trạng thực hành:** Chưa có triển khai cloud được xác nhận bằng URL public hoặc kết quả kiểm tra dịch vụ từ Internet. Phần so sánh và pipeline dưới đây được hoàn thiện bằng cách đọc cấu hình trong repository.
+**Tình trạng thực hành:** Đã deploy agent Part 6 lên Railway tại [day14-agent-53c5ceff.up.railway.app](https://day14-agent-53c5ceff.up.railway.app). Kiểm tra thực nhận `/health` 200, `/ready` 200, `/ask` thiếu key 401 và có key 200. Chi tiết deployment, biến môi trường và bằng chứng ở [DEPLOYMENT.md](DEPLOYMENT.md).
 
 Theo lộ trình K5, Part 3 thuộc CP6: hoàn thành Part 6 trước, rồi deploy agent trong `06-lab-complete/`. Chọn Railway hoặc Render làm nền tảng chính; nền tảng còn lại có thể làm bài so sánh để đáp ứng rubric. Part 6 đã đạt PASS 12/12; cấu hình Railway/Render đã hoàn thiện. Hướng dẫn thao tác nằm trong [DEPLOYMENT.md](DEPLOYMENT.md).
 
@@ -413,7 +413,7 @@ railway domain
 
 Cài CLI bằng `npm i -g @railway/cli`, đăng nhập bằng `railway login` hoặc `railway login --browserless`; tạo project bằng `railway init`, liên kết service bằng `railway link`. Tài liệu: [Railway CLI](https://docs.railway.com/cli), [railway up](https://docs.railway.com/cli/up), [Railway Redis](https://docs.railway.com/databases/redis).
 
-**Kết quả hiện có:** Chưa có bằng chứng triển khai Railway để ghi tên project, URL, ảnh dashboard hoặc kết quả HTTP cloud.
+**Kết quả:** Project `precious-rebirth`, environment `production`, Redis và agent Online; Root Directory `/06-lab-complete`, public domain trỏ port 8080. Deployment `433dbc32-d361-4e31-87d8-29571cb45d74` chạy commit `7efa7d0`. [HTTP cloud](reports/part6_cloud_http.json), [dashboard](screenshots/dashboard.png), [service chạy](screenshots/running.png), [test API](screenshots/test.png). File TOML được giữ theo hợp đồng lab; cấu hình Railway thực tế được lưu trên dashboard do thay đổi hỗ trợ Config as Code của nền tảng.
 
 ### Exercise 3.2: Render và so sánh cấu hình
 
@@ -432,6 +432,8 @@ Bảng đối chiếu hai file mẫu trong `03-cloud-deployment/`:
 | Tùy chọn vận hành | Có restart policy khi process lỗi. | Có region, plan, autoDeploy trong YAML mẫu. | Cần đọc đúng phạm vi từng cấu hình, không coi tên trường hoặc plan trong mẫu là cam kết hiện hành. |
 
 Nếu chọn Render làm nền tảng chính, dùng `06-lab-complete/render.yaml` đã hoàn thiện, commit/push code không có secret, rồi tạo Blueprint và chọn đúng branch. Đặt **Blueprint Path** là `06-lab-complete/render.yaml`; cấu hình **Root Directory/build context** của web service tương ứng `06-lab-complete/`. Đây là hai thiết lập khác nhau. Tạo Key Value tương thích Redis cùng region và nối URL nội bộ vào `REDIS_URL`. Cấu hình web service dùng Docker, `/health` và các biến cần thiết trước khi deploy.
+
+Đối với hai file đã hoàn thiện trong Part 6: Railway TOML chọn `DOCKERFILE`, `Dockerfile`, `/health` và restart khi lỗi; không khai báo Redis hoặc secret trong file. Render YAML mô tả cả Docker web và Key Value cùng region, đặt `rootDir: 06-lab-complete`, tự sinh API key bằng `generateValue: true` và lấy Redis connection string qua `fromService`. Vì phạm vi khai báo khác nhau, Railway cần tạo/nối Redis ngoài file, còn Render Blueprint biểu diễn được quan hệ hai service. Thực tế Railway hiện hạn chế Config as Code mới, nên service này lưu cấu hình qua dashboard như DEPLOYMENT.md; không coi TOML và dashboard là hai nguồn đã tự đồng bộ. So sánh cấu hình thay cho deploy nền tảng thứ hai theo RUBRIC.
 
 Tài liệu: [Render Blueprints](https://render.com/docs/infrastructure-as-code), [Blueprint reference](https://render.com/docs/blueprint-spec), [Render Key Value](https://render.com/docs/key-value).
 
@@ -457,7 +459,7 @@ Tài liệu: [Render Blueprints](https://render.com/docs/infrastructure-as-code)
 
 ### Tự kiểm tra sau khi có public URL
 
-Các mã mục tiêu theo CP6 là **200, 200, 401, 200**. Chưa có kết quả thực nghiệm cloud để báo cáo.
+Các mã thực nhận theo CP6 là **200, 200, 401, 200**, lưu trong [reports/part6_cloud_http.txt](reports/part6_cloud_http.txt). Readiness 200 đã kiểm tra kết nối Redis; kết quả này không được suy ra chỉ từ trạng thái Online.
 
 ```bash
 read -r -p 'URL HTTPS cua agent: ' LAB_BASE
@@ -478,7 +480,7 @@ Khi triển khai xong, bổ sung URL, kết quả thật, ảnh đã che secret 
 
 ## Part 4: API Security — CP3
 
-Các kết quả thực hành trong phần này là những quan sát đã xác nhận qua trao đổi. Chưa đính kèm transcript headers/body đầy đủ; không tạo lại response giả để thay thế bằng chứng `curl -i`.
+Kết quả ban đầu được xác nhận qua trao đổi. Khi được yêu cầu hoàn thiện toàn bộ lab, đã chạy kiểm chứng bổ sung và lưu HTTP status, response headers/body thật trong [part4_http_verification.txt](reports/part4_http_verification.txt), kết quả tổng hợp trong [parts4_5_verification.json](reports/parts4_5_verification.json). Request key và JWT không được ghi vào report.
 
 ### Exercise 4.1: API Key authentication
 
@@ -526,7 +528,7 @@ Không ghi token vào bài nộp. Việc dùng token thành công ở đây chư
 | Request đầu tiên bắt đầu bị chặn | Request thứ 11 trả 429 |
 | Sau khi đợi theo `Retry-After` | Gọi lại được 200 |
 
-Giá trị số giây của `Retry-After` và response headers/body chưa được lưu, nên không ghi con số chờ cụ thể. Code có các header `Retry-After`, `X-RateLimit-Limit`, `X-RateLimit-Remaining`, `X-RateLimit-Reset` ở nhánh 429.
+Lần kiểm chứng bổ sung: mười request có JWT trả 200, request thứ 11 trả 429 với `Retry-After: 59`; đợi theo header rồi gọi lại trả 200. Headers/body nằm trong report HTTP Part 4. Giá trị 59 giây thuộc lần chạy này, không phải thời gian cố định của mọi lần bị giới hạn.
 
 ### Exercise 4.4: Cost guard
 
@@ -539,7 +541,7 @@ Giá trị số giây của `Retry-After` và response headers/body chưa đư�
 5. **Xử lý đồng thời:** Bước đọc số dư, kiểm tra và cập nhật cần nguyên tử, chẳng hạn dùng Redis Lua hoặc transaction có kiểm soát xung đột. Có thể giữ chỗ theo chi phí ước lượng trước request rồi đối soát usage thật sau đó; xử lý hoàn lại phần giữ chỗ nếu request lỗi. Tách `GET` và tăng tiền thành hai lệnh không được bảo vệ có thể cho nhiều request cùng vượt ngân sách.
 6. **Reset thực tế:** Record của từng user được thay mới khi `_get_record()` nhận thấy ngày đã đổi. Code dùng `time.strftime` theo timezone hệ thống, nên dòng thông báo “midnight UTC” chưa bảo đảm đúng timezone vận hành. `_global_today` được khởi tạo nhưng không dùng để reset `_global_cost`, vì vậy reset ngân sách chung theo ngày còn thiếu trong mẫu.
 
-**Quan sát đã báo:** Sau một request thành công, `requests` tăng 1 và `cost_usd` tăng. Không có giá trị tuyệt đối trước/sau để ghi số tiền hoặc độ tăng cụ thể. Quan sát này kiểm tra việc ghi nhận usage; chưa thử riêng nhánh hết budget hoặc reset ngày/tháng.
+**Kết quả:** Sau một request thành công, `requests` tăng 1 và `cost_usd` tăng. Lần kiểm chứng bổ sung đọc `/me/usage` trước/sau: requests **0 → 1**, cost **0 → 0.000018 USD**; lưu cả hai response trong `reports/parts4_5_verification.json`. Phép thử Part 4 này kiểm tra ghi usage; nhánh hết ngân sách và rollover UTC được kiểm tra riêng bằng bài Part 6.
 
 Đọc số dư tại `GET /me/usage`. Trường `budget_remaining_usd` trong response `/ask` đang gán bằng `usage.total_cost_usd`, nên tên trường đó chưa phản ánh số dư đúng. Mẫu lưu usage trong RAM, không phải Redis.
 
@@ -584,7 +586,7 @@ Chưa lưu body chứa uptime/bộ nhớ nên không ghi các giá trị đó. B
 | Curl exit code | 0 |
 | Server | Shutdown xong |
 
-Kết quả phù hợp với việc một request hoàn tất trong phép thử đã chạy. Curl exit code 0 không phải số đo exit code của server. Chưa có PID, thời gian shutdown hoặc transcript log để ghi thêm; cũng chưa thử riêng nhiều request đồng thời hay quan sát `/ready` trả 503 trong lúc dừng.
+Kết quả ban đầu: request trả 200, curl exit code 0 và server dừng. Lần kiểm chứng bổ sung gửi SIGTERM trong lúc xử lý request: `/health` 200, `/ready` 200, request đang xử lý **200**, **server exit code 0**, thời gian dừng **3.184 giây**. [Kết quả JSON](reports/parts4_5_verification.json), [log server](reports/part5_health_shutdown_server.log). Curl exit code và server exit code là hai quan sát riêng. Phép thử này chưa bao gồm nhiều request đồng thời hoặc đo readiness trong lúc drain.
 
 ### Exercise 5.3: Stateless design
 
@@ -748,7 +750,7 @@ Bản khung ban đầu trong [reports/part6_static_initial.txt](reports/part6_st
 | Logging | Mỗi dòng app là JSON với thời gian, level, event, PID, request ID/status/thời gian xử lý. Không ghi key hoặc nội dung câu hỏi vào app log. |
 | Shutdown | Giữ SIGTERM của Uvicorn để drain request trước lifespan cleanup, đóng Redis pool khi dừng. Docker dùng exec, graceful timeout 5 giây, Compose cho 8 giây. |
 | Docker | Hai stage python:3.11-slim, venv riêng, user agent, HEALTHCHECK theo PORT. Dockerignore loại secret, venv và cache host. |
-| Compose | Agent + Redis 7 Alpine, chờ Redis healthy, AOF + named volume; Redis không publish ra host. Cổng host theo HOST_PORT. |
+| Compose | Nginx + ba agent + Redis 7 Alpine, chờ dependency healthy, AOF + named volume; Redis không publish ra host. Nginx bind localhost theo HOST_PORT. |
 | Deploy | Railway Docker build + /health; Render Blueprint gồm Docker web và Key Value, tự sinh secret và reference Redis URL. Docker bind 0.0.0.0 và đọc PORT. |
 
 ### 6.2. Checklist Deliverable — trích output thực chạy
@@ -768,7 +770,7 @@ Bản khung ban đầu trong [reports/part6_static_initial.txt](reports/part6_st
      ✅ Graceful shutdown
      ✅ Public URL ready (Railway / Render config)
 ----------------------------------------------------------------
-  Result: 12/12 tiêu chí đạt · 43/43 checks passed
+  Result: 12/12 tiêu chí đạt · 44/44 checks passed
   🎉 PASS 12/12 — PRODUCTION READY! Deploy nào!
 ================================================================
 ```
@@ -778,14 +780,15 @@ Bản khung ban đầu trong [reports/part6_static_initial.txt](reports/part6_st
 | Phép thử | Kết quả thực nhận | Bằng chứng |
 |---|---|---|
 | Script đầy đủ, 2 worker | 12/12 tiêu chí, 43/43 checks passed | reports/part6_full_check.txt |
+| Chấm đầy đủ kèm URL public | 12/12 tiêu chí, 44/44 checks passed; GET HTTPS /health 200 | reports/part6_public_check.txt |
 | Thiếu/sai key, key đúng | 401 / 401 / 200 | Report đầy đủ và reports/part6_compose_smoke.json |
 | Rate limit cấu hình 5/phút | Sau 5 request thành công bắt đầu 429; restart agent vẫn 429 | Report đầy đủ |
 | Redis mất kết nối | /health 200, /ready 503 | Report đầy đủ |
 | Ngân sách gần 0 | Request đầu trả 402 | Report đầy đủ |
 | Log | 12 dòng app đều là JSON hợp lệ | Report đầy đủ |
 | SIGTERM lúc có request | Request 200, process exit code 0 | Report đầy đủ |
-| Docker stop | Exit code 0, khoảng 0,4 giây | Report đầy đủ |
-| Image | Script báo 63 MB; Compose image inspect Size = 66.560.119 bytes, user agent | Hai report tương ứng; metric Size của inspect, không phải tổng disk/layer unpacked |
+| Docker stop | Exit code 0, 0.5 giây lần local và 0.6 giây lần có public URL | Hai report đầy đủ |
+| Image | Script mới nhất báo 63 MB; số Compose inspect trước mở rộng là 66.560.119 bytes, user agent | Hai report tương ứng; số inspect thuộc phiên trước, không phải số byte của image sau thêm tính năng |
 | Compose localhost:18006 | Health 200, ready 200, thiếu key 401, sai key 401, key đúng 200; cost_usd=0.0000201 cho request đã lưu | reports/part6_compose_smoke.json và reports/part6_compose_build.txt |
 | Docker PORT=18007, không có Redis | Health 200, ready 503, Docker healthy; PID 1 chạy Uvicorn đúng cổng, user agent | reports/part6_port_smoke.json |
 | 32 lời gọi rate limit đồng thời, ngưỡng 5 | Đúng 5 được chấp nhận, 27 trả 429 | reports/part6_shared_limits_tests.txt và source test |
@@ -793,9 +796,11 @@ Bản khung ban đầu trong [reports/part6_static_initial.txt](reports/part6_st
 | Quyết toán/hoàn tiền lặp | Không cộng chi phí hoặc hoàn tiền hai lần | Cùng bộ test |
 | Đổi kỳ UTC | Ngày mới có ngân sách ngày mới; tháng mới có ngân sách tháng mới | Cùng bộ test |
 
-Bốn test bổ sung đều PASS, dùng Redis tạm và namespace ngẫu nhiên. Sau kiểm chứng đã gỡ Redis tạm và dừng project Compose k5-day14-final, giữ named volume. File .env local đã có key ngẫu nhiên và HOST_PORT=18006, được Git/Docker ignore. Server riêng đang dùng cổng 8000 được giữ nguyên.
+Bảy test Redis đều PASS, dùng Redis tạm và namespace ngẫu nhiên: bốn test giới hạn/ngân sách trước đó cùng ba test ownership, retention/TTL và ghi history đồng thời. [Output mới nhất](reports/part6_extensions_tests.txt). [Smoke mở rộng](reports/part6_extensions_smoke.json) xác nhận đủ ba backend, history dùng chung còn 8 message sau restart toàn bộ agent, SSE có 17 event và rate limit vẫn còn sau restart. File .env local có key ngẫu nhiên và HOST_PORT=18006, được Git/Docker ignore. Server riêng đang dùng cổng 8000 được giữ nguyên.
 
-**Phạm vi:** LLM là mock; token ước lượng hai token/từ và đơn giá cố định, không có lời gọi LLM trả phí. Request giữ chỗ theo output tối đa nên có thể bị từ chối sớm dù output thực ngắn hơn. Process chết trước quyết toán có thể giữ khoản dự trù đến hết kỳ. Chưa kiểm thử Redis Cluster, failover hoặc backup/restore. PASS mục “Public URL ready” xác nhận cấu hình, chưa chứng minh có URL cloud hoạt động.
+Checklist 6.2 trích từ lần chấm đầy đủ có `--public-url`, [output gốc](reports/part6_public_check.txt); thêm một check public health so với lần 43/43 trước đó. Không chỉnh script chấm.
+
+**Phạm vi:** LLM là mock; token ước lượng hai token/từ và đơn giá cố định, không có lời gọi LLM trả phí. Request giữ chỗ theo output tối đa nên có thể bị từ chối sớm dù output thực ngắn hơn. Process chết trước quyết toán có thể giữ khoản dự trù đến hết kỳ. Chưa kiểm thử Redis Cluster, failover hoặc backup/restore. PASS mục “Public URL ready” của kiểm tra local xác nhận cấu hình; kết quả HTTP cloud được kiểm chứng độc lập trong DEPLOYMENT.md.
 
 ### 6.4. Chạy lại và chuyển sang CP6
 
@@ -808,7 +813,36 @@ set -o pipefail
 python check_production_ready.py 2>&1 | tee ../reports/part6_full_check.txt
 ~~~
 
-Hướng dẫn local: [06-lab-complete/SETUP.md](06-lab-complete/SETUP.md). Hướng dẫn cloud: [DEPLOYMENT.md](DEPLOYMENT.md), gồm Railway/Render, root/config path, Redis URL, secret/ngân sách và phép thử 200/200/401/200. **Chưa có public URL, HTTP cloud hoặc ảnh dashboard thực tế.** Bổ sung sau khi tự deploy để hoàn thành CP6. Part 7 còn bộ yêu cầu benchmark riêng.
+Hướng dẫn local: [06-lab-complete/SETUP.md](06-lab-complete/SETUP.md). Kết quả cloud: [DEPLOYMENT.md](DEPLOYMENT.md), có URL HTTPS và HTTP thực nhận 200/200/401/200. CP6 đã có bằng chứng dịch vụ hoạt động cùng Redis, xác thực và các endpoint mở rộng.
+
+### 6.5. Phần mở rộng
+
+Mục đích: giữ hội thoại khi đổi/restart instance, quan sát trả dữ liệu từng phần và phân phối tải bằng Nginx. Rubric không quy định điểm bonus riêng; đây là phần mở rộng theo yêu cầu.
+
+- `POST /chat` và `/ask` nhận `session_id` UUID tùy chọn; `GET /history/{session_id}` đọc hội thoại Redis với cùng API key. Key Redis chứa hash credential; mỗi lượt hỏi–đáp ghi nguyên tử để không lệch cặp khi chạy đồng thời. Giữ tối đa 50 lượt, TTL 24 giờ từ lần ghi cuối.
+- `POST /ask/stream` trả SSE token/done. Auth, rate limit, giữ chỗ ngân sách và tạo câu trả lời hoàn tất trước HTTP 200. Đây là chia câu trả lời mock thành event, chưa phải streaming trực tiếp từ LLM; client ngắt giữa chừng vẫn đã tính lượt/chi phí và ghi history.
+- Compose chạy ba agent sau Nginx, chia sẻ Redis và giữ session sau restart. Railway dùng một replica; không lấy phép thử local làm bằng chứng scale cloud.
+
+Đã kiểm tra cả ba tính năng local và kiểm tra history/chat/SSE trên domain public: [cloud JSON](reports/part6_cloud_http.json). Mock vẫn dùng câu hỏi hiện tại, chưa đưa history vào context.
+
+## Part 7: Benchmark & Observability — CP7 và CP8
+
+**Mục đích:** đo hiệu năng, chất lượng và chi phí; phát hiện suy giảm bằng metrics/alerts, xác định nguyên nhân bằng trace/log, rồi so sánh scaling thực tế.
+
+Báo cáo đầy đủ theo mẫu và năm câu hỏi thảo luận nằm trong [BENCHMARK_REPORT.md](BENCHMARK_REPORT.md). Các kết quả chính:
+
+| Exercise | Kết quả và bằng chứng |
+|---|---|
+| 7.1: đọc/thêm metric | Counter/Gauge/Histogram, route template chống cardinality; thêm `agent_question_length_chars`. Câu hỏi 40 ký tự ghi count 1, sum 40; ba URL lạ gom vào unmatched. Raw trong `reports/part7_question_metrics.prom`. |
+| 7.2: load và tail latency | Đủ 300 request/lần tại c1/10/50/100 và slow rate 0/0.03/0.1. c100 có p95 3675.4 ms, trượt SLO; ghi nguyên số đo trong `reports/load_*.json`. |
+| 7.3: eval/KB | v1 1/23, v2 21/23, v2 sau bổ sung JWT/HPA 23/23, 0 regression. Không sửa golden dataset. |
+| Quality gate | v1 so baseline có 20 regression, exit 1. GitHub Actions run 45627994273 success với accuracy 100%, 0 regression. |
+| 7.4: đọc dashboard | Hai agent, 30 users, ramp 5/s: avg 232.09 ms, p95 294.13 ms; backend 9.65 và 9.52 req/s; input/output 1530.57/825.10 token/s; `/metrics` qua Nginx 404. Bốn câu trả lời chi tiết và raw ở BENCHMARK_REPORT và `reports/part7_exercise_7_4_metrics.json`. |
+| Production observability | Promtool SUCCESS; dashboard Grafana có tải, trace chậm/lỗi với exception, Prometheus có hai alert firing đồng thời. |
+| Phá hệ thống A–E | Error, latency, cost và instance-down đều quan sát firing; v1 chất lượng kém không bật alert trong khoảng thử nhưng eval thất bại. Có JSON timestamp và raw Locust CSV. |
+| Scaling | 100 users, 120 giây/lần; 1 → 3 agent: RPS `/ask` 57.46 → 60.80, p95 810 → 250 ms. Manifest kiểm đúng số container trước/sau. |
+
+Trace chậm đã lưu có tổng 1741.407 ms, span LLM 1659.437 ms (95.29%); trace lỗi trả 503 và ghi event exception. Log thật được đối chiếu bằng trace ID. Giới hạn phép đo và các lần chạy sai cấu hình được giải thích, raw chẩn đoán được giữ riêng trong reports/diagnostics.
 
 
 
@@ -840,5 +874,13 @@ Công cụ sử dụng: ChatGPT/Codex. Mục này được giữ theo `RULES.md`
 | Đọc kiểm tra tĩnh ban đầu Part 6 và hướng dẫn /health | Ghi 0/12 tiêu chí, 5/24 kiểm tra tĩnh; giải thích phần chưa chạy và hướng dẫn route public /health. | Chỉ đọc report, source và script chấm, cập nhật tài liệu. Không sửa app/main.py, chạy server, curl hoặc script chấm thay. |
 | Cho phép hoàn thiện Part 6 và chạy kiểm chứng, tự thực hiện deploy sau | Codex triển khai app/config/auth/Redis/rate limit/cost guard/log/shutdown, Docker/Compose và cấu hình cloud; tạo tài liệu local/deploy. | Codex trực tiếp chạy chấm đầy đủ PASS 12/12 (43/43), 4 test Redis bổ sung và smoke Compose; lưu output gốc trong reports. Đã tạo .env local có key ngẫu nhiên được ignore, dừng stack kiểm chứng. Không thực hiện deploy cloud, commit/push hoặc sửa script chấm/golden dataset. |
 | Hướng dẫn deploy Railway từng bước từ GitHub, tự thao tác | Kiểm tra Git local, ghi branch/remote/HEAD và hướng dẫn stage, commit, push vào DEPLOYMENT.md. | Chỉ kiểm tra trạng thái và sửa tài liệu; chưa stage, commit, push, đăng nhập GitHub/Railway hoặc tạo tài nguyên cloud. Kết quả push được ghi sau khi nhận output thực chạy. |
+| Xác nhận đã push GitHub, nhờ ghi kết quả và hướng dẫn tạo project Railway | Cập nhật DEPLOYMENT.md: push thành công theo xác nhận; local HEAD và origin/main 71ca52c, working tree sạch trước cập nhật tài liệu. Hướng dẫn tạo project, chọn repo/main và đường dẫn build/config. | Chỉ đọc Git và viết tài liệu, đối chiếu Railway Docs. Không đăng nhập, tạo project, Redis, deploy hoặc push thay. Tên project/service trong hướng dẫn là gợi ý, chưa phải kết quả cloud. |
+| Chẩn đoán ảnh Railway build thất bại vì thiếu go.mod | Đối chiếu log go build với Dockerfile Go ở gốc; hướng dẫn áp dụng Root Directory Part 6 và đường dẫn config đúng. Ghi sự cố vào DEPLOYMENT.md. | Chỉ đọc source và ảnh đã cung cấp, đối chiếu Railway Docs; chưa đổi Settings hoặc deploy thay. Chưa có kết quả build lại hoặc bằng chứng Redis/runtime cloud. |
+| Xác nhận đã lưu Root Directory/Config File Path, nhờ hướng dẫn Redis và environment | Cập nhật DEPLOYMENT.md với hai đường dẫn đã lưu theo xác nhận; hướng dẫn tạo Redis cùng project, reference REDIS_URL, sinh API key riêng, đặt config và apply/deploy staged changes. | Chỉ đối chiếu source/Railway Docs và viết tài liệu; chưa tạo Redis, đặt biến hoặc deploy thay. Chưa ghi Redis/build mới thành công khi chưa có kết quả thực tế. |
+| Hướng dẫn vị trí nối agent tới Redis | Chỉ rõ ô ứng dụng GitHub → Variables → New Variable, REDIS_URL reference tới service Redis; ghi project precious-rebirth/environment production từ ảnh canvas vào DEPLOYMENT.md. | Chỉ sửa tài liệu, chưa thao tác dashboard; chưa xác nhận reference đã lưu hoặc kết nối Redis thành công. |
+| Ảnh Redis Online, app có AGENT_API_KEY/REDIS_URL, hỏi bước tiếp | Ghi trạng thái ảnh vào DEPLOYMENT.md; hướng dẫn thêm bảy biến production, apply/deploy và đọc log mới. | Giá trị hai biến được che và app còn Apply 4 changes; chưa xác nhận key/reference hợp lệ, biến đã áp dụng, kết nối Redis runtime hoặc deployment agent thành công. Không thao tác dashboard thay. |
+| Xác nhận thêm đủ biến, deploy thành công và agent Online; nhờ hướng dẫn domain/API | Ghi kết quả theo xác nhận vào DEPLOYMENT.md, hướng dẫn Generate Domain, chọn cổng theo log Uvicorn, bốn phép thử HTTP và lưu reports. | Không tạo domain hoặc chạy API thay; chưa có URL hoặc HTTP cloud thực nhận. Không suy từ Online rằng Redis/auth đã được kiểm chứng. |
 
-**Các việc còn cần bằng chứng trước khi nộp:** transcript `curl -i` Part 4 đã che secret và log bổ sung cho các bước Part 5 đã báo; giữ các report Part 5/6. CP5 đã đạt kiểm tra đầy đủ. CP6 còn deploy đúng agent để có URL HTTPS, kết quả HTTP cloud và ảnh dashboard theo `DEPLOYMENT.md`. Part 7 còn báo cáo benchmark/observability theo checklist riêng; không tính PASS Part 6 là đã hoàn thành toàn bộ bài nộp.
+| Yêu cầu hoàn thiện toàn bộ lab, phần mở rộng, báo cáo và dọn cấu trúc; xác nhận L3A, tạo domain public và đổi tên repo | Hoàn thiện history Redis/SSE/Nginx; chạy lại kiểm chứng Part 4–6, benchmark/eval/Locust A–E và AB; thêm histogram 7.1, đo/giải thích 7.4; tạo BENCHMARK_REPORT, cập nhật MISSION/DEPLOYMENT, thêm CI quality gate. | Codex trực tiếp chạy các phép thử theo phạm vi mới được cho phép, lưu raw JSON/CSV/log/ảnh và ghi nguồn thực hiện. Part 6 PASS 12/12, 44/44 khi kèm public URL; bảy test Redis PASS; v2 23/23; CI success. Đã đổi tên repo, push mã nguồn và deploy bản mới, kiểm chứng API HTTPS và history/chat/SSE. Không sửa script chấm/golden dataset, không bịa số đạt SLO, không tác động process riêng cổng 8000. |
+
+Các kết quả trước đây trong AI log mô tả thời điểm từng lượt, không thay thế trạng thái cuối ở các phần trên. Bài nộp dùng source trong `06-lab-complete/`, ba báo cáo root, raw `reports/`, `benchmark-results/` và ảnh `screenshots/`. Nộp link repository public trên LMS theo SUBMISSION.md; không thay ngày commit hoặc force-push.

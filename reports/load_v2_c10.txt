@@ -1,0 +1,17 @@
+
+════════════════════════════════════════════════════════
+  LOAD TEST REPORT — http://127.0.0.1:8002
+════════════════════════════════════════════════════════
+  Requests     : 300  (concurrency=10)
+  Duration     : 8.28 s
+  Throughput   : 36.23 req/s
+  Error rate   : 1.67%   {'200': 295, '503': 5}
+  Total cost   : $0.010136
+  Latency (ms) : min=155.4  avg=237.9  max=1702.1
+                 p50=192.1  p90=217.0  p95=225.3  p99=1694.8
+────────────────────────────────────────────────────────
+  SLO p95 ≤ 500ms        : ✅ PASS
+  SLO error rate ≤ 2.0%  : ✅ PASS
+════════════════════════════════════════════════════════
+
+💾 Đã lưu report: /mnt/e/Lab_VinUni/Day14/K5-L3-Day14-LeGiaHung-2A202603713-Deployment-Agent-Benchmark-Observability/reports/load_v2_c10.json

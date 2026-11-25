@@ -1,0 +1,44 @@
+[
+  {
+    "replicas": 1,
+    "started_utc": "2026-11-25T13:13:53.123980+00:00",
+    "exit_code": 1,
+    "users": 100,
+    "ramp_per_second": 10,
+    "duration_seconds": 120,
+    "actual_containers_before": [
+      "e8d6152a6f9ac34b56038d19530e91016058fb06c7a7584b3ab686bbf7a5c9bd"
+    ],
+    "actual_containers_after": [
+      "e8d6152a6f9ac34b56038d19530e91016058fb06c7a7584b3ab686bbf7a5c9bd"
+    ],
+    "observed_backend_ids": [
+      "e8d6152a6f9a"
+    ],
+    "locust_no_deps": true
+  },
+  {
+    "replicas": 3,
+    "started_utc": "2026-11-25T13:16:07.767699+00:00",
+    "exit_code": 1,
+    "users": 100,
+    "ramp_per_second": 10,
+    "duration_seconds": 120,
+    "actual_containers_before": [
+      "e8d6152a6f9ac34b56038d19530e91016058fb06c7a7584b3ab686bbf7a5c9bd",
+      "d4f9ac6bd4e7c7779f6739cb21466c2970c6221da001b0245b3e60a409cd3ed8",
+      "cbff1844983c86007aaf3d7c63da6e039cda99a0a9a03b2a84a308331eb8bc85"
+    ],
+    "actual_containers_after": [
+      "e8d6152a6f9ac34b56038d19530e91016058fb06c7a7584b3ab686bbf7a5c9bd",
+      "d4f9ac6bd4e7c7779f6739cb21466c2970c6221da001b0245b3e60a409cd3ed8",
+      "cbff1844983c86007aaf3d7c63da6e039cda99a0a9a03b2a84a308331eb8bc85"
+    ],
+    "observed_backend_ids": [
+      "cbff1844983c",
+      "d4f9ac6bd4e7",
+      "e8d6152a6f9a"
+    ],
+    "locust_no_deps": true
+  }
+]

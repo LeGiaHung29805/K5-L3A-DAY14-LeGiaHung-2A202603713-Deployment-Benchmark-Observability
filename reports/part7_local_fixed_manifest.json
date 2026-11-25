@@ -1,0 +1,32 @@
+{
+  "phase": "fixed",
+  "recorded_utc": "2026-11-25T12:54:27.292183+00:00",
+  "python": "3.12.3",
+  "platform": "Linux-6.18.58.1-microsoft-standard-WSL2-x86_64-with-glibc2.39",
+  "logical_cpus": 12,
+  "runs": [
+    {
+      "command": [
+        "eval/run_eval.py",
+        "--url",
+        "http://127.0.0.1:8002",
+        "--out",
+        "/mnt/e/Lab_VinUni/Day14/K5-L3-Day14-LeGiaHung-2A202603713-Deployment-Agent-Benchmark-Observability/reports/eval_v2_fixed.json",
+        "--min-accuracy",
+        "1.0",
+        "--baseline",
+        "/mnt/e/Lab_VinUni/Day14/K5-L3-Day14-LeGiaHung-2A202603713-Deployment-Agent-Benchmark-Observability/reports/eval_v2.json"
+      ],
+      "started_utc": "2026-11-25T12:54:21.852621+00:00",
+      "exit_code": 0
+    }
+  ],
+  "eval_configuration": {
+    "MOCK_ERROR_RATE": "0",
+    "MOCK_SLOW_RATE": "0.03"
+  },
+  "load_configuration": {
+    "MOCK_ERROR_RATE": "0.01",
+    "MOCK_SLOW_RATE": "0.03 except slow comparison"
+  }
+}

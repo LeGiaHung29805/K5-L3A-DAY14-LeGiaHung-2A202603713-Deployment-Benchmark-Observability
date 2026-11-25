@@ -1,0 +1,114 @@
+{
+  "phase": "baseline",
+  "recorded_utc": "2026-11-25T12:49:14.184756+00:00",
+  "python": "3.12.3",
+  "platform": "Linux-6.18.58.1-microsoft-standard-WSL2-x86_64-with-glibc2.39",
+  "logical_cpus": 12,
+  "runs": [
+    {
+      "command": [
+        "eval/run_eval.py",
+        "--url",
+        "http://127.0.0.1:8001",
+        "--out",
+        "/mnt/e/Lab_VinUni/Day14/K5-L3-Day14-LeGiaHung-2A202603713-Deployment-Agent-Benchmark-Observability/reports/eval_v1.json"
+      ],
+      "started_utc": "2026-11-25T12:47:31.342835+00:00",
+      "exit_code": 1
+    },
+    {
+      "command": [
+        "eval/run_eval.py",
+        "--url",
+        "http://127.0.0.1:8002",
+        "--out",
+        "/mnt/e/Lab_VinUni/Day14/K5-L3-Day14-LeGiaHung-2A202603713-Deployment-Agent-Benchmark-Observability/reports/eval_v2.json",
+        "--baseline",
+        "/mnt/e/Lab_VinUni/Day14/K5-L3-Day14-LeGiaHung-2A202603713-Deployment-Agent-Benchmark-Observability/reports/eval_v1.json"
+      ],
+      "started_utc": "2026-11-25T12:47:34.397435+00:00",
+      "exit_code": 0
+    },
+    {
+      "command": [
+        "eval/run_eval.py",
+        "--url",
+        "http://127.0.0.1:8001",
+        "--out",
+        "/mnt/e/Lab_VinUni/Day14/K5-L3-Day14-LeGiaHung-2A202603713-Deployment-Agent-Benchmark-Observability/reports/eval_v1_regression.json",
+        "--baseline",
+        "/mnt/e/Lab_VinUni/Day14/K5-L3-Day14-LeGiaHung-2A202603713-Deployment-Agent-Benchmark-Observability/reports/eval_v2.json"
+      ],
+      "started_utc": "2026-11-25T12:47:38.966289+00:00",
+      "exit_code": 1
+    },
+    {
+      "command": [
+        "load_test.py",
+        "--url",
+        "http://127.0.0.1:8002",
+        "--out",
+        "/mnt/e/Lab_VinUni/Day14/K5-L3-Day14-LeGiaHung-2A202603713-Deployment-Agent-Benchmark-Observability/reports/load_v2_c1.json",
+        "--requests",
+        "300",
+        "--concurrency",
+        "1"
+      ],
+      "started_utc": "2026-11-25T12:47:46.741168+00:00",
+      "exit_code": 0
+    },
+    {
+      "command": [
+        "load_test.py",
+        "--url",
+        "http://127.0.0.1:8002",
+        "--out",
+        "/mnt/e/Lab_VinUni/Day14/K5-L3-Day14-LeGiaHung-2A202603713-Deployment-Agent-Benchmark-Observability/reports/load_v2_c10.json",
+        "--requests",
+        "300",
+        "--concurrency",
+        "10"
+      ],
+      "started_utc": "2026-11-25T12:48:56.215313+00:00",
+      "exit_code": 0
+    },
+    {
+      "command": [
+        "load_test.py",
+        "--url",
+        "http://127.0.0.1:8002",
+        "--out",
+        "/mnt/e/Lab_VinUni/Day14/K5-L3-Day14-LeGiaHung-2A202603713-Deployment-Agent-Benchmark-Observability/reports/load_v2_c50.json",
+        "--requests",
+        "300",
+        "--concurrency",
+        "50"
+      ],
+      "started_utc": "2026-11-25T12:49:04.460762+00:00",
+      "exit_code": 0
+    },
+    {
+      "command": [
+        "load_test.py",
+        "--url",
+        "http://127.0.0.1:8002",
+        "--out",
+        "/mnt/e/Lab_VinUni/Day14/K5-L3-Day14-LeGiaHung-2A202603713-Deployment-Agent-Benchmark-Observability/reports/load_v2_c100.json",
+        "--requests",
+        "300",
+        "--concurrency",
+        "100"
+      ],
+      "started_utc": "2026-11-25T12:49:07.959592+00:00",
+      "exit_code": 1
+    }
+  ],
+  "eval_configuration": {
+    "MOCK_ERROR_RATE": "0",
+    "MOCK_SLOW_RATE": "0.03"
+  },
+  "load_configuration": {
+    "MOCK_ERROR_RATE": "0.01",
+    "MOCK_SLOW_RATE": "0.03 except slow comparison"
+  }
+}

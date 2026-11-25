@@ -1,0 +1,84 @@
+{
+  "checked_utc": "2026-11-25T14:29:14.300240+00:00",
+  "result": "PASS",
+  "required_artifacts": [
+    "MISSION_ANSWERS.md",
+    "DEPLOYMENT.md",
+    "BENCHMARK_REPORT.md",
+    "reports/part6_public_check.txt",
+    "reports/part6_cloud_http.json",
+    "reports/part6_extensions_smoke.json",
+    "reports/part6_extensions_tests.txt",
+    "reports/part7_trace_analysis.json",
+    "reports/ci_quality_gate.json",
+    "reports/load_v2_c1.json",
+    "reports/load_v2_c10.json",
+    "reports/load_v2_c50.json",
+    "reports/load_v2_c100.json",
+    "reports/load_v2_slow_0.json",
+    "reports/load_v2_slow_0.03.json",
+    "reports/load_v2_slow_0.1.json",
+    "reports/eval_v1.json",
+    "reports/eval_v2.json",
+    "reports/eval_v2_fixed.json",
+    "benchmark-results/scale_1_stats.csv",
+    "benchmark-results/scale_3_stats.csv",
+    "screenshots/dashboard.png",
+    "screenshots/running.png",
+    "screenshots/test.png",
+    "screenshots/grafana-dashboard.png",
+    "screenshots/jaeger-slow-trace.png",
+    "screenshots/jaeger-error-trace.png",
+    "screenshots/prometheus-alert-firing.png"
+  ],
+  "image_dimensions": {
+    "dashboard": [
+      1536,
+      686
+    ],
+    "running": [
+      1521,
+      679
+    ],
+    "test": [
+      1521,
+      679
+    ],
+    "grafana-dashboard": [
+      1280,
+      720
+    ],
+    "jaeger-slow-trace": [
+      1280,
+      720
+    ],
+    "jaeger-error-trace": [
+      1265,
+      712
+    ],
+    "prometheus-alert-firing": [
+      1280,
+      720
+    ]
+  },
+  "protected_source_sha256": {
+    "06-lab-complete/check_production_ready.py": "73e4a70c13ba1127ffd7fafe14d2b9f6ce6ec016dccafd8ca3d416cf8817268a",
+    "06-lab-complete/benchmark-observability/develop/eval/golden_dataset.jsonl": "22e672344ef72779959f3cf480391cef247b2f8ce86415010ddea9b315e959ec"
+  },
+  "protected_source_matches_original": true,
+  "private_key_matches": [],
+  "env_file_history_empty": true,
+  "scaling_replica_counts": [
+    1,
+    3
+  ],
+  "cloud_http_statuses": [
+    200,
+    200,
+    401,
+    200
+  ],
+  "quality_eval": "23/23",
+  "github_ci": "success",
+  "broken_report_links": []
+}

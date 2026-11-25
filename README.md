@@ -2,13 +2,23 @@
 
 > Đưa agent lên cloud, đo xem nó nhanh và đúng tới đâu, rồi giám sát nó khi chạy thật.
 
-> **AICB-P1 · VinUniversity 2026**  
-> Repository thực hành đi kèm bài giảng Day 14.  
+> **AICB-P1 · VinUniversity 2026**
+> Repository thực hành đi kèm bài giảng Day 14.
 > Mỗi phần có ví dụ **cơ bản** (hiểu concept) và **chuyên sâu** (production-ready).
 
-> **Hình thức: CÁ NHÂN** · **Thời lượng:** 4 giờ tại lớp · **Deadline:** 23h59 (GMT+7) ngày lab, trừ khi Lab Coach thông báo khác  
-> **Đọc theo thứ tự:** README → [RULES](RULES.md) → [CHECKPOINTS](CHECKPOINTS.md) → [SUBMISSION](SUBMISSION.md) → [RUBRIC](RUBRIC.md)  
+> **Hình thức: CÁ NHÂN** · **Thời lượng:** 4 giờ tại lớp · **Deadline:** 23h59 (GMT+7) ngày lab, trừ khi Lab Coach thông báo khác
+> **Đọc theo thứ tự:** README → [RULES](RULES.md) → [CHECKPOINTS](CHECKPOINTS.md) → [SUBMISSION](SUBMISSION.md) → [RUBRIC](RUBRIC.md)
 > **Bài nộp:** repo `K5-<L3A|L3B>-DAY14-HoVaTen-MSSV-Deployment-Benchmark-Observability`, nộp **link repo** trên LMS (chi tiết: [SUBMISSION.md](SUBMISSION.md)).
+
+### Kết quả bài thực hành
+
+- [MISSION_ANSWERS.md](MISSION_ANSWERS.md): câu trả lời Part 1–7, output chấm Part 6 và AI log theo RULES.
+- [DEPLOYMENT.md](DEPLOYMENT.md): [API public Railway](https://day14-agent-53c5ceff.up.railway.app), biến môi trường và HTTP thực nhận 200/200/401/200.
+- [BENCHMARK_REPORT.md](BENCHMARK_REPORT.md): benchmark, eval, trace/alert và scaling; raw ở `reports/`, CSV ở `benchmark-results/`, ảnh ở `screenshots/`.
+- [Part 6](06-lab-complete/): PASS 12/12, 44/44 checks khi chấm kèm URL public; history Redis, SSE và Nginx ba agent. [Hướng dẫn chạy](06-lab-complete/SETUP.md).
+- [CI quality gate](https://github.com/LeGiaHung29805/K5-L3A-DAY14-LeGiaHung-2A202603713-Deployment-Benchmark-Observability/actions/runs/45627994273): success, v2 đạt 23/23, không regression.
+
+Source Part 6 ở đúng thư mục K5; các thư mục Part 1–5 và tài liệu luật/rubric là học liệu của chương trình, được giữ lại. Dockerfile Go trùng lặp ở gốc đã bỏ vì gây chọn nhầm build; ví dụ gốc vẫn ở `02-docker/multi-stages/`. `utils/` và `.dockerignore` ở root vẫn cần cho Docker build Part 2. Script tái hiện ở `scripts/`; report chẩn đoán ở `reports/diagnostics/` không được dùng thay kết quả chính.
 
 ### ⚠️ Lưu ý khi làm bài (K5)
 
@@ -58,15 +68,19 @@ K5-L3-Day14-Deployment-Agent-Benchmark-Observability/
 │   └── production/                   #   Stateless + Redis + Nginx LB
 │
 ├── 06-lab-complete/                # Lab 14: Production-ready agent
-│   ├── (bản khung TODO — sinh viên tự làm, chấm bằng check_production_ready.py)
+│   ├── app/, Dockerfile, docker-compose.yml, nginx/  # Bản đã hoàn thiện
 │   └── benchmark-observability/      #   Part 7: Benchmark & Observability
 │       ├── develop/                  #     Metrics + load test + eval (chạy local)
 │       └── production/               #     Prometheus + Grafana + Jaeger + Locust
 │
-├── Dockerfile_examples/            # Ví dụ Dockerfile (Go) + thứ tự layers
-│   ├── Dockerfile                    #   Single-stage, COPY . . (chưa tối ưu)
-│   ├── Dockerfile.deps-first         #   Dependencies trước, source sau (tối ưu)
-│   └── Dockerfile.source-first       #   Source trước, dependencies sau (không tối ưu)
+├── MISSION_ANSWERS.md              # Câu trả lời + output chấm + AI log
+├── DEPLOYMENT.md                   # URL và kiểm chứng cloud
+├── BENCHMARK_REPORT.md             # Báo cáo Part 7 đã điền
+├── reports/                        # JSON, transcript và manifest thực chạy
+├── benchmark-results/              # Locust CSV chính
+├── screenshots/                    # Ảnh bằng chứng deploy/observability
+├── scripts/                        # Tái hiện kiểm chứng và báo cáo
+├── .github/workflows/              # Quality gate chạy trên GitHub Actions
 │
 └── utils/                          # Mock LLM dùng chung (không cần API key)
 ```

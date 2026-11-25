@@ -1,0 +1,57 @@
+{
+  "started_utc": "2026-11-25T13:16:44.990668+00:00",
+  "executed_by": "Codex, authorized completion run",
+  "api_key_statuses": [
+    401,
+    403,
+    200
+  ],
+  "jwt_missing_status": 401,
+  "usage_before": {
+    "user_id": "student",
+    "date": "2026-11-25",
+    "requests": 0,
+    "input_tokens": 0,
+    "output_tokens": 0,
+    "cost_usd": 0.0,
+    "budget_usd": 1.0,
+    "budget_remaining_usd": 1.0,
+    "budget_used_pct": 0.0
+  },
+  "usage_after": {
+    "user_id": "student",
+    "date": "2026-11-25",
+    "requests": 1,
+    "input_tokens": 2,
+    "output_tokens": 30,
+    "cost_usd": 1.8e-05,
+    "budget_usd": 1.0,
+    "budget_remaining_usd": 0.999982,
+    "budget_used_pct": 0.0
+  },
+  "jwt_and_rate_statuses": [
+    200,
+    200,
+    200,
+    200,
+    200,
+    200,
+    200,
+    200,
+    200,
+    200,
+    429
+  ],
+  "retry_after_seconds": 59,
+  "after_retry_status": 200,
+  "finished_utc": "2026-11-25T13:19:23.958805+00:00",
+  "part5_started_utc": "2026-11-25T13:19:19.972928+00:00",
+  "part5": {
+    "health": 200,
+    "ready": 200,
+    "in_flight_request_status": 200,
+    "server_exit_code": 0,
+    "shutdown_seconds": 3.184
+  },
+  "result": "PASS"
+}

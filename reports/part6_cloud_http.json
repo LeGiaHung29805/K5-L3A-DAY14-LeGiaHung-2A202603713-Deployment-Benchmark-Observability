@@ -1,0 +1,333 @@
+{
+  "base_url": "https://day14-agent-53c5ceff.up.railway.app",
+  "deployment_id": "433dbc32-d361-4e31-87d8-29571cb45d74",
+  "tested_utc": "2026-11-25T13:56:16.532942+00:00",
+  "tests": {
+    "health": {
+      "status": 200,
+      "body": {
+        "status": "ok"
+      },
+      "headers": {
+        "Content-Type": "application/json",
+        "Date": "Wed, 25 Nov 2026 13:56:20 GMT",
+        "Server": "railway-hikari",
+        "x-content-type-options": "nosniff",
+        "x-railway-request-id": "Bfvy9jtXQH6Xuq4XpHNmDw",
+        "x-request-id": "46bdbcff6e954d2d89433f8ca3317e2d",
+        "x-served-by": "c8b19422e079",
+        "Content-Length": "15",
+        "x-hikari-trace": "sin1.nzn2",
+        "x-railway-edge": "sin1",
+        "Connection": "close"
+      }
+    },
+    "ready": {
+      "status": 200,
+      "body": {
+        "ready": true
+      },
+      "headers": {
+        "Content-Type": "application/json",
+        "Date": "Wed, 25 Nov 2026 13:56:21 GMT",
+        "Server": "railway-hikari",
+        "x-content-type-options": "nosniff",
+        "x-railway-request-id": "_5UPUKRsQIWrXrBMwUFZXw",
+        "x-request-id": "1660c71575f74fbba74bad3bb0ac08e3",
+        "x-served-by": "c8b19422e079",
+        "Content-Length": "14",
+        "x-hikari-trace": "sin1.462z",
+        "x-railway-edge": "sin1",
+        "Connection": "close"
+      }
+    },
+    "missing_key": {
+      "status": 401,
+      "body": {
+        "detail": "Missing or invalid API key"
+      },
+      "headers": {
+        "Content-Type": "application/json",
+        "Date": "Wed, 25 Nov 2026 13:56:23 GMT",
+        "Server": "railway-hikari",
+        "x-content-type-options": "nosniff",
+        "x-railway-request-id": "Vb2sd7v_Ray1_Gjpn6XIxQ",
+        "x-request-id": "6360b20344c94ceab818ab0610ab0173",
+        "x-served-by": "c8b19422e079",
+        "Content-Length": "39",
+        "x-hikari-trace": "sin1.hs0s",
+        "x-railway-edge": "sin1",
+        "Connection": "close"
+      }
+    },
+    "valid_key": {
+      "status": 200,
+      "body": {
+        "question": "What is deployment?",
+        "answer": "Deployment là quá trình đưa code từ máy bạn lên server để người khác dùng được.",
+        "cost_usd": 2.01e-05,
+        "session_id": "c647a45f-6393-451f-b1b6-d1f565d81e6a",
+        "message_count": 2,
+        "storage": "redis",
+        "served_by": "c8b19422e079"
+      },
+      "headers": {
+        "Content-Type": "application/json",
+        "Date": "Wed, 25 Nov 2026 13:56:24 GMT",
+        "Server": "railway-hikari",
+        "x-content-type-options": "nosniff",
+        "x-railway-request-id": "IgdBz_tHQfG49Z4H0_TJvA",
+        "x-ratelimit-limit": "10",
+        "x-ratelimit-remaining": "9",
+        "x-request-id": "13a38edcce0845ab8068cbefc6c5a854",
+        "x-served-by": "c8b19422e079",
+        "Content-Length": "283",
+        "x-hikari-trace": "sin1.tr00",
+        "x-railway-edge": "sin1",
+        "vary": "accept-encoding",
+        "Connection": "close"
+      }
+    },
+    "history": {
+      "status": 200,
+      "body": {
+        "session_id": "c647a45f-6393-451f-b1b6-d1f565d81e6a",
+        "messages": [
+          {
+            "role": "user",
+            "content": "What is deployment?"
+          },
+          {
+            "role": "assistant",
+            "content": "Deployment là quá trình đưa code từ máy bạn lên server để người khác dùng được."
+          }
+        ],
+        "message_count": 2,
+        "storage": "redis",
+        "served_by": "c8b19422e079"
+      },
+      "headers": {
+        "Content-Type": "application/json",
+        "Date": "Wed, 25 Nov 2026 13:56:29 GMT",
+        "Server": "railway-hikari",
+        "x-content-type-options": "nosniff",
+        "x-railway-request-id": "3WfXkF-KS2ig7g8KYqVb7A",
+        "x-request-id": "400d656b075d46a191762361c538ea4d",
+        "x-served-by": "c8b19422e079",
+        "Content-Length": "313",
+        "x-hikari-trace": "sin1.hs0s",
+        "x-railway-edge": "sin1",
+        "vary": "accept-encoding",
+        "Connection": "close"
+      }
+    },
+    "chat": {
+      "status": 200,
+      "body": {
+        "question": "Explain Docker",
+        "answer": "Container là cách đóng gói app để chạy ở mọi nơi. Build once, run anywhere!",
+        "cost_usd": 1.86e-05,
+        "session_id": "c647a45f-6393-451f-b1b6-d1f565d81e6a",
+        "message_count": 4,
+        "storage": "redis",
+        "served_by": "c8b19422e079"
+      },
+      "headers": {
+        "Content-Type": "application/json",
+        "Date": "Wed, 25 Nov 2026 13:56:31 GMT",
+        "Server": "railway-hikari",
+        "x-content-type-options": "nosniff",
+        "x-railway-request-id": "UX5hUIRxQvOTi8-t2prcFg",
+        "x-ratelimit-limit": "10",
+        "x-ratelimit-remaining": "8",
+        "x-request-id": "cc12da9e03c34f13be42a63cf9c67a84",
+        "x-served-by": "c8b19422e079",
+        "Content-Length": "266",
+        "x-hikari-trace": "sin1.98a6",
+        "x-railway-edge": "sin1",
+        "vary": "accept-encoding",
+        "Connection": "close"
+      }
+    },
+    "stream": {
+      "status": 200,
+      "headers": {
+        "Cache-Control": "no-cache",
+        "Content-Type": "text/event-stream; charset=utf-8",
+        "Date": "Wed, 25 Nov 2026 13:56:32 GMT",
+        "Server": "railway-hikari",
+        "x-accel-buffering": "no",
+        "x-content-type-options": "nosniff",
+        "x-railway-request-id": "HMl9DpfNThqJYwJXLPU1MQ",
+        "x-ratelimit-limit": "10",
+        "x-ratelimit-remaining": "7",
+        "x-request-id": "c915d7f3aec44e9c97933f6e00b57826",
+        "x-served-by": "c8b19422e079",
+        "Transfer-Encoding": "chunked",
+        "x-hikari-trace": "sin1.98a6",
+        "x-railway-edge": "sin1",
+        "Connection": "close"
+      },
+      "events": [
+        {
+          "elapsed_ms": 631.59,
+          "data": {
+            "text": "Deployment "
+          }
+        },
+        {
+          "elapsed_ms": 645.09,
+          "data": {
+            "text": "là "
+          }
+        },
+        {
+          "elapsed_ms": 661.89,
+          "data": {
+            "text": "quá "
+          }
+        },
+        {
+          "elapsed_ms": 688.19,
+          "data": {
+            "text": "trình "
+          }
+        },
+        {
+          "elapsed_ms": 762.66,
+          "data": {
+            "text": "đưa "
+          }
+        },
+        {
+          "elapsed_ms": 762.72,
+          "data": {
+            "text": "code "
+          }
+        },
+        {
+          "elapsed_ms": 762.74,
+          "data": {
+            "text": "từ "
+          }
+        },
+        {
+          "elapsed_ms": 762.77,
+          "data": {
+            "text": "máy "
+          }
+        },
+        {
+          "elapsed_ms": 783.22,
+          "data": {
+            "text": "bạn "
+          }
+        },
+        {
+          "elapsed_ms": 795.59,
+          "data": {
+            "text": "lên "
+          }
+        },
+        {
+          "elapsed_ms": 1027.92,
+          "data": {
+            "text": "server "
+          }
+        },
+        {
+          "elapsed_ms": 1027.98,
+          "data": {
+            "text": "để "
+          }
+        },
+        {
+          "elapsed_ms": 1028.01,
+          "data": {
+            "text": "người "
+          }
+        },
+        {
+          "elapsed_ms": 1028.08,
+          "data": {
+            "text": "khác "
+          }
+        },
+        {
+          "elapsed_ms": 1028.1,
+          "data": {
+            "text": "dùng "
+          }
+        },
+        {
+          "elapsed_ms": 1028.13,
+          "data": {
+            "text": "được. "
+          }
+        },
+        {
+          "elapsed_ms": 1028.15,
+          "data": {
+            "question": "What is deployment?",
+            "answer": "Deployment là quá trình đưa code từ máy bạn lên server để người khác dùng được.",
+            "cost_usd": 2.01e-05,
+            "session_id": "c647a45f-6393-451f-b1b6-d1f565d81e6a",
+            "message_count": 6,
+            "storage": "redis",
+            "served_by": "c8b19422e079"
+          }
+        }
+      ]
+    },
+    "history_after_stream": {
+      "status": 200,
+      "body": {
+        "session_id": "c647a45f-6393-451f-b1b6-d1f565d81e6a",
+        "messages": [
+          {
+            "role": "user",
+            "content": "What is deployment?"
+          },
+          {
+            "role": "assistant",
+            "content": "Deployment là quá trình đưa code từ máy bạn lên server để người khác dùng được."
+          },
+          {
+            "role": "user",
+            "content": "Explain Docker"
+          },
+          {
+            "role": "assistant",
+            "content": "Container là cách đóng gói app để chạy ở mọi nơi. Build once, run anywhere!"
+          },
+          {
+            "role": "user",
+            "content": "What is deployment?"
+          },
+          {
+            "role": "assistant",
+            "content": "Deployment là quá trình đưa code từ máy bạn lên server để người khác dùng được."
+          }
+        ],
+        "message_count": 6,
+        "storage": "redis",
+        "served_by": "c8b19422e079"
+      },
+      "headers": {
+        "Content-Type": "application/json",
+        "Date": "Wed, 25 Nov 2026 13:56:33 GMT",
+        "Server": "railway-hikari",
+        "x-content-type-options": "nosniff",
+        "x-railway-request-id": "fc4jEEgfR_y0yxMs9I3ezw",
+        "x-request-id": "f512670138c54a3e9ba3b6066301106a",
+        "x-served-by": "c8b19422e079",
+        "Content-Length": "664",
+        "x-hikari-trace": "sin1.98a6",
+        "x-railway-edge": "sin1",
+        "vary": "accept-encoding",
+        "Connection": "close"
+      }
+    }
+  },
+  "passed": true
+}

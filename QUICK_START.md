@@ -2,6 +2,8 @@
 
 > Jump right into the lab without reading everything first
 
+> Bản bài đã hoàn thiện: xem [kết quả và URL deploy](DEPLOYMENT.md), [chạy Part 6 trong WSL](06-lab-complete/SETUP.md) và [benchmark](BENCHMARK_REPORT.md). Với lớp K5, deploy source trong `06-lab-complete/` cùng Redis theo DEPLOYMENT.md; các ví dụ cloud bên dưới chỉ minh họa luồng CLI.
+
 ---
 
 ## 🎯 Goal
@@ -54,9 +56,7 @@ python app.py
 
 In another terminal:
 ```bash
-curl http://localhost:8000/ask -X POST \
-  -H "Content-Type: application/json" \
-  -d '{"question": "Hello"}'
+curl -X POST 'http://localhost:8000/ask?question=Hello'
 ```
 
 **Expected:** You get a response! 🎉
@@ -69,7 +69,7 @@ curl http://localhost:8000/ask -X POST \
 cd ../../02-docker/develop
 
 # Build image
-docker build -t my-agent .
+docker build -f Dockerfile -t my-agent ../..
 
 # Run container
 docker run -p 8000:8000 my-agent
@@ -77,9 +77,7 @@ docker run -p 8000:8000 my-agent
 
 Test again:
 ```bash
-curl http://localhost:8000/ask -X POST \
-  -H "Content-Type: application/json" \
-  -d '{"question": "What is Docker?"}'
+curl -X POST 'http://localhost:8000/ask?question=What%20is%20Docker%3F'
 ```
 
 **Expected:** Same response, but now in a container! 🐳
@@ -168,7 +166,7 @@ Now that you've seen it work, go deeper:
 
 Read [CODE_LAB.md](CODE_LAB.md) for detailed explanations and exercises.
 
-**Time:** 4-5 hours  
+**Time:** 4-5 hours
 **Outcome:** Deep understanding + production-ready skills
 
 ### Option B: Jump to Final Project
@@ -180,7 +178,7 @@ cd 06-lab-complete
 cat README.md
 ```
 
-**Time:** 1-2 hours  
+**Time:** 1-2 hours
 **Outcome:** Working production agent
 
 ### Option C: Benchmark & Observe Your Agent
@@ -193,14 +191,14 @@ docker compose up --build -d
 # Grafana: http://localhost:3000  ·  Jaeger: http://localhost:16686  ·  Locust: http://localhost:8089
 ```
 
-**Time:** 75 minutes  
+**Time:** 75 minutes
 **Outcome:** Benchmark report + observability stack
 
 ### Option D: Explore Examples
 
 Browse through each section's `develop/` and `production/` folders.
 
-**Time:** 1 hour  
+**Time:** 1 hour
 **Outcome:** See different patterns and approaches
 
 ---

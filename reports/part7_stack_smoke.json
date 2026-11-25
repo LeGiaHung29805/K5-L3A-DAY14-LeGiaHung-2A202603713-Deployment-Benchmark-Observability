@@ -1,0 +1,116 @@
+{
+  "/health": {
+    "status": 200,
+    "headers": {
+      "Server": "nginx/1.28.3",
+      "Date": "Wed, 25 Nov 2026 13:13:39 GMT",
+      "Content-Type": "application/json",
+      "Content-Length": "80",
+      "Connection": "close",
+      "x-request-id": "0762e3d86fd4",
+      "X-Served-By": "172.19.0.5:8000"
+    },
+    "body": {
+      "status": "ok",
+      "version": "1.0.0",
+      "agent_version": "v2",
+      "instance": "e8d6152a6f9a"
+    }
+  },
+  "/ready": {
+    "status": 200,
+    "headers": {
+      "Server": "nginx/1.28.3",
+      "Date": "Wed, 25 Nov 2026 13:13:39 GMT",
+      "Content-Type": "application/json",
+      "Content-Length": "14",
+      "Connection": "close",
+      "x-request-id": "6261f50693d0",
+      "X-Served-By": "172.19.0.5:8000"
+    },
+    "body": {
+      "ready": true
+    }
+  },
+  "/metrics": {
+    "status": 404,
+    "headers": {
+      "Server": "nginx/1.28.3",
+      "Date": "Wed, 25 Nov 2026 13:13:39 GMT",
+      "Content-Type": "text/html",
+      "Content-Length": "153",
+      "Connection": "close"
+    },
+    "body": "<html>\r\n<head><title>404 Not Found</title></head>\r\n<body>\r\n<center><h1>404 Not Found</h1></center>\r\n<hr><center>nginx/1.28.3</center>\r\n</body>\r\n</html>\r\n"
+  },
+  "missing_key": {
+    "status": 401,
+    "headers": {
+      "Server": "nginx/1.28.3",
+      "Date": "Wed, 25 Nov 2026 13:13:39 GMT",
+      "Content-Type": "application/json",
+      "Content-Length": "41",
+      "Connection": "close",
+      "x-request-id": "b406209bc62d",
+      "x-trace-id": "db3406c3a6777c1df1af1fd1ba85dde1",
+      "X-Served-By": "172.19.0.5:8000"
+    },
+    "body": {
+      "detail": "Invalid or missing X-API-Key"
+    }
+  },
+  "valid_key": {
+    "status": 200,
+    "headers": {
+      "Server": "nginx/1.28.3",
+      "Date": "Wed, 25 Nov 2026 13:13:40 GMT",
+      "Content-Type": "application/json",
+      "Content-Length": "449",
+      "Connection": "close",
+      "x-request-id": "7579bdf95f8a",
+      "x-trace-id": "f26ff6a6f15cee42ee1b2f158905e901",
+      "X-Served-By": "172.19.0.5:8000"
+    },
+    "body": {
+      "answer": "Distributed tracing ghi lại một request đi qua những bước nào. Mỗi bước là một span có thời gian bắt đầu, kết thúc và attributes. OpenTelemetry thu thập trace và gửi tới Jaeger để xem.",
+      "model": "mock-llm-small",
+      "agent_version": "v2",
+      "usage": {
+        "input_tokens": 75,
+        "output_tokens": 46,
+        "cost_usd": 3.885e-05
+      },
+      "llm_latency_ms": 184.2,
+      "request_id": "7579bdf95f8a",
+      "trace_id": "f26ff6a6f15cee42ee1b2f158905e901"
+    }
+  },
+  "valid_key_attempts": [
+    {
+      "status": 200,
+      "headers": {
+        "Server": "nginx/1.28.3",
+        "Date": "Wed, 25 Nov 2026 13:13:40 GMT",
+        "Content-Type": "application/json",
+        "Content-Length": "449",
+        "Connection": "close",
+        "x-request-id": "7579bdf95f8a",
+        "x-trace-id": "f26ff6a6f15cee42ee1b2f158905e901",
+        "X-Served-By": "172.19.0.5:8000"
+      },
+      "body": {
+        "answer": "Distributed tracing ghi lại một request đi qua những bước nào. Mỗi bước là một span có thời gian bắt đầu, kết thúc và attributes. OpenTelemetry thu thập trace và gửi tới Jaeger để xem.",
+        "model": "mock-llm-small",
+        "agent_version": "v2",
+        "usage": {
+          "input_tokens": 75,
+          "output_tokens": 46,
+          "cost_usd": 3.885e-05
+        },
+        "llm_latency_ms": 184.2,
+        "request_id": "7579bdf95f8a",
+        "trace_id": "f26ff6a6f15cee42ee1b2f158905e901"
+      }
+    }
+  ]
+}

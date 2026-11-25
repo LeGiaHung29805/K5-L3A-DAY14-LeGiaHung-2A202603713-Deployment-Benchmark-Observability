@@ -1,0 +1,414 @@
+{
+  "experiment": "D",
+  "changed_at_utc": "2026-11-25T13:30:43.102416+00:00",
+  "changes": {},
+  "load_users": 30,
+  "duration_seconds": 100,
+  "samples": [
+    {
+      "elapsed_seconds": 0.0,
+      "observed_utc": "2026-11-25T13:30:58.481965+00:00",
+      "alerts": []
+    },
+    {
+      "elapsed_seconds": 5.0,
+      "observed_utc": "2026-11-25T13:31:03.486190+00:00",
+      "alerts": []
+    },
+    {
+      "elapsed_seconds": 10.0,
+      "observed_utc": "2026-11-25T13:31:08.490888+00:00",
+      "alerts": []
+    },
+    {
+      "elapsed_seconds": 15.1,
+      "observed_utc": "2026-11-25T13:31:13.583977+00:00",
+      "alerts": [
+        {
+          "labels": {
+            "alertname": "AgentInstanceDown",
+            "instance": "172.19.0.8:8000",
+            "job": "agent",
+            "severity": "critical"
+          },
+          "annotations": {
+            "description": "Prometheus không gọi được /metrics của 172.19.0.8:8000 trong 30s",
+            "summary": "Instance agent 172.19.0.8:8000 không scrape được"
+          },
+          "state": "pending",
+          "activeAt": "2026-11-25T13:31:07.401817116Z",
+          "value": "0e+00"
+        }
+      ]
+    },
+    {
+      "elapsed_seconds": 20.1,
+      "observed_utc": "2026-11-25T13:31:18.591865+00:00",
+      "alerts": [
+        {
+          "labels": {
+            "alertname": "AgentInstanceDown",
+            "instance": "172.19.0.8:8000",
+            "job": "agent",
+            "severity": "critical"
+          },
+          "annotations": {
+            "description": "Prometheus không gọi được /metrics của 172.19.0.8:8000 trong 30s",
+            "summary": "Instance agent 172.19.0.8:8000 không scrape được"
+          },
+          "state": "pending",
+          "activeAt": "2026-11-25T13:31:07.401817116Z",
+          "value": "0e+00"
+        }
+      ]
+    },
+    {
+      "elapsed_seconds": 25.1,
+      "observed_utc": "2026-11-25T13:31:23.629978+00:00",
+      "alerts": [
+        {
+          "labels": {
+            "alertname": "AgentInstanceDown",
+            "instance": "172.19.0.8:8000",
+            "job": "agent",
+            "severity": "critical"
+          },
+          "annotations": {
+            "description": "Prometheus không gọi được /metrics của 172.19.0.8:8000 trong 30s",
+            "summary": "Instance agent 172.19.0.8:8000 không scrape được"
+          },
+          "state": "pending",
+          "activeAt": "2026-11-25T13:31:07.401817116Z",
+          "value": "0e+00"
+        }
+      ]
+    },
+    {
+      "elapsed_seconds": 30.2,
+      "observed_utc": "2026-11-25T13:31:28.541296+00:00",
+      "alerts": [
+        {
+          "labels": {
+            "alertname": "AgentInstanceDown",
+            "instance": "172.19.0.8:8000",
+            "job": "agent",
+            "severity": "critical"
+          },
+          "annotations": {
+            "description": "Prometheus không gọi được /metrics của 172.19.0.8:8000 trong 30s",
+            "summary": "Instance agent 172.19.0.8:8000 không scrape được"
+          },
+          "state": "pending",
+          "activeAt": "2026-11-25T13:31:07.401817116Z",
+          "value": "0e+00"
+        }
+      ]
+    },
+    {
+      "elapsed_seconds": 35.3,
+      "observed_utc": "2026-11-25T13:31:33.673276+00:00",
+      "alerts": [
+        {
+          "labels": {
+            "alertname": "AgentInstanceDown",
+            "instance": "172.19.0.8:8000",
+            "job": "agent",
+            "severity": "critical"
+          },
+          "annotations": {
+            "description": "Prometheus không gọi được /metrics của 172.19.0.8:8000 trong 30s",
+            "summary": "Instance agent 172.19.0.8:8000 không scrape được"
+          },
+          "state": "pending",
+          "activeAt": "2026-11-25T13:31:07.401817116Z",
+          "value": "0e+00"
+        }
+      ]
+    },
+    {
+      "elapsed_seconds": 40.4,
+      "observed_utc": "2026-11-25T13:31:38.715670+00:00",
+      "alerts": [
+        {
+          "labels": {
+            "alertname": "AgentInstanceDown",
+            "instance": "172.19.0.8:8000",
+            "job": "agent",
+            "severity": "critical"
+          },
+          "annotations": {
+            "description": "Prometheus không gọi được /metrics của 172.19.0.8:8000 trong 30s",
+            "summary": "Instance agent 172.19.0.8:8000 không scrape được"
+          },
+          "state": "pending",
+          "activeAt": "2026-11-25T13:31:07.401817116Z",
+          "value": "0e+00"
+        }
+      ]
+    },
+    {
+      "elapsed_seconds": 45.4,
+      "observed_utc": "2026-11-25T13:31:43.741129+00:00",
+      "alerts": [
+        {
+          "labels": {
+            "alertname": "AgentInstanceDown",
+            "instance": "172.19.0.8:8000",
+            "job": "agent",
+            "severity": "critical"
+          },
+          "annotations": {
+            "description": "Prometheus không gọi được /metrics của 172.19.0.8:8000 trong 30s",
+            "summary": "Instance agent 172.19.0.8:8000 không scrape được"
+          },
+          "state": "firing",
+          "activeAt": "2026-11-25T13:31:07.401817116Z",
+          "value": "0e+00"
+        }
+      ]
+    },
+    {
+      "elapsed_seconds": 50.4,
+      "observed_utc": "2026-11-25T13:31:48.760234+00:00",
+      "alerts": [
+        {
+          "labels": {
+            "alertname": "AgentInstanceDown",
+            "instance": "172.19.0.8:8000",
+            "job": "agent",
+            "severity": "critical"
+          },
+          "annotations": {
+            "description": "Prometheus không gọi được /metrics của 172.19.0.8:8000 trong 30s",
+            "summary": "Instance agent 172.19.0.8:8000 không scrape được"
+          },
+          "state": "firing",
+          "activeAt": "2026-11-25T13:31:07.401817116Z",
+          "value": "0e+00"
+        }
+      ]
+    },
+    {
+      "elapsed_seconds": 55.4,
+      "observed_utc": "2026-11-25T13:31:53.773108+00:00",
+      "alerts": [
+        {
+          "labels": {
+            "alertname": "AgentInstanceDown",
+            "instance": "172.19.0.8:8000",
+            "job": "agent",
+            "severity": "critical"
+          },
+          "annotations": {
+            "description": "Prometheus không gọi được /metrics của 172.19.0.8:8000 trong 30s",
+            "summary": "Instance agent 172.19.0.8:8000 không scrape được"
+          },
+          "state": "firing",
+          "activeAt": "2026-11-25T13:31:07.401817116Z",
+          "value": "0e+00"
+        }
+      ]
+    },
+    {
+      "elapsed_seconds": 60.5,
+      "observed_utc": "2026-11-25T13:31:58.460881+00:00",
+      "alerts": [
+        {
+          "labels": {
+            "alertname": "AgentInstanceDown",
+            "instance": "172.19.0.8:8000",
+            "job": "agent",
+            "severity": "critical"
+          },
+          "annotations": {
+            "description": "Prometheus không gọi được /metrics của 172.19.0.8:8000 trong 30s",
+            "summary": "Instance agent 172.19.0.8:8000 không scrape được"
+          },
+          "state": "firing",
+          "activeAt": "2026-11-25T13:31:07.401817116Z",
+          "value": "0e+00"
+        }
+      ]
+    },
+    {
+      "elapsed_seconds": 65.5,
+      "observed_utc": "2026-11-25T13:32:03.466766+00:00",
+      "alerts": [
+        {
+          "labels": {
+            "alertname": "AgentInstanceDown",
+            "instance": "172.19.0.8:8000",
+            "job": "agent",
+            "severity": "critical"
+          },
+          "annotations": {
+            "description": "Prometheus không gọi được /metrics của 172.19.0.8:8000 trong 30s",
+            "summary": "Instance agent 172.19.0.8:8000 không scrape được"
+          },
+          "state": "firing",
+          "activeAt": "2026-11-25T13:31:07.401817116Z",
+          "value": "0e+00"
+        }
+      ]
+    },
+    {
+      "elapsed_seconds": 70.5,
+      "observed_utc": "2026-11-25T13:32:08.474848+00:00",
+      "alerts": [
+        {
+          "labels": {
+            "alertname": "AgentInstanceDown",
+            "instance": "172.19.0.8:8000",
+            "job": "agent",
+            "severity": "critical"
+          },
+          "annotations": {
+            "description": "Prometheus không gọi được /metrics của 172.19.0.8:8000 trong 30s",
+            "summary": "Instance agent 172.19.0.8:8000 không scrape được"
+          },
+          "state": "firing",
+          "activeAt": "2026-11-25T13:31:07.401817116Z",
+          "value": "0e+00"
+        }
+      ]
+    },
+    {
+      "elapsed_seconds": 75.5,
+      "observed_utc": "2026-11-25T13:32:13.481224+00:00",
+      "alerts": [
+        {
+          "labels": {
+            "alertname": "AgentInstanceDown",
+            "instance": "172.19.0.8:8000",
+            "job": "agent",
+            "severity": "critical"
+          },
+          "annotations": {
+            "description": "Prometheus không gọi được /metrics của 172.19.0.8:8000 trong 30s",
+            "summary": "Instance agent 172.19.0.8:8000 không scrape được"
+          },
+          "state": "firing",
+          "activeAt": "2026-11-25T13:31:07.401817116Z",
+          "value": "0e+00"
+        }
+      ]
+    },
+    {
+      "elapsed_seconds": 80.5,
+      "observed_utc": "2026-11-25T13:32:18.486731+00:00",
+      "alerts": [
+        {
+          "labels": {
+            "alertname": "AgentInstanceDown",
+            "instance": "172.19.0.8:8000",
+            "job": "agent",
+            "severity": "critical"
+          },
+          "annotations": {
+            "description": "Prometheus không gọi được /metrics của 172.19.0.8:8000 trong 30s",
+            "summary": "Instance agent 172.19.0.8:8000 không scrape được"
+          },
+          "state": "firing",
+          "activeAt": "2026-11-25T13:31:07.401817116Z",
+          "value": "0e+00"
+        }
+      ]
+    },
+    {
+      "elapsed_seconds": 85.5,
+      "observed_utc": "2026-11-25T13:32:23.496160+00:00",
+      "alerts": [
+        {
+          "labels": {
+            "alertname": "AgentInstanceDown",
+            "instance": "172.19.0.8:8000",
+            "job": "agent",
+            "severity": "critical"
+          },
+          "annotations": {
+            "description": "Prometheus không gọi được /metrics của 172.19.0.8:8000 trong 30s",
+            "summary": "Instance agent 172.19.0.8:8000 không scrape được"
+          },
+          "state": "firing",
+          "activeAt": "2026-11-25T13:31:07.401817116Z",
+          "value": "0e+00"
+        }
+      ]
+    },
+    {
+      "elapsed_seconds": 90.5,
+      "observed_utc": "2026-11-25T13:32:28.385197+00:00",
+      "alerts": [
+        {
+          "labels": {
+            "alertname": "AgentInstanceDown",
+            "instance": "172.19.0.8:8000",
+            "job": "agent",
+            "severity": "critical"
+          },
+          "annotations": {
+            "description": "Prometheus không gọi được /metrics của 172.19.0.8:8000 trong 30s",
+            "summary": "Instance agent 172.19.0.8:8000 không scrape được"
+          },
+          "state": "firing",
+          "activeAt": "2026-11-25T13:31:07.401817116Z",
+          "value": "0e+00"
+        }
+      ]
+    },
+    {
+      "elapsed_seconds": 95.5,
+      "observed_utc": "2026-11-25T13:32:33.394881+00:00",
+      "alerts": [
+        {
+          "labels": {
+            "alertname": "AgentInstanceDown",
+            "instance": "172.19.0.8:8000",
+            "job": "agent",
+            "severity": "critical"
+          },
+          "annotations": {
+            "description": "Prometheus không gọi được /metrics của 172.19.0.8:8000 trong 30s",
+            "summary": "Instance agent 172.19.0.8:8000 không scrape được"
+          },
+          "state": "firing",
+          "activeAt": "2026-11-25T13:31:07.401817116Z",
+          "value": "0e+00"
+        }
+      ]
+    },
+    {
+      "elapsed_seconds": 100.5,
+      "observed_utc": "2026-11-25T13:32:38.403319+00:00",
+      "alerts": [
+        {
+          "labels": {
+            "alertname": "AgentInstanceDown",
+            "instance": "172.19.0.8:8000",
+            "job": "agent",
+            "severity": "critical"
+          },
+          "annotations": {
+            "description": "Prometheus không gọi được /metrics của 172.19.0.8:8000 trong 30s",
+            "summary": "Instance agent 172.19.0.8:8000 không scrape được"
+          },
+          "state": "firing",
+          "activeAt": "2026-11-25T13:31:07.401817116Z",
+          "value": "0e+00"
+        }
+      ]
+    }
+  ],
+  "first_firing": {
+    "AgentInstanceDown": 45.4
+  },
+  "actual_container_ids": [
+    "3517b60d75b23647ae220882c3fcfc5a78fa22992d0c885d86444abb1d0edf7e",
+    "4cbb1cb80c5ad655036964c8090471942a22ab671ce963f242f51e1b6f61fd54",
+    "919fc8e7708f4b3e1ca7f0f2829c9e887fbf8fe3101bbfa8183146fb0915260f"
+  ],
+  "load_started_utc": "2026-11-25T13:30:58.480422+00:00",
+  "setup_seconds": 15.38,
+  "locust_exit_code": 1,
+  "finished_utc": "2026-11-25T13:32:43.586563+00:00"
+}

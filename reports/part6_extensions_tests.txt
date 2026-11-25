@@ -1,0 +1,12 @@
+test_daily_and_monthly_budgets_roll_over_in_utc (test_shared_limits.SharedLimitsTests.test_daily_and_monthly_budgets_roll_over_in_utc) ... ok
+test_history_is_isolated_by_credential (test_shared_limits.SharedLimitsTests.test_history_is_isolated_by_credential) ... ok
+test_history_retention_and_ttl (test_shared_limits.SharedLimitsTests.test_history_retention_and_ttl) ... ok
+test_parallel_budget_cannot_reserve_more_than_available (test_shared_limits.SharedLimitsTests.test_parallel_budget_cannot_reserve_more_than_available) ... ok
+test_parallel_history_keeps_question_answer_pairs (test_shared_limits.SharedLimitsTests.test_parallel_history_keeps_question_answer_pairs) ... ok
+test_parallel_rate_limit_accepts_exactly_five (test_shared_limits.SharedLimitsTests.test_parallel_rate_limit_accepts_exactly_five) ... ok
+test_settlement_and_release_are_idempotent (test_shared_limits.SharedLimitsTests.test_settlement_and_release_are_idempotent) ... ok
+
+----------------------------------------------------------------------
+Ran 7 tests in 0.062s
+
+OK

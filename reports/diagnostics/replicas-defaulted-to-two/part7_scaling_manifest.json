@@ -1,0 +1,18 @@
+[
+  {
+    "replicas": 1,
+    "started_utc": "2026-11-25T13:06:20.840199+00:00",
+    "exit_code": 1,
+    "users": 100,
+    "ramp_per_second": 10,
+    "duration_seconds": 120
+  },
+  {
+    "replicas": 3,
+    "started_utc": "2026-11-25T13:08:25.923992+00:00",
+    "exit_code": 1,
+    "users": 100,
+    "ramp_per_second": 10,
+    "duration_seconds": 120
+  }
+]

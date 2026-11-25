@@ -1,0 +1,11 @@
+health: 200
+{"status": "ok"}
+
+ready: 200
+{"ready": true}
+
+missing_key: 401
+{"detail": "Missing or invalid API key"}
+
+valid_key: 200
+{"question": "What is deployment?", "answer": "Deployment là quá trình đưa code từ máy bạn lên server để người khác dùng được.", "cost_usd": 2.01e-05, "session_id": "c647a45f-6393-451f-b1b6-d1f565d81e6a", "message_count": 2, "storage": "redis", "served_by": "c8b19422e079"}

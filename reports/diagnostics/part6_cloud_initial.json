@@ -1,0 +1,83 @@
+{
+  "base_url": "https://day14-agent-53c5ceff.up.railway.app",
+  "tested_utc": "2026-11-25T13:34:16.609157+00:00",
+  "tests": {
+    "health": {
+      "status": 200,
+      "body": {
+        "status": "ok"
+      },
+      "headers": {
+        "Content-Type": "application/json",
+        "Date": "Wed, 25 Nov 2026 13:34:16 GMT",
+        "Server": "railway-hikari",
+        "x-content-type-options": "nosniff",
+        "x-railway-request-id": "l1pzu2zYRMmceowv9I3ezw",
+        "x-request-id": "d6fa1f2d8e61413fbab155294f5c6538",
+        "Content-Length": "15",
+        "x-hikari-trace": "sin1.d1nj",
+        "x-railway-edge": "sin1",
+        "Connection": "close"
+      }
+    },
+    "ready": {
+      "status": 200,
+      "body": {
+        "ready": true
+      },
+      "headers": {
+        "Content-Type": "application/json",
+        "Date": "Wed, 25 Nov 2026 13:34:17 GMT",
+        "Server": "railway-hikari",
+        "x-content-type-options": "nosniff",
+        "x-railway-request-id": "3_-EdafpR42dD4GC2prcFg",
+        "x-request-id": "9e8e4101eca448c7bea8d36954b55d03",
+        "Content-Length": "14",
+        "x-hikari-trace": "sin1.98a6",
+        "x-railway-edge": "sin1",
+        "Connection": "close"
+      }
+    },
+    "missing_key": {
+      "status": 401,
+      "body": {
+        "detail": "Missing or invalid API key"
+      },
+      "headers": {
+        "Content-Type": "application/json",
+        "Date": "Wed, 25 Nov 2026 13:34:17 GMT",
+        "Server": "railway-hikari",
+        "x-content-type-options": "nosniff",
+        "x-railway-request-id": "EsT6hiADQQypKfMmjq4OvQ",
+        "x-request-id": "a97b8be3e1fa4cbb9bfd00129ab8808a",
+        "Content-Length": "39",
+        "x-hikari-trace": "sin1.462z",
+        "x-railway-edge": "sin1",
+        "Connection": "close"
+      }
+    },
+    "valid_key": {
+      "status": 200,
+      "body": {
+        "question": "What is deployment?",
+        "answer": "Deployment là quá trình đưa code từ máy bạn lên server để người khác dùng được.",
+        "cost_usd": 2.01e-05
+      },
+      "headers": {
+        "Content-Type": "application/json",
+        "Date": "Wed, 25 Nov 2026 13:34:18 GMT",
+        "Server": "railway-hikari",
+        "x-content-type-options": "nosniff",
+        "x-railway-request-id": "k9ubvt_rTTup8tqXCYBc-A",
+        "x-ratelimit-limit": "10",
+        "x-ratelimit-remaining": "9",
+        "x-request-id": "fb8100a42fb24259b59d596989dcef5a",
+        "Content-Length": "168",
+        "x-hikari-trace": "sin1.d1nj",
+        "x-railway-edge": "sin1",
+        "Connection": "close"
+      }
+    }
+  },
+  "passed": true
+}

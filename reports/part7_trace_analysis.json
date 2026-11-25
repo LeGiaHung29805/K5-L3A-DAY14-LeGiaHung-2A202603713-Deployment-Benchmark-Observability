@@ -1,0 +1,110 @@
+{
+  "slow": {
+    "trace_id": "7ac5c4905cb4f915ed0268ef6f2eaff3",
+    "total_ms": 1741.407,
+    "llm_span": "chat mock-llm-small",
+    "llm_ms": 1659.437,
+    "llm_share_percent": 95.29,
+    "span_count": 4,
+    "exception_events": [],
+    "matching_logs": [
+      {
+        "ts": "2026-11-25T13:40:05.694592+00:00",
+        "level": "INFO",
+        "service": "observable-agent",
+        "instance": "78a2e0952a59",
+        "event": "llm_call",
+        "trace_id": "7ac5c4905cb4f915ed0268ef6f2eaff3",
+        "span_id": "5b6208891d6ee40b",
+        "request_id": "1f85e68b29d8",
+        "model": "mock-llm-small",
+        "agent_version": "v2",
+        "input_tokens": 81,
+        "output_tokens": 46,
+        "cost_usd": 4e-05,
+        "llm_ms": 1658.0
+      },
+      {
+        "ts": "2026-11-25T13:40:05.695666+00:00",
+        "level": "INFO",
+        "service": "observable-agent",
+        "instance": "78a2e0952a59",
+        "event": "http_request",
+        "trace_id": "7ac5c4905cb4f915ed0268ef6f2eaff3",
+        "span_id": "5b6208891d6ee40b",
+        "request_id": "1f85e68b29d8",
+        "method": "POST",
+        "route": "/ask",
+        "status": 200,
+        "ms": 1740.5
+      }
+    ]
+  },
+  "error": {
+    "trace_id": "f01e824ada23f68508d6d0eab1697413",
+    "total_ms": 128.84,
+    "llm_span": "chat mock-llm-small",
+    "llm_ms": 94.572,
+    "llm_share_percent": 73.4,
+    "span_count": 4,
+    "exception_events": [
+      {
+        "timestamp": 1795614004565430,
+        "fields": [
+          {
+            "key": "event",
+            "type": "string",
+            "value": "exception"
+          },
+          {
+            "key": "exception.escaped",
+            "type": "string",
+            "value": "False"
+          },
+          {
+            "key": "exception.message",
+            "type": "string",
+            "value": "Upstream LLM error: 503 Service Unavailable (mock)"
+          },
+          {
+            "key": "exception.stacktrace",
+            "type": "string",
+            "value": "Traceback (most recent call last):\n  File \"/app/app/main.py\", line 153, in run_agent\n    result = await mock_llm.generate(question, context=context,\n             ^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^\n  File \"/app/utils/mock_llm.py\", line 207, in generate\n    raise LLMError(\"Upstream LLM error: 503 Service Unavailable (mock)\")\nutils.mock_llm.LLMError: Upstream LLM error: 503 Service Unavailable (mock)\n"
+          },
+          {
+            "key": "exception.type",
+            "type": "string",
+            "value": "utils.mock_llm.LLMError"
+          }
+        ]
+      }
+    ],
+    "matching_logs": [
+      {
+        "ts": "2026-11-25T13:40:04.566415+00:00",
+        "level": "INFO",
+        "service": "observable-agent",
+        "instance": "78a2e0952a59",
+        "event": "llm_error",
+        "trace_id": "f01e824ada23f68508d6d0eab1697413",
+        "span_id": "03af17457fd97a5f",
+        "request_id": "e4ccbf2526a8",
+        "error": "Upstream LLM error: 503 Service Unavailable (mock)"
+      },
+      {
+        "ts": "2026-11-25T13:40:04.567295+00:00",
+        "level": "INFO",
+        "service": "observable-agent",
+        "instance": "78a2e0952a59",
+        "event": "http_request",
+        "trace_id": "f01e824ada23f68508d6d0eab1697413",
+        "span_id": "03af17457fd97a5f",
+        "request_id": "e4ccbf2526a8",
+        "method": "POST",
+        "route": "/ask",
+        "status": 503,
+        "ms": 127.2
+      }
+    ]
+  }
+}

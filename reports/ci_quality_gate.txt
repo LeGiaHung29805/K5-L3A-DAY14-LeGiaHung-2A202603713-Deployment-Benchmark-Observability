@@ -1,0 +1,328 @@
+evaluate	Set up job	﻿2026-11-25T13:52:22.5367170Z Current runner version: '2.338.2'
+evaluate	Set up job	2026-11-25T13:52:22.5406152Z ##[group]Runner Image Provisioner
+evaluate	Set up job	2026-11-25T13:52:22.5407586Z Hosted Compute Agent
+evaluate	Set up job	2026-11-25T13:52:22.5408721Z Version: 20261111.635
+evaluate	Set up job	2026-11-25T13:52:22.5409831Z Commit: b8a594ea514ff44cadb5342986c68b1eac6e22ed
+evaluate	Set up job	2026-11-25T13:52:22.5411114Z Build Date: 2026-11-11T01:49:01Z
+evaluate	Set up job	2026-11-25T13:52:22.5412607Z Worker ID: {85f649e1-28df-4d4c-9c90-9ced938dd7ed}
+evaluate	Set up job	2026-11-25T13:52:22.5413879Z Region: eastus
+evaluate	Set up job	2026-11-25T13:52:22.5414915Z Cloud: Azure
+evaluate	Set up job	2026-11-25T13:52:22.5415904Z ##[endgroup]
+evaluate	Set up job	2026-11-25T13:52:22.5419432Z ##[group]Operating System
+evaluate	Set up job	2026-11-25T13:52:22.5420784Z Ubuntu
+evaluate	Set up job	2026-11-25T13:52:22.5421766Z 26.04.1
+evaluate	Set up job	2026-11-25T13:52:22.5423001Z LTS
+evaluate	Set up job	2026-11-25T13:52:22.5423958Z ##[endgroup]
+evaluate	Set up job	2026-11-25T13:52:22.5425181Z ##[group]Runner Image
+evaluate	Set up job	2026-11-25T13:52:22.5426318Z Image: ubuntu-26.04
+evaluate	Set up job	2026-11-25T13:52:22.5427805Z Version: 20261116.202.1
+evaluate	Set up job	2026-11-25T13:52:22.5429754Z Included Software: https://github.com/actions/runner-images/blob/ubuntu26/20261116.202/images/ubuntu/Ubuntu2604-Readme.md
+evaluate	Set up job	2026-11-25T13:52:22.5433348Z Image Release: https://github.com/actions/runner-images/releases/tag/ubuntu26%2F20261116.202
+evaluate	Set up job	2026-11-25T13:52:22.5435118Z ##[endgroup]
+evaluate	Set up job	2026-11-25T13:52:22.5437194Z ##[group]GITHUB_TOKEN Permissions
+evaluate	Set up job	2026-11-25T13:52:22.5440364Z Contents: read
+evaluate	Set up job	2026-11-25T13:52:22.5441398Z Metadata: read
+evaluate	Set up job	2026-11-25T13:52:22.5442620Z ##[endgroup]
+evaluate	Set up job	2026-11-25T13:52:22.5445940Z Secret source: Actions
+evaluate	Set up job	2026-11-25T13:52:22.5447602Z Cache mode: write
+evaluate	Set up job	2026-11-25T13:52:22.5449138Z Prepare workflow directory
+evaluate	Set up job	2026-11-25T13:52:22.5836640Z Prepare all required actions
+evaluate	Set up job	2026-11-25T13:52:22.5888768Z Getting action download info
+evaluate	Set up job	2026-11-25T13:52:22.9062053Z Download action repository 'actions/checkout@v4' (SHA:11d5960a326750d5838078e36cf38b85af677262)
+evaluate	Set up job	2026-11-25T13:52:23.0201324Z Download action repository 'actions/setup-python@v5' (SHA:a26af69be951a213d495a4c3e4e4022e16d87065)
+evaluate	Set up job	2026-11-25T13:52:23.2030774Z Complete job name: evaluate
+evaluate	Run actions/checkout@v4	﻿2026-11-25T13:52:23.3027466Z ##[group]Run actions/checkout@v4
+evaluate	Run actions/checkout@v4	2026-11-25T13:52:23.3028750Z with:
+evaluate	Run actions/checkout@v4	2026-11-25T13:52:23.3029781Z   repository: LeGiaHung29805/K5-L3A-DAY14-LeGiaHung-2A202603713-Deployment-Benchmark-Observability
+evaluate	Run actions/checkout@v4	2026-11-25T13:52:23.3034497Z   token: ***
+evaluate	Run actions/checkout@v4	2026-11-25T13:52:23.3035001Z   ssh-strict: true
+evaluate	Run actions/checkout@v4	2026-11-25T13:52:23.3035493Z   ssh-user: git
+evaluate	Run actions/checkout@v4	2026-11-25T13:52:23.3035991Z   persist-credentials: true
+evaluate	Run actions/checkout@v4	2026-11-25T13:52:23.3036533Z   clean: true
+evaluate	Run actions/checkout@v4	2026-11-25T13:52:23.3037023Z   sparse-checkout-cone-mode: true
+evaluate	Run actions/checkout@v4	2026-11-25T13:52:23.3037602Z   fetch-depth: 1
+evaluate	Run actions/checkout@v4	2026-11-25T13:52:23.3038100Z   fetch-tags: false
+evaluate	Run actions/checkout@v4	2026-11-25T13:52:23.3038594Z   show-progress: true
+evaluate	Run actions/checkout@v4	2026-11-25T13:52:23.3039115Z   lfs: false
+evaluate	Run actions/checkout@v4	2026-11-25T13:52:23.3039585Z   submodules: false
+evaluate	Run actions/checkout@v4	2026-11-25T13:52:23.3040092Z   set-safe-directory: true
+evaluate	Run actions/checkout@v4	2026-11-25T13:52:23.3040673Z   allow-unsafe-pr-checkout: false
+evaluate	Run actions/checkout@v4	2026-11-25T13:52:23.3041519Z ##[endgroup]
+evaluate	Run actions/checkout@v4	2026-11-25T13:52:23.6494219Z Syncing repository: LeGiaHung29805/K5-L3A-DAY14-LeGiaHung-2A202603713-Deployment-Benchmark-Observability
+evaluate	Run actions/checkout@v4	2026-11-25T13:52:23.6497332Z ##[group]Getting Git version info
+evaluate	Run actions/checkout@v4	2026-11-25T13:52:23.6499050Z Working directory is '/home/runner/work/K5-L3A-DAY14-LeGiaHung-2A202603713-Deployment-Benchmark-Observability/K5-L3A-DAY14-LeGiaHung-2A202603713-Deployment-Benchmark-Observability'
+evaluate	Run actions/checkout@v4	2026-11-25T13:52:23.6501279Z [command]/usr/bin/git version
+evaluate	Run actions/checkout@v4	2026-11-25T13:52:23.6586439Z git version 2.56.1
+evaluate	Run actions/checkout@v4	2026-11-25T13:52:23.6610997Z ##[endgroup]
+evaluate	Run actions/checkout@v4	2026-11-25T13:52:23.6634146Z Temporarily overriding HOME='/home/runner/work/_temp/0f3637f1-665b-43fd-b0e5-0e2fefa7a014' before making global git config changes
+evaluate	Run actions/checkout@v4	2026-11-25T13:52:23.6651725Z Adding repository directory to the temporary git global config as a safe directory
+evaluate	Run actions/checkout@v4	2026-11-25T13:52:23.6667247Z [command]/usr/bin/git config --global --add safe.directory /home/runner/work/K5-L3A-DAY14-LeGiaHung-2A202603713-Deployment-Benchmark-Observability/K5-L3A-DAY14-LeGiaHung-2A202603713-Deployment-Benchmark-Observability
+evaluate	Run actions/checkout@v4	2026-11-25T13:52:23.6739718Z Deleting the contents of '/home/runner/work/K5-L3A-DAY14-LeGiaHung-2A202603713-Deployment-Benchmark-Observability/K5-L3A-DAY14-LeGiaHung-2A202603713-Deployment-Benchmark-Observability'
+evaluate	Run actions/checkout@v4	2026-11-25T13:52:23.6744447Z ##[group]Initializing the repository
+evaluate	Run actions/checkout@v4	2026-11-25T13:52:23.6749614Z [command]/usr/bin/git init /home/runner/work/K5-L3A-DAY14-LeGiaHung-2A202603713-Deployment-Benchmark-Observability/K5-L3A-DAY14-LeGiaHung-2A202603713-Deployment-Benchmark-Observability
+evaluate	Run actions/checkout@v4	2026-11-25T13:52:23.6893570Z hint: Using 'master' as the name for the initial branch. This default branch name
+evaluate	Run actions/checkout@v4	2026-11-25T13:52:23.6895320Z hint: will change to "main" in Git 3.0. To configure the initial branch name
+evaluate	Run actions/checkout@v4	2026-11-25T13:52:23.6896466Z hint: to use in all of your new repositories, which will suppress this warning,
+evaluate	Run actions/checkout@v4	2026-11-25T13:52:23.6897539Z hint: call:
+evaluate	Run actions/checkout@v4	2026-11-25T13:52:23.6898070Z hint:
+evaluate	Run actions/checkout@v4	2026-11-25T13:52:23.6898746Z hint: 	git config --global init.defaultBranch <name>
+evaluate	Run actions/checkout@v4	2026-11-25T13:52:23.6899511Z hint:
+evaluate	Run actions/checkout@v4	2026-11-25T13:52:23.6900293Z hint: Names commonly chosen instead of 'master' are 'main', 'trunk' and
+evaluate	Run actions/checkout@v4	2026-11-25T13:52:23.6901468Z hint: 'development'. The just-created branch can be renamed via this command:
+evaluate	Run actions/checkout@v4	2026-11-25T13:52:23.6902566Z hint:
+evaluate	Run actions/checkout@v4	2026-11-25T13:52:23.6903140Z hint: 	git branch -m <name>
+evaluate	Run actions/checkout@v4	2026-11-25T13:52:23.6903869Z hint:
+evaluate	Run actions/checkout@v4	2026-11-25T13:52:23.6904625Z hint: Disable this message with "git config set advice.defaultBranchName false"
+evaluate	Run actions/checkout@v4	2026-11-25T13:52:23.6908539Z Initialized empty Git repository in /home/runner/work/K5-L3A-DAY14-LeGiaHung-2A202603713-Deployment-Benchmark-Observability/K5-L3A-DAY14-LeGiaHung-2A202603713-Deployment-Benchmark-Observability/.git/
+evaluate	Run actions/checkout@v4	2026-11-25T13:52:23.6923659Z [command]/usr/bin/git remote add origin https://github.com/LeGiaHung29805/K5-L3A-DAY14-LeGiaHung-2A202603713-Deployment-Benchmark-Observability
+evaluate	Run actions/checkout@v4	2026-11-25T13:52:23.6994865Z ##[endgroup]
+evaluate	Run actions/checkout@v4	2026-11-25T13:52:23.6996399Z ##[group]Disabling automatic garbage collection
+evaluate	Run actions/checkout@v4	2026-11-25T13:52:23.6998293Z [command]/usr/bin/git config --local gc.auto 0
+evaluate	Run actions/checkout@v4	2026-11-25T13:52:23.7039944Z ##[endgroup]
+evaluate	Run actions/checkout@v4	2026-11-25T13:52:23.7041190Z ##[group]Setting up auth
+evaluate	Run actions/checkout@v4	2026-11-25T13:52:23.7047656Z [command]/usr/bin/git config --local --name-only --get-regexp core\.sshCommand
+evaluate	Run actions/checkout@v4	2026-11-25T13:52:23.7094503Z [command]/usr/bin/git submodule foreach --recursive sh -c "git config --local --name-only --get-regexp 'core\.sshCommand' && git config --local --unset-all 'core.sshCommand' || :"
+evaluate	Run actions/checkout@v4	2026-11-25T13:52:23.7626491Z [command]/usr/bin/git config --local --name-only --get-regexp http\.https\:\/\/github\.com\/\.extraheader
+evaluate	Run actions/checkout@v4	2026-11-25T13:52:23.7665240Z [command]/usr/bin/git submodule foreach --recursive sh -c "git config --local --name-only --get-regexp 'http\.https\:\/\/github\.com\/\.extraheader' && git config --local --unset-all 'http.https://github.com/.extraheader' || :"
+evaluate	Run actions/checkout@v4	2026-11-25T13:52:23.7958109Z [command]/usr/bin/git config --local --name-only --get-regexp ^includeIf\.gitdir:
+evaluate	Run actions/checkout@v4	2026-11-25T13:52:23.7996920Z [command]/usr/bin/git submodule foreach --recursive git config --local --show-origin --name-only --get-regexp remote.origin.url
+evaluate	Run actions/checkout@v4	2026-11-25T13:52:23.8287949Z [command]/usr/bin/git config --local http.https://github.com/.extraheader AUTHORIZATION: basic ***
+evaluate	Run actions/checkout@v4	2026-11-25T13:52:23.8334285Z ##[endgroup]
+evaluate	Run actions/checkout@v4	2026-11-25T13:52:23.8344184Z ##[group]Fetching the repository
+evaluate	Run actions/checkout@v4	2026-11-25T13:52:23.8346100Z [command]/usr/bin/git -c protocol.version=2 fetch --no-tags --prune --no-recurse-submodules --depth=1 origin +7efa7d023eeb2c51df053a392f8dec1a9ed160ea:refs/remotes/origin/main
+evaluate	Run actions/checkout@v4	2026-11-25T13:52:24.1197499Z From https://github.com/LeGiaHung29805/K5-L3A-DAY14-LeGiaHung-2A202603713-Deployment-Benchmark-Observability
+evaluate	Run actions/checkout@v4	2026-11-25T13:52:24.1200013Z  * [new ref]         7efa7d023eeb2c51df053a392f8dec1a9ed160ea -> origin/main
+evaluate	Run actions/checkout@v4	2026-11-25T13:52:24.1206367Z ##[endgroup]
+evaluate	Run actions/checkout@v4	2026-11-25T13:52:24.1209571Z ##[group]Determining the checkout info
+evaluate	Run actions/checkout@v4	2026-11-25T13:52:24.1212906Z ##[endgroup]
+evaluate	Run actions/checkout@v4	2026-11-25T13:52:24.1214730Z [command]/usr/bin/git sparse-checkout disable
+evaluate	Run actions/checkout@v4	2026-11-25T13:52:24.1277158Z [command]/usr/bin/git config --local --unset-all extensions.worktreeConfig
+evaluate	Run actions/checkout@v4	2026-11-25T13:52:24.1311212Z ##[group]Checking out the ref
+evaluate	Run actions/checkout@v4	2026-11-25T13:52:24.1316475Z [command]/usr/bin/git checkout --progress --force -B main refs/remotes/origin/main
+evaluate	Run actions/checkout@v4	2026-11-25T13:52:24.1492554Z Switched to a new branch 'main'
+evaluate	Run actions/checkout@v4	2026-11-25T13:52:24.1498638Z branch 'main' set up to track 'origin/main'.
+evaluate	Run actions/checkout@v4	2026-11-25T13:52:24.1508727Z ##[endgroup]
+evaluate	Run actions/checkout@v4	2026-11-25T13:52:24.1567159Z [command]/usr/bin/git log -1 --format=%H
+evaluate	Run actions/checkout@v4	2026-11-25T13:52:24.1597176Z 7efa7d023eeb2c51df053a392f8dec1a9ed160ea
+evaluate	Run actions/setup-python@v5	﻿2026-11-25T13:52:24.2012638Z ##[group]Run actions/setup-python@v5
+evaluate	Run actions/setup-python@v5	2026-11-25T13:52:24.2013982Z with:
+evaluate	Run actions/setup-python@v5	2026-11-25T13:52:24.2014878Z   python-version: 3.11
+evaluate	Run actions/setup-python@v5	2026-11-25T13:52:24.2015982Z   check-latest: false
+evaluate	Run actions/setup-python@v5	2026-11-25T13:52:24.2026124Z   token: ***
+evaluate	Run actions/setup-python@v5	2026-11-25T13:52:24.2027137Z   update-environment: true
+evaluate	Run actions/setup-python@v5	2026-11-25T13:52:24.2028288Z   allow-prereleases: false
+evaluate	Run actions/setup-python@v5	2026-11-25T13:52:24.2029393Z   freethreaded: false
+evaluate	Run actions/setup-python@v5	2026-11-25T13:52:24.2030394Z ##[endgroup]
+evaluate	Run actions/setup-python@v5	2026-11-25T13:52:24.3479034Z ##[group]Installed versions
+evaluate	Run actions/setup-python@v5	2026-11-25T13:52:24.3667763Z (node:2374) [DEP0040] DeprecationWarning: The `punycode` module is deprecated. Please use a userland alternative instead.
+evaluate	Run actions/setup-python@v5	2026-11-25T13:52:24.3672917Z (Use `node --trace-deprecation ...` to show where the warning was created)
+evaluate	Run actions/setup-python@v5	2026-11-25T13:52:24.3675146Z Successfully set up CPython (3.11.18)
+evaluate	Run actions/setup-python@v5	2026-11-25T13:52:24.3677781Z ##[endgroup]
+evaluate	Run pip install -r 06-lab-complete/benchmark-observability/develop/requirements.txt	﻿2026-11-25T13:52:24.3999265Z ##[group]Run pip install -r 06-lab-complete/benchmark-observability/develop/requirements.txt
+evaluate	Run pip install -r 06-lab-complete/benchmark-observability/develop/requirements.txt	2026-11-25T13:52:24.4002402Z ^[[36;1mpip install -r 06-lab-complete/benchmark-observability/develop/requirements.txt^[[0m
+evaluate	Run pip install -r 06-lab-complete/benchmark-observability/develop/requirements.txt	2026-11-25T13:52:24.4088836Z shell: /usr/bin/bash -e {0}
+evaluate	Run pip install -r 06-lab-complete/benchmark-observability/develop/requirements.txt	2026-11-25T13:52:24.4090735Z env:
+evaluate	Run pip install -r 06-lab-complete/benchmark-observability/develop/requirements.txt	2026-11-25T13:52:24.4092805Z   pythonLocation: /opt/hostedtoolcache/Python/3.11.18/x64
+evaluate	Run pip install -r 06-lab-complete/benchmark-observability/develop/requirements.txt	2026-11-25T13:52:24.4095348Z   PKG_CONFIG_PATH: /opt/hostedtoolcache/Python/3.11.18/x64/lib/pkgconfig
+evaluate	Run pip install -r 06-lab-complete/benchmark-observability/develop/requirements.txt	2026-11-25T13:52:24.4097326Z   Python_ROOT_DIR: /opt/hostedtoolcache/Python/3.11.18/x64
+evaluate	Run pip install -r 06-lab-complete/benchmark-observability/develop/requirements.txt	2026-11-25T13:52:24.4099688Z   Python2_ROOT_DIR: /opt/hostedtoolcache/Python/3.11.18/x64
+evaluate	Run pip install -r 06-lab-complete/benchmark-observability/develop/requirements.txt	2026-11-25T13:52:24.4102415Z   Python3_ROOT_DIR: /opt/hostedtoolcache/Python/3.11.18/x64
+evaluate	Run pip install -r 06-lab-complete/benchmark-observability/develop/requirements.txt	2026-11-25T13:52:24.4104839Z   LD_LIBRARY_PATH: /opt/hostedtoolcache/Python/3.11.18/x64/lib
+evaluate	Run pip install -r 06-lab-complete/benchmark-observability/develop/requirements.txt	2026-11-25T13:52:24.4106739Z ##[endgroup]
+evaluate	Run pip install -r 06-lab-complete/benchmark-observability/develop/requirements.txt	2026-11-25T13:52:25.3493890Z Collecting fastapi==0.115.0 (from -r 06-lab-complete/benchmark-observability/develop/requirements.txt (line 1))
+evaluate	Run pip install -r 06-lab-complete/benchmark-observability/develop/requirements.txt	2026-11-25T13:52:25.3904976Z   Downloading fastapi-0.115.0-py3-none-any.whl.metadata (27 kB)
+evaluate	Run pip install -r 06-lab-complete/benchmark-observability/develop/requirements.txt	2026-11-25T13:52:25.4172659Z Collecting uvicorn==0.30.0 (from uvicorn[standard]==0.30.0->-r 06-lab-complete/benchmark-observability/develop/requirements.txt (line 2))
+evaluate	Run pip install -r 06-lab-complete/benchmark-observability/develop/requirements.txt	2026-11-25T13:52:25.4220063Z   Downloading uvicorn-0.30.0-py3-none-any.whl.metadata (6.3 kB)
+evaluate	Run pip install -r 06-lab-complete/benchmark-observability/develop/requirements.txt	2026-11-25T13:52:25.5302829Z Collecting pydantic==2.9.0 (from -r 06-lab-complete/benchmark-observability/develop/requirements.txt (line 3))
+evaluate	Run pip install -r 06-lab-complete/benchmark-observability/develop/requirements.txt	2026-11-25T13:52:25.5352860Z   Downloading pydantic-2.9.0-py3-none-any.whl.metadata (146 kB)
+evaluate	Run pip install -r 06-lab-complete/benchmark-observability/develop/requirements.txt	2026-11-25T13:52:25.5648766Z Collecting prometheus-client==0.26.0 (from -r 06-lab-complete/benchmark-observability/develop/requirements.txt (line 4))
+evaluate	Run pip install -r 06-lab-complete/benchmark-observability/develop/requirements.txt	2026-11-25T13:52:25.5689431Z   Downloading prometheus_client-0.26.0-py3-none-any.whl.metadata (2.1 kB)
+evaluate	Run pip install -r 06-lab-complete/benchmark-observability/develop/requirements.txt	2026-11-25T13:52:25.5852755Z Collecting httpx==0.27.2 (from -r 06-lab-complete/benchmark-observability/develop/requirements.txt (line 5))
+evaluate	Run pip install -r 06-lab-complete/benchmark-observability/develop/requirements.txt	2026-11-25T13:52:25.5889897Z   Downloading httpx-0.27.2-py3-none-any.whl.metadata (7.1 kB)
+evaluate	Run pip install -r 06-lab-complete/benchmark-observability/develop/requirements.txt	2026-11-25T13:52:25.6255759Z Collecting starlette<0.39.0,>=0.37.2 (from fastapi==0.115.0->-r 06-lab-complete/benchmark-observability/develop/requirements.txt (line 1))
+evaluate	Run pip install -r 06-lab-complete/benchmark-observability/develop/requirements.txt	2026-11-25T13:52:25.6290472Z   Downloading starlette-0.38.6-py3-none-any.whl.metadata (6.0 kB)
+evaluate	Run pip install -r 06-lab-complete/benchmark-observability/develop/requirements.txt	2026-11-25T13:52:25.6478716Z Collecting typing-extensions>=4.8.0 (from fastapi==0.115.0->-r 06-lab-complete/benchmark-observability/develop/requirements.txt (line 1))
+evaluate	Run pip install -r 06-lab-complete/benchmark-observability/develop/requirements.txt	2026-11-25T13:52:25.6547785Z   Downloading typing_extensions-4.16.0-py3-none-any.whl.metadata (3.3 kB)
+evaluate	Run pip install -r 06-lab-complete/benchmark-observability/develop/requirements.txt	2026-11-25T13:52:25.6682879Z Collecting annotated-types>=0.4.0 (from pydantic==2.9.0->-r 06-lab-complete/benchmark-observability/develop/requirements.txt (line 3))
+evaluate	Run pip install -r 06-lab-complete/benchmark-observability/develop/requirements.txt	2026-11-25T13:52:25.6721397Z   Downloading annotated_types-0.8.0-py3-none-any.whl.metadata (15 kB)
+evaluate	Run pip install -r 06-lab-complete/benchmark-observability/develop/requirements.txt	2026-11-25T13:52:26.3886854Z Collecting pydantic-core==2.23.2 (from pydantic==2.9.0->-r 06-lab-complete/benchmark-observability/develop/requirements.txt (line 3))
+evaluate	Run pip install -r 06-lab-complete/benchmark-observability/develop/requirements.txt	2026-11-25T13:52:26.3930677Z   Downloading pydantic_core-2.23.2-cp311-cp311-manylinux_2_17_x86_64.manylinux2014_x86_64.whl.metadata (6.6 kB)
+evaluate	Run pip install -r 06-lab-complete/benchmark-observability/develop/requirements.txt	2026-11-25T13:52:26.4151921Z Collecting tzdata (from pydantic==2.9.0->-r 06-lab-complete/benchmark-observability/develop/requirements.txt (line 3))
+evaluate	Run pip install -r 06-lab-complete/benchmark-observability/develop/requirements.txt	2026-11-25T13:52:26.4190328Z   Downloading tzdata-2026.6-py2.py3-none-any.whl.metadata (1.4 kB)
+evaluate	Run pip install -r 06-lab-complete/benchmark-observability/develop/requirements.txt	2026-11-25T13:52:26.4630878Z Collecting click>=7.0 (from uvicorn==0.30.0->uvicorn[standard]==0.30.0->-r 06-lab-complete/benchmark-observability/develop/requirements.txt (line 2))
+evaluate	Run pip install -r 06-lab-complete/benchmark-observability/develop/requirements.txt	2026-11-25T13:52:26.4671589Z   Downloading click-8.5.1-py3-none-any.whl.metadata (2.6 kB)
+evaluate	Run pip install -r 06-lab-complete/benchmark-observability/develop/requirements.txt	2026-11-25T13:52:26.5593384Z Collecting h11>=0.8 (from uvicorn==0.30.0->uvicorn[standard]==0.30.0->-r 06-lab-complete/benchmark-observability/develop/requirements.txt (line 2))
+evaluate	Run pip install -r 06-lab-complete/benchmark-observability/develop/requirements.txt	2026-11-25T13:52:26.5634567Z   Downloading h11-0.16.0-py3-none-any.whl.metadata (8.3 kB)
+evaluate	Run pip install -r 06-lab-complete/benchmark-observability/develop/requirements.txt	2026-11-25T13:52:26.5818571Z Collecting anyio (from httpx==0.27.2->-r 06-lab-complete/benchmark-observability/develop/requirements.txt (line 5))
+evaluate	Run pip install -r 06-lab-complete/benchmark-observability/develop/requirements.txt	2026-11-25T13:52:26.5854881Z   Downloading anyio-4.16.0-py3-none-any.whl.metadata (4.7 kB)
+evaluate	Run pip install -r 06-lab-complete/benchmark-observability/develop/requirements.txt	2026-11-25T13:52:26.6187146Z Collecting certifi (from httpx==0.27.2->-r 06-lab-complete/benchmark-observability/develop/requirements.txt (line 5))
+evaluate	Run pip install -r 06-lab-complete/benchmark-observability/develop/requirements.txt	2026-11-25T13:52:26.6222737Z   Downloading certifi-2026.11.20-py3-none-any.whl.metadata (2.5 kB)
+evaluate	Run pip install -r 06-lab-complete/benchmark-observability/develop/requirements.txt	2026-11-25T13:52:26.6383695Z Collecting httpcore==1.* (from httpx==0.27.2->-r 06-lab-complete/benchmark-observability/develop/requirements.txt (line 5))
+evaluate	Run pip install -r 06-lab-complete/benchmark-observability/develop/requirements.txt	2026-11-25T13:52:26.6417657Z   Downloading httpcore-1.0.9-py3-none-any.whl.metadata (21 kB)
+evaluate	Run pip install -r 06-lab-complete/benchmark-observability/develop/requirements.txt	2026-11-25T13:52:26.6576009Z Collecting idna (from httpx==0.27.2->-r 06-lab-complete/benchmark-observability/develop/requirements.txt (line 5))
+evaluate	Run pip install -r 06-lab-complete/benchmark-observability/develop/requirements.txt	2026-11-25T13:52:26.6615440Z   Downloading idna-3.20-py3-none-any.whl.metadata (7.2 kB)
+evaluate	Run pip install -r 06-lab-complete/benchmark-observability/develop/requirements.txt	2026-11-25T13:52:26.6730389Z Collecting sniffio (from httpx==0.27.2->-r 06-lab-complete/benchmark-observability/develop/requirements.txt (line 5))
+evaluate	Run pip install -r 06-lab-complete/benchmark-observability/develop/requirements.txt	2026-11-25T13:52:26.6773100Z   Downloading sniffio-1.3.1-py3-none-any.whl.metadata (3.9 kB)
+evaluate	Run pip install -r 06-lab-complete/benchmark-observability/develop/requirements.txt	2026-11-25T13:52:26.7219318Z Collecting httptools>=0.5.0 (from uvicorn[standard]==0.30.0->-r 06-lab-complete/benchmark-observability/develop/requirements.txt (line 2))
+evaluate	Run pip install -r 06-lab-complete/benchmark-observability/develop/requirements.txt	2026-11-25T13:52:26.7256498Z   Downloading httptools-0.9.0-cp311-cp311-manylinux1_x86_64.manylinux_2_28_x86_64.manylinux_2_5_x86_64.whl.metadata (3.5 kB)
+evaluate	Run pip install -r 06-lab-complete/benchmark-observability/develop/requirements.txt	2026-11-25T13:52:26.7430191Z Collecting python-dotenv>=0.13 (from uvicorn[standard]==0.30.0->-r 06-lab-complete/benchmark-observability/develop/requirements.txt (line 2))
+evaluate	Run pip install -r 06-lab-complete/benchmark-observability/develop/requirements.txt	2026-11-25T13:52:26.7467110Z   Downloading python_dotenv-1.2.4-py3-none-any.whl.metadata (29 kB)
+evaluate	Run pip install -r 06-lab-complete/benchmark-observability/develop/requirements.txt	2026-11-25T13:52:26.7883843Z Collecting pyyaml>=5.1 (from uvicorn[standard]==0.30.0->-r 06-lab-complete/benchmark-observability/develop/requirements.txt (line 2))
+evaluate	Run pip install -r 06-lab-complete/benchmark-observability/develop/requirements.txt	2026-11-25T13:52:26.7921501Z   Downloading pyyaml-6.0.4-cp311-cp311-manylinux2014_x86_64.manylinux_2_17_x86_64.manylinux_2_28_x86_64.whl.metadata (2.3 kB)
+evaluate	Run pip install -r 06-lab-complete/benchmark-observability/develop/requirements.txt	2026-11-25T13:52:26.8314244Z Collecting uvloop!=0.15.0,!=0.15.1,>=0.14.0 (from uvicorn[standard]==0.30.0->-r 06-lab-complete/benchmark-observability/develop/requirements.txt (line 2))
+evaluate	Run pip install -r 06-lab-complete/benchmark-observability/develop/requirements.txt	2026-11-25T13:52:26.8358551Z   Downloading uvloop-0.23.0-cp311-cp311-manylinux2014_x86_64.manylinux_2_17_x86_64.manylinux_2_28_x86_64.whl.metadata (5.1 kB)
+evaluate	Run pip install -r 06-lab-complete/benchmark-observability/develop/requirements.txt	2026-11-25T13:52:26.9059721Z Collecting watchfiles>=0.13 (from uvicorn[standard]==0.30.0->-r 06-lab-complete/benchmark-observability/develop/requirements.txt (line 2))
+evaluate	Run pip install -r 06-lab-complete/benchmark-observability/develop/requirements.txt	2026-11-25T13:52:26.9094497Z   Downloading watchfiles-1.3.0-cp310-abi3-manylinux_2_17_x86_64.manylinux2014_x86_64.whl.metadata (4.9 kB)
+evaluate	Run pip install -r 06-lab-complete/benchmark-observability/develop/requirements.txt	2026-11-25T13:52:27.0319234Z Collecting websockets>=10.4 (from uvicorn[standard]==0.30.0->-r 06-lab-complete/benchmark-observability/develop/requirements.txt (line 2))
+evaluate	Run pip install -r 06-lab-complete/benchmark-observability/develop/requirements.txt	2026-11-25T13:52:27.0356413Z   Downloading websockets-17.4-cp311-cp311-manylinux1_x86_64.manylinux_2_28_x86_64.manylinux_2_5_x86_64.whl.metadata (6.3 kB)
+evaluate	Run pip install -r 06-lab-complete/benchmark-observability/develop/requirements.txt	2026-11-25T13:52:27.0744137Z Downloading fastapi-0.115.0-py3-none-any.whl (94 kB)
+evaluate	Run pip install -r 06-lab-complete/benchmark-observability/develop/requirements.txt	2026-11-25T13:52:27.0811218Z Downloading pydantic-2.9.0-py3-none-any.whl (434 kB)
+evaluate	Run pip install -r 06-lab-complete/benchmark-observability/develop/requirements.txt	2026-11-25T13:52:27.0939865Z Downloading uvicorn-0.30.0-py3-none-any.whl (62 kB)
+evaluate	Run pip install -r 06-lab-complete/benchmark-observability/develop/requirements.txt	2026-11-25T13:52:27.1001181Z Downloading prometheus_client-0.26.0-py3-none-any.whl (64 kB)
+evaluate	Run pip install -r 06-lab-complete/benchmark-observability/develop/requirements.txt	2026-11-25T13:52:27.1054320Z Downloading httpx-0.27.2-py3-none-any.whl (76 kB)
+evaluate	Run pip install -r 06-lab-complete/benchmark-observability/develop/requirements.txt	2026-11-25T13:52:27.1141587Z Downloading pydantic_core-2.23.2-cp311-cp311-manylinux_2_17_x86_64.manylinux2014_x86_64.whl (2.1 MB)
+evaluate	Run pip install -r 06-lab-complete/benchmark-observability/develop/requirements.txt	2026-11-25T13:52:27.1428200Z    ━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━ 2.1/2.1 MB 87.1 MB/s  0:00:00
+evaluate	Run pip install -r 06-lab-complete/benchmark-observability/develop/requirements.txt	2026-11-25T13:52:27.1471122Z Downloading httpcore-1.0.9-py3-none-any.whl (78 kB)
+evaluate	Run pip install -r 06-lab-complete/benchmark-observability/develop/requirements.txt	2026-11-25T13:52:27.1527959Z Downloading starlette-0.38.6-py3-none-any.whl (71 kB)
+evaluate	Run pip install -r 06-lab-complete/benchmark-observability/develop/requirements.txt	2026-11-25T13:52:27.1595461Z Downloading anyio-4.16.0-py3-none-any.whl (134 kB)
+evaluate	Run pip install -r 06-lab-complete/benchmark-observability/develop/requirements.txt	2026-11-25T13:52:27.1652864Z Downloading annotated_types-0.8.0-py3-none-any.whl (13 kB)
+evaluate	Run pip install -r 06-lab-complete/benchmark-observability/develop/requirements.txt	2026-11-25T13:52:27.1716176Z Downloading click-8.5.1-py3-none-any.whl (126 kB)
+evaluate	Run pip install -r 06-lab-complete/benchmark-observability/develop/requirements.txt	2026-11-25T13:52:27.1774894Z Downloading h11-0.16.0-py3-none-any.whl (37 kB)
+evaluate	Run pip install -r 06-lab-complete/benchmark-observability/develop/requirements.txt	2026-11-25T13:52:27.1851203Z Downloading httptools-0.9.0-cp311-cp311-manylinux1_x86_64.manylinux_2_28_x86_64.manylinux_2_5_x86_64.whl (499 kB)
+evaluate	Run pip install -r 06-lab-complete/benchmark-observability/develop/requirements.txt	2026-11-25T13:52:27.1944383Z Downloading idna-3.20-py3-none-any.whl (69 kB)
+evaluate	Run pip install -r 06-lab-complete/benchmark-observability/develop/requirements.txt	2026-11-25T13:52:27.1999267Z Downloading python_dotenv-1.2.4-py3-none-any.whl (23 kB)
+evaluate	Run pip install -r 06-lab-complete/benchmark-observability/develop/requirements.txt	2026-11-25T13:52:27.2056143Z Downloading pyyaml-6.0.4-cp311-cp311-manylinux2014_x86_64.manylinux_2_17_x86_64.manylinux_2_28_x86_64.whl (828 kB)
+evaluate	Run pip install -r 06-lab-complete/benchmark-observability/develop/requirements.txt	2026-11-25T13:52:27.2149078Z    ━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━ 828.0/828.0 kB 97.3 MB/s  0:00:00
+evaluate	Run pip install -r 06-lab-complete/benchmark-observability/develop/requirements.txt	2026-11-25T13:52:27.2192089Z Downloading typing_extensions-4.16.0-py3-none-any.whl (45 kB)
+evaluate	Run pip install -r 06-lab-complete/benchmark-observability/develop/requirements.txt	2026-11-25T13:52:27.2262356Z Downloading uvloop-0.23.0-cp311-cp311-manylinux2014_x86_64.manylinux_2_17_x86_64.manylinux_2_28_x86_64.whl (4.0 MB)
+evaluate	Run pip install -r 06-lab-complete/benchmark-observability/develop/requirements.txt	2026-11-25T13:52:27.2486980Z    ━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━ 4.0/4.0 MB 195.8 MB/s  0:00:00
+evaluate	Run pip install -r 06-lab-complete/benchmark-observability/develop/requirements.txt	2026-11-25T13:52:27.2522400Z Downloading watchfiles-1.3.0-cp310-abi3-manylinux_2_17_x86_64.manylinux2014_x86_64.whl (458 kB)
+evaluate	Run pip install -r 06-lab-complete/benchmark-observability/develop/requirements.txt	2026-11-25T13:52:27.2598715Z Downloading websockets-17.4-cp311-cp311-manylinux1_x86_64.manylinux_2_28_x86_64.manylinux_2_5_x86_64.whl (226 kB)
+evaluate	Run pip install -r 06-lab-complete/benchmark-observability/develop/requirements.txt	2026-11-25T13:52:27.2660122Z Downloading certifi-2026.11.20-py3-none-any.whl (127 kB)
+evaluate	Run pip install -r 06-lab-complete/benchmark-observability/develop/requirements.txt	2026-11-25T13:52:27.2714689Z Downloading sniffio-1.3.1-py3-none-any.whl (10 kB)
+evaluate	Run pip install -r 06-lab-complete/benchmark-observability/develop/requirements.txt	2026-11-25T13:52:27.2767929Z Downloading tzdata-2026.6-py2.py3-none-any.whl (348 kB)
+evaluate	Run pip install -r 06-lab-complete/benchmark-observability/develop/requirements.txt	2026-11-25T13:52:27.4355895Z Installing collected packages: websockets, uvloop, tzdata, typing-extensions, sniffio, pyyaml, python-dotenv, prometheus-client, idna, httptools, h11, click, certifi, annotated-types, uvicorn, pydantic-core, httpcore, anyio, watchfiles, starlette, pydantic, httpx, fastapi
+evaluate	Run pip install -r 06-lab-complete/benchmark-observability/develop/requirements.txt	2026-11-25T13:52:28.7564006Z 
+evaluate	Run pip install -r 06-lab-complete/benchmark-observability/develop/requirements.txt	2026-11-25T13:52:28.7580617Z Successfully installed annotated-types-0.8.0 anyio-4.16.0 certifi-2026.11.20 click-8.5.1 fastapi-0.115.0 h11-0.16.0 httpcore-1.0.9 httptools-0.9.0 httpx-0.27.2 idna-3.20 prometheus-client-0.26.0 pydantic-2.9.0 pydantic-core-2.23.2 python-dotenv-1.2.4 pyyaml-6.0.4 sniffio-1.3.1 starlette-0.38.6 typing-extensions-4.16.0 tzdata-2026.6 uvicorn-0.30.0 uvloop-0.23.0 watchfiles-1.3.0 websockets-17.4
+evaluate	Start v2 without random faults for deterministic quality evaluation	﻿2026-11-25T13:52:28.8873717Z ##[group]Run AGENT_VERSION=v2 PORT=8002 MOCK_ERROR_RATE=0 MOCK_SLOW_RATE=0 python app.py > /tmp/day14-eval.log 2>&1 &
+evaluate	Start v2 without random faults for deterministic quality evaluation	2026-11-25T13:52:28.8874598Z ^[[36;1mAGENT_VERSION=v2 PORT=8002 MOCK_ERROR_RATE=0 MOCK_SLOW_RATE=0 python app.py > /tmp/day14-eval.log 2>&1 &^[[0m
+evaluate	Start v2 without random faults for deterministic quality evaluation	2026-11-25T13:52:28.8875141Z ^[[36;1mecho $! > /tmp/day14-eval.pid^[[0m
+evaluate	Start v2 without random faults for deterministic quality evaluation	2026-11-25T13:52:28.8875439Z ^[[36;1mfor attempt in $(seq 1 60); do^[[0m
+evaluate	Start v2 without random faults for deterministic quality evaluation	2026-11-25T13:52:28.8875922Z ^[[36;1m  if curl -fsS http://127.0.0.1:8002/health; then exit 0; fi^[[0m
+evaluate	Start v2 without random faults for deterministic quality evaluation	2026-11-25T13:52:28.8876307Z ^[[36;1m  sleep 1^[[0m
+evaluate	Start v2 without random faults for deterministic quality evaluation	2026-11-25T13:52:28.8876718Z ^[[36;1mdone^[[0m
+evaluate	Start v2 without random faults for deterministic quality evaluation	2026-11-25T13:52:28.8876942Z ^[[36;1mcat /tmp/day14-eval.log^[[0m
+evaluate	Start v2 without random faults for deterministic quality evaluation	2026-11-25T13:52:28.8877195Z ^[[36;1mexit 1^[[0m
+evaluate	Start v2 without random faults for deterministic quality evaluation	2026-11-25T13:52:28.8913533Z shell: /usr/bin/bash -e {0}
+evaluate	Start v2 without random faults for deterministic quality evaluation	2026-11-25T13:52:28.8913798Z env:
+evaluate	Start v2 without random faults for deterministic quality evaluation	2026-11-25T13:52:28.8914075Z   pythonLocation: /opt/hostedtoolcache/Python/3.11.18/x64
+evaluate	Start v2 without random faults for deterministic quality evaluation	2026-11-25T13:52:28.8914540Z   PKG_CONFIG_PATH: /opt/hostedtoolcache/Python/3.11.18/x64/lib/pkgconfig
+evaluate	Start v2 without random faults for deterministic quality evaluation	2026-11-25T13:52:28.8914989Z   Python_ROOT_DIR: /opt/hostedtoolcache/Python/3.11.18/x64
+evaluate	Start v2 without random faults for deterministic quality evaluation	2026-11-25T13:52:28.8915437Z   Python2_ROOT_DIR: /opt/hostedtoolcache/Python/3.11.18/x64
+evaluate	Start v2 without random faults for deterministic quality evaluation	2026-11-25T13:52:28.8915843Z   Python3_ROOT_DIR: /opt/hostedtoolcache/Python/3.11.18/x64
+evaluate	Start v2 without random faults for deterministic quality evaluation	2026-11-25T13:52:28.8916239Z   LD_LIBRARY_PATH: /opt/hostedtoolcache/Python/3.11.18/x64/lib
+evaluate	Start v2 without random faults for deterministic quality evaluation	2026-11-25T13:52:28.8916575Z ##[endgroup]
+evaluate	Start v2 without random faults for deterministic quality evaluation	2026-11-25T13:52:28.9132747Z curl: (7) Failed to connect to 127.0.0.1 port 8002 after 1 ms: Could not connect to server
+evaluate	Start v2 without random faults for deterministic quality evaluation	2026-11-25T13:52:29.9384811Z {"status":"ok","agent_version":"v2","uptime_seconds":0.3}
+evaluate	Require 100% accuracy and no regression against recorded v2 baseline	﻿2026-11-25T13:52:29.9425743Z ##[group]Run python 06-lab-complete/benchmark-observability/develop/eval/run_eval.py \
+evaluate	Require 100% accuracy and no regression against recorded v2 baseline	2026-11-25T13:52:29.9426510Z ^[[36;1mpython 06-lab-complete/benchmark-observability/develop/eval/run_eval.py \^[[0m
+evaluate	Require 100% accuracy and no regression against recorded v2 baseline	2026-11-25T13:52:29.9427085Z ^[[36;1m  --url http://127.0.0.1:8002 --min-accuracy 1.0 \^[[0m
+evaluate	Require 100% accuracy and no regression against recorded v2 baseline	2026-11-25T13:52:29.9427564Z ^[[36;1m  --baseline reports/eval_v2.json --out reports/eval_ci.json^[[0m
+evaluate	Require 100% accuracy and no regression against recorded v2 baseline	2026-11-25T13:52:29.9460950Z shell: /usr/bin/bash -e {0}
+evaluate	Require 100% accuracy and no regression against recorded v2 baseline	2026-11-25T13:52:29.9461221Z env:
+evaluate	Require 100% accuracy and no regression against recorded v2 baseline	2026-11-25T13:52:29.9461501Z   pythonLocation: /opt/hostedtoolcache/Python/3.11.18/x64
+evaluate	Require 100% accuracy and no regression against recorded v2 baseline	2026-11-25T13:52:29.9461959Z   PKG_CONFIG_PATH: /opt/hostedtoolcache/Python/3.11.18/x64/lib/pkgconfig
+evaluate	Require 100% accuracy and no regression against recorded v2 baseline	2026-11-25T13:52:29.9462656Z   Python_ROOT_DIR: /opt/hostedtoolcache/Python/3.11.18/x64
+evaluate	Require 100% accuracy and no regression against recorded v2 baseline	2026-11-25T13:52:29.9463064Z   Python2_ROOT_DIR: /opt/hostedtoolcache/Python/3.11.18/x64
+evaluate	Require 100% accuracy and no regression against recorded v2 baseline	2026-11-25T13:52:29.9463459Z   Python3_ROOT_DIR: /opt/hostedtoolcache/Python/3.11.18/x64
+evaluate	Require 100% accuracy and no regression against recorded v2 baseline	2026-11-25T13:52:29.9463864Z   LD_LIBRARY_PATH: /opt/hostedtoolcache/Python/3.11.18/x64/lib
+evaluate	Require 100% accuracy and no regression against recorded v2 baseline	2026-11-25T13:52:29.9464261Z ##[endgroup]
+evaluate	Require 100% accuracy and no regression against recorded v2 baseline	2026-11-25T13:52:34.4036051Z 
+evaluate	Require 100% accuracy and no regression against recorded v2 baseline	2026-11-25T13:52:34.4037368Z 🧪 Eval agent tại http://127.0.0.1:8002
+evaluate	Require 100% accuracy and no regression against recorded v2 baseline	2026-11-25T13:52:34.4037768Z 
+evaluate	Require 100% accuracy and no regression against recorded v2 baseline	2026-11-25T13:52:34.4038004Z   ✅ basic-01         score=1.00    169.5ms
+evaluate	Require 100% accuracy and no regression against recorded v2 baseline	2026-11-25T13:52:34.4038476Z   ✅ docker-01        score=1.00    166.6ms
+evaluate	Require 100% accuracy and no regression against recorded v2 baseline	2026-11-25T13:52:34.4038929Z   ✅ docker-02        score=1.00    172.3ms
+evaluate	Require 100% accuracy and no regression against recorded v2 baseline	2026-11-25T13:52:34.4039377Z   ✅ probe-01         score=1.00    199.3ms
+evaluate	Require 100% accuracy and no regression against recorded v2 baseline	2026-11-25T13:52:34.4039826Z   ✅ probe-02         score=1.00    201.1ms
+evaluate	Require 100% accuracy and no regression against recorded v2 baseline	2026-11-25T13:52:34.4040278Z   ✅ reliability-01   score=1.00    197.9ms
+evaluate	Require 100% accuracy and no regression against recorded v2 baseline	2026-11-25T13:52:34.4040725Z   ✅ config-01        score=1.00    190.3ms
+evaluate	Require 100% accuracy and no regression against recorded v2 baseline	2026-11-25T13:52:34.4041168Z   ✅ security-01      score=1.00    212.3ms
+evaluate	Require 100% accuracy and no regression against recorded v2 baseline	2026-11-25T13:52:34.4041611Z   ✅ security-02      score=1.00    166.0ms
+evaluate	Require 100% accuracy and no regression against recorded v2 baseline	2026-11-25T13:52:34.4042054Z   ✅ scaling-01       score=1.00    166.1ms
+evaluate	Require 100% accuracy and no regression against recorded v2 baseline	2026-11-25T13:52:34.4042751Z   ✅ scaling-02       score=1.00    198.1ms
+evaluate	Require 100% accuracy and no regression against recorded v2 baseline	2026-11-25T13:52:34.4043203Z   ✅ scaling-03       score=1.00    197.0ms
+evaluate	Require 100% accuracy and no regression against recorded v2 baseline	2026-11-25T13:52:34.4043700Z   ✅ bench-01         score=1.00    184.0ms
+evaluate	Require 100% accuracy and no regression against recorded v2 baseline	2026-11-25T13:52:34.4044141Z   ✅ bench-02         score=1.00    162.0ms
+evaluate	Require 100% accuracy and no regression against recorded v2 baseline	2026-11-25T13:52:34.4044586Z   ✅ obs-01           score=1.00    205.1ms
+evaluate	Require 100% accuracy and no regression against recorded v2 baseline	2026-11-25T13:52:34.4045019Z   ✅ obs-02           score=1.00    211.0ms
+evaluate	Require 100% accuracy and no regression against recorded v2 baseline	2026-11-25T13:52:34.4045471Z   ✅ obs-03           score=1.00    182.0ms
+evaluate	Require 100% accuracy and no regression against recorded v2 baseline	2026-11-25T13:52:34.4045937Z   ✅ obs-04           score=1.00    214.2ms
+evaluate	Require 100% accuracy and no regression against recorded v2 baseline	2026-11-25T13:52:34.4046373Z   ✅ obs-05           score=1.00    169.2ms
+evaluate	Require 100% accuracy and no regression against recorded v2 baseline	2026-11-25T13:52:34.4046808Z   ✅ obs-06           score=1.00    196.2ms
+evaluate	Require 100% accuracy and no regression against recorded v2 baseline	2026-11-25T13:52:34.4047204Z   ✅ slo-01           score=1.00    187.2ms
+evaluate	Require 100% accuracy and no regression against recorded v2 baseline	2026-11-25T13:52:34.4047571Z   ✅ cost-01          score=1.00    206.1ms
+evaluate	Require 100% accuracy and no regression against recorded v2 baseline	2026-11-25T13:52:34.4047944Z   ✅ cloud-01         score=1.00    174.0ms
+evaluate	Require 100% accuracy and no regression against recorded v2 baseline	2026-11-25T13:52:34.4048159Z 
+evaluate	Require 100% accuracy and no regression against recorded v2 baseline	2026-11-25T13:52:34.4048400Z ══════════════════════════════════════════════════════════
+evaluate	Require 100% accuracy and no regression against recorded v2 baseline	2026-11-25T13:52:34.4048817Z   EVAL REPORT — agent v2
+evaluate	Require 100% accuracy and no regression against recorded v2 baseline	2026-11-25T13:52:34.4049511Z ══════════════════════════════════════════════════════════
+evaluate	Require 100% accuracy and no regression against recorded v2 baseline	2026-11-25T13:52:34.4049899Z   Accuracy      : 100.0%  (23/23)
+evaluate	Require 100% accuracy and no regression against recorded v2 baseline	2026-11-25T13:52:34.4050200Z   Errors        : 0
+evaluate	Require 100% accuracy and no regression against recorded v2 baseline	2026-11-25T13:52:34.4050472Z   Latency (ms)  : p50=190.3  p95=212.2
+evaluate	Require 100% accuracy and no regression against recorded v2 baseline	2026-11-25T13:52:34.4050798Z   Avg tokens    : 118.1
+evaluate	Require 100% accuracy and no regression against recorded v2 baseline	2026-11-25T13:52:34.4051203Z   Total cost    : $0.000829   (cost / câu đúng: $0.00003603)
+evaluate	Require 100% accuracy and no regression against recorded v2 baseline	2026-11-25T13:52:34.4051589Z   Theo category :
+evaluate	Require 100% accuracy and no regression against recorded v2 baseline	2026-11-25T13:52:34.4051882Z     - benchmark      3/3  (100%)
+evaluate	Require 100% accuracy and no regression against recorded v2 baseline	2026-11-25T13:52:34.4052382Z     - cost           1/1  (100%)
+evaluate	Require 100% accuracy and no regression against recorded v2 baseline	2026-11-25T13:52:34.4052701Z     - deployment     3/3  (100%)
+evaluate	Require 100% accuracy and no regression against recorded v2 baseline	2026-11-25T13:52:34.4052999Z     - docker         2/2  (100%)
+evaluate	Require 100% accuracy and no regression against recorded v2 baseline	2026-11-25T13:52:34.4053299Z     - observability  6/6  (100%)
+evaluate	Require 100% accuracy and no regression against recorded v2 baseline	2026-11-25T13:52:34.4053602Z     - reliability    3/3  (100%)
+evaluate	Require 100% accuracy and no regression against recorded v2 baseline	2026-11-25T13:52:34.4053902Z     - scaling        3/3  (100%)
+evaluate	Require 100% accuracy and no regression against recorded v2 baseline	2026-11-25T13:52:34.4054197Z     - security       2/2  (100%)
+evaluate	Require 100% accuracy and no regression against recorded v2 baseline	2026-11-25T13:52:34.4054394Z 
+evaluate	Require 100% accuracy and no regression against recorded v2 baseline	2026-11-25T13:52:34.4054584Z   📊 So sánh với baseline (agent v2)
+evaluate	Require 100% accuracy and no regression against recorded v2 baseline	2026-11-25T13:52:34.4055327Z   Chỉ số                    Baseline    Hiện tại        Thay đổi
+evaluate	Require 100% accuracy and no regression against recorded v2 baseline	2026-11-25T13:52:34.4055845Z   Accuracy                     91.3%      100.0%     +8.7 điểm %
+evaluate	Require 100% accuracy and no regression against recorded v2 baseline	2026-11-25T13:52:34.4056302Z   Latency p95 (ms)             221.3       212.2            -9.1
+evaluate	Require 100% accuracy and no regression against recorded v2 baseline	2026-11-25T13:52:34.4056823Z   Avg tokens / câu             109.3       118.1            +8.8
+evaluate	Require 100% accuracy and no regression against recorded v2 baseline	2026-11-25T13:52:34.4057318Z   Tổng cost (USD)           0.000764    0.000829       +0.000065
+evaluate	Require 100% accuracy and no regression against recorded v2 baseline	2026-11-25T13:52:34.4057571Z 
+evaluate	Require 100% accuracy and no regression against recorded v2 baseline	2026-11-25T13:52:34.4057707Z   ✨ Câu được cải thiện : 2
+evaluate	Require 100% accuracy and no regression against recorded v2 baseline	2026-11-25T13:52:34.4057986Z   ⚠️  Câu bị regression : 0 
+evaluate	Require 100% accuracy and no regression against recorded v2 baseline	2026-11-25T13:52:34.4058331Z ──────────────────────────────────────────────────────────
+evaluate	Require 100% accuracy and no regression against recorded v2 baseline	2026-11-25T13:52:34.4058757Z   Quality gate (accuracy ≥ 100%, không regression): ✅ PASS
+evaluate	Require 100% accuracy and no regression against recorded v2 baseline	2026-11-25T13:52:34.4059199Z ══════════════════════════════════════════════════════════
+evaluate	Require 100% accuracy and no regression against recorded v2 baseline	2026-11-25T13:52:34.4059405Z 
+evaluate	Require 100% accuracy and no regression against recorded v2 baseline	2026-11-25T13:52:34.4059556Z 💾 Đã lưu report: reports/eval_ci.json
+evaluate	Stop this job's agent	﻿2026-11-25T13:52:34.4297228Z ##[group]Run if [ -f /tmp/day14-eval.pid ]; then kill "$(cat /tmp/day14-eval.pid)" 2>/dev/null || true; fi
+evaluate	Stop this job's agent	2026-11-25T13:52:34.4298087Z ^[[36;1mif [ -f /tmp/day14-eval.pid ]; then kill "$(cat /tmp/day14-eval.pid)" 2>/dev/null || true; fi^[[0m
+evaluate	Stop this job's agent	2026-11-25T13:52:34.4331731Z shell: /usr/bin/bash -e {0}
+evaluate	Stop this job's agent	2026-11-25T13:52:34.4332023Z env:
+evaluate	Stop this job's agent	2026-11-25T13:52:34.4332571Z   pythonLocation: /opt/hostedtoolcache/Python/3.11.18/x64
+evaluate	Stop this job's agent	2026-11-25T13:52:34.4333165Z   PKG_CONFIG_PATH: /opt/hostedtoolcache/Python/3.11.18/x64/lib/pkgconfig
+evaluate	Stop this job's agent	2026-11-25T13:52:34.4333662Z   Python_ROOT_DIR: /opt/hostedtoolcache/Python/3.11.18/x64
+evaluate	Stop this job's agent	2026-11-25T13:52:34.4334099Z   Python2_ROOT_DIR: /opt/hostedtoolcache/Python/3.11.18/x64
+evaluate	Stop this job's agent	2026-11-25T13:52:34.4334534Z   Python3_ROOT_DIR: /opt/hostedtoolcache/Python/3.11.18/x64
+evaluate	Stop this job's agent	2026-11-25T13:52:34.4334982Z   LD_LIBRARY_PATH: /opt/hostedtoolcache/Python/3.11.18/x64/lib
+evaluate	Stop this job's agent	2026-11-25T13:52:34.4335355Z ##[endgroup]
+evaluate	Post Run actions/setup-python@v5	﻿2026-11-25T13:52:34.4531890Z Post job cleanup.
+evaluate	Post Run actions/setup-python@v5	2026-11-25T13:52:34.5830184Z (node:2428) [DEP0040] DeprecationWarning: The `punycode` module is deprecated. Please use a userland alternative instead.
+evaluate	Post Run actions/setup-python@v5	2026-11-25T13:52:34.5831042Z (Use `node --trace-deprecation ...` to show where the warning was created)
+evaluate	Post Run actions/checkout@v4	﻿2026-11-25T13:52:34.6069229Z Post job cleanup.
+evaluate	Post Run actions/checkout@v4	2026-11-25T13:52:34.7115696Z [command]/usr/bin/git version
+evaluate	Post Run actions/checkout@v4	2026-11-25T13:52:34.7163295Z git version 2.56.1
+evaluate	Post Run actions/checkout@v4	2026-11-25T13:52:34.7208629Z Temporarily overriding HOME='/home/runner/work/_temp/4afae76c-0ae2-454f-8ef6-6ed70d8d5813' before making global git config changes
+evaluate	Post Run actions/checkout@v4	2026-11-25T13:52:34.7210036Z Adding repository directory to the temporary git global config as a safe directory
+evaluate	Post Run actions/checkout@v4	2026-11-25T13:52:34.7213462Z [command]/usr/bin/git config --global --add safe.directory /home/runner/work/K5-L3A-DAY14-LeGiaHung-2A202603713-Deployment-Benchmark-Observability/K5-L3A-DAY14-LeGiaHung-2A202603713-Deployment-Benchmark-Observability
+evaluate	Post Run actions/checkout@v4	2026-11-25T13:52:34.7284607Z [command]/usr/bin/git config --local --name-only --get-regexp core\.sshCommand
+evaluate	Post Run actions/checkout@v4	2026-11-25T13:52:34.7332787Z [command]/usr/bin/git submodule foreach --recursive sh -c "git config --local --name-only --get-regexp 'core\.sshCommand' && git config --local --unset-all 'core.sshCommand' || :"
+evaluate	Post Run actions/checkout@v4	2026-11-25T13:52:34.7744509Z [command]/usr/bin/git config --local --name-only --get-regexp http\.https\:\/\/github\.com\/\.extraheader
+evaluate	Post Run actions/checkout@v4	2026-11-25T13:52:34.7771095Z http.https://github.com/.extraheader
+evaluate	Post Run actions/checkout@v4	2026-11-25T13:52:34.7790015Z [command]/usr/bin/git config --local --unset-all http.https://github.com/.extraheader
+evaluate	Post Run actions/checkout@v4	2026-11-25T13:52:34.7837179Z [command]/usr/bin/git submodule foreach --recursive sh -c "git config --local --name-only --get-regexp 'http\.https\:\/\/github\.com\/\.extraheader' && git config --local --unset-all 'http.https://github.com/.extraheader' || :"
+evaluate	Post Run actions/checkout@v4	2026-11-25T13:52:34.8266745Z [command]/usr/bin/git config --local --name-only --get-regexp ^includeIf\.gitdir:
+evaluate	Post Run actions/checkout@v4	2026-11-25T13:52:34.8326428Z [command]/usr/bin/git submodule foreach --recursive git config --local --show-origin --name-only --get-regexp remote.origin.url
+evaluate	Complete job	﻿2026-11-25T13:52:34.8833313Z Cleaning up orphan processes
+evaluate	Complete job	2026-11-25T13:52:34.9247547Z ##[warning]Node.js 20 is deprecated. The following actions target Node.js 20 but are being forced to run on Node.js 24: actions/checkout@v4, actions/setup-python@v5. For more information see: https://github.blog/changelog/2025-09-19-deprecation-of-node-20-on-github-actions-runners/
