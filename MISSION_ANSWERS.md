@@ -836,7 +836,7 @@ Báo cáo đầy đủ theo mẫu và năm câu hỏi thảo luận nằm trong 
 | 7.1: đọc/thêm metric | Counter/Gauge/Histogram, route template chống cardinality; thêm `agent_question_length_chars`. Câu hỏi 40 ký tự ghi count 1, sum 40; ba URL lạ gom vào unmatched. Raw trong `reports/part7_question_metrics.prom`. |
 | 7.2: load và tail latency | Đủ 300 request/lần tại c1/10/50/100 và slow rate 0/0.03/0.1. c100 có p95 3675.4 ms, trượt SLO; ghi nguyên số đo trong `reports/load_*.json`. |
 | 7.3: eval/KB | v1 1/23, v2 21/23, v2 sau bổ sung JWT/HPA 23/23, 0 regression. Không sửa golden dataset. |
-| Quality gate | v1 so baseline có 20 regression, exit 1. GitHub Actions run 45627994273 success với accuracy 100%, 0 regression. |
+| Quality gate | v1 so baseline có 20 regression, exit 1. GitHub Actions run 45635693939 success với accuracy 100%, 0 regression. |
 | 7.4: đọc dashboard | Hai agent, 30 users, ramp 5/s: avg 232.09 ms, p95 294.13 ms; backend 9.65 và 9.52 req/s; input/output 1530.57/825.10 token/s; `/metrics` qua Nginx 404. Bốn câu trả lời chi tiết và raw ở BENCHMARK_REPORT và `reports/part7_exercise_7_4_metrics.json`. |
 | Production observability | Promtool SUCCESS; dashboard Grafana có tải, trace chậm/lỗi với exception, Prometheus có hai alert firing đồng thời. |
 | Phá hệ thống A–E | Error, latency, cost và instance-down đều quan sát firing; v1 chất lượng kém không bật alert trong khoảng thử nhưng eval thất bại. Có JSON timestamp và raw Locust CSV. |

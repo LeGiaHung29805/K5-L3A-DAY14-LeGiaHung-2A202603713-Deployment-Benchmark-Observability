@@ -26,7 +26,7 @@
     "test.jpg",
     "domain-review.png"
   ],
-  "python_cache_directories_removed": 10,
+  "python_cache_directories_removed": 11,
   "lab_compose_projects_stopped_with_volumes": [
     "k5-day14-final",
     "k5-day14-observability"

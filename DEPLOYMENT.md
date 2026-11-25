@@ -87,7 +87,7 @@ Mã kỳ vọng theo thứ tự: **200, 200, 401, 200**. Tối đa 10 request/ph
 - [Chấm đầy đủ Part 6 kèm public URL](reports/part6_public_check.txt): **PASS 12/12, 44/44 checks**, SIGTERM hoàn tất request và exit 0, Docker stop 0.6 giây, image 63 MB theo script. [Lần local trước đó](reports/part6_full_check.txt) có 43/43 checks, stop 0.5 giây.
 - [Bảy test Redis](reports/part6_extensions_tests.txt): PASS, gồm atomic rate/budget, rollover, idempotency, ownership/retention/TTL và ghi history đồng thời.
 - [Smoke Nginx ba agent](reports/part6_extensions_smoke.json): thấy đủ ba backend, history dùng chung và còn sau restart; rate limit cũng còn sau restart. Đây là kiểm chứng local; Railway chỉ chạy một replica.
-- [GitHub Actions quality gate](https://github.com/LeGiaHung29805/K5-L3A-DAY14-LeGiaHung-2A202603713-Deployment-Benchmark-Observability/actions/runs/45627994273): **success**, accuracy 100%, không regression. [Log CI](reports/ci_quality_gate.txt).
+- [GitHub Actions quality gate](https://github.com/LeGiaHung29805/K5-L3A-DAY14-LeGiaHung-2A202603713-Deployment-Benchmark-Observability/actions/runs/45635693939): **success**, accuracy 100%, không regression. [Log CI](reports/ci_quality_gate.txt).
 
 Phần mở rộng đáp ứng yêu cầu tự học: history trong Redis, SSE và load balancing Nginx. Rubric của chương trình không có điểm bonus riêng. SSE hiện chia câu trả lời mock đã tạo xong thành event, chưa phải streaming trực tiếp từ nhà cung cấp LLM. Chi phí và history được quyết toán trước khi bắt đầu stream; client ngắt giữa chừng không hoàn lại lượt/chi phí. History lưu hội thoại, mock chưa dùng toàn bộ history làm context.
 

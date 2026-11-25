@@ -16,7 +16,7 @@
 - [DEPLOYMENT.md](DEPLOYMENT.md): [API public Railway](https://day14-agent-53c5ceff.up.railway.app), biến môi trường và HTTP thực nhận 200/200/401/200.
 - [BENCHMARK_REPORT.md](BENCHMARK_REPORT.md): benchmark, eval, trace/alert và scaling; raw ở `reports/`, CSV ở `benchmark-results/`, ảnh ở `screenshots/`.
 - [Part 6](06-lab-complete/): PASS 12/12, 44/44 checks khi chấm kèm URL public; history Redis, SSE và Nginx ba agent. [Hướng dẫn chạy](06-lab-complete/SETUP.md).
-- [CI quality gate](https://github.com/LeGiaHung29805/K5-L3A-DAY14-LeGiaHung-2A202603713-Deployment-Benchmark-Observability/actions/runs/45627994273): success, v2 đạt 23/23, không regression.
+- [CI quality gate](https://github.com/LeGiaHung29805/K5-L3A-DAY14-LeGiaHung-2A202603713-Deployment-Benchmark-Observability/actions/runs/45635693939): success, v2 đạt 23/23, không regression.
 
 Source Part 6 ở đúng thư mục K5; các thư mục Part 1–5 và tài liệu luật/rubric là học liệu của chương trình, được giữ lại. Dockerfile Go trùng lặp ở gốc đã bỏ vì gây chọn nhầm build; ví dụ gốc vẫn ở `02-docker/multi-stages/`. `utils/` và `.dockerignore` ở root vẫn cần cho Docker build Part 2. Script tái hiện ở `scripts/`; report chẩn đoán ở `reports/diagnostics/` không được dùng thay kết quả chính.
 

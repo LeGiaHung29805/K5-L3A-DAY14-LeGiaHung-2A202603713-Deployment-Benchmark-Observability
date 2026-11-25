@@ -28,6 +28,8 @@ def main():
               "jaeger-error-trace", "prometheus-alert-firing"]
     required += [f"screenshots/{name}.png" for name in images]
     assert all((ROOT / name).is_file() and (ROOT / name).stat().st_size for name in required)
+    tracked = set(git("ls-files").decode().splitlines())
+    assert set(required) <= tracked, "Required artifact exists locally but is not tracked by Git"
     image_sizes = {}
     for name in images:
         raw = (ROOT / f"screenshots/{name}.png").read_bytes()
@@ -94,6 +96,7 @@ def main():
     assert not broken, broken
     audit = {"checked_utc": datetime.now(timezone.utc).isoformat(), "result": "PASS",
              "required_artifacts": required, "image_dimensions": image_sizes,
+             "required_artifacts_tracked_by_git": True,
              "protected_source_sha256": hashes, "protected_source_matches_original": True,
              "private_key_matches": leaked, "env_file_history_empty": True,
              "scaling_replica_counts": [1, 3], "cloud_http_statuses": [200, 200, 401, 200],
